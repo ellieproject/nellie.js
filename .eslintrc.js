@@ -13,6 +13,7 @@ module.exports = {
     'indent': ['error', 2],
     'linebreak-style': ['error', 'windows'],
     'no-multiple-empty-lines': ['error', { 'max': 1, 'maxEOF': 0 }],
+    'no-unused-vars': 'warn',
     'quotes': ['error', 'single'],
     'semi': ['error', 'always']
   }
