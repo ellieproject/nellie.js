@@ -6,7 +6,8 @@ const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
 function executeSEI(instruction, processor) {
-  console.log(this);
+  console.debug(this.name);
+  processor.register.p.bitSet('I', 1);
   return;
 } // executeSEI()
 

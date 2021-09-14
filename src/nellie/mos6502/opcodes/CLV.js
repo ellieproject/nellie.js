@@ -6,8 +6,9 @@ const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
 function executeCLV(instruction, processor) {
-  console.log(this);
-  return;
+  console.debug(this.name);
+  processor.register.p.bitSet('V', 0);
+  return null;
 } // executeCLV()
 
 const CLV = new Ellie.Opcode(

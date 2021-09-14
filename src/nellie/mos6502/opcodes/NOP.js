@@ -5,8 +5,8 @@
 const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
-function executeNOP(instruction, processor) {
-  console.log(this);
+function executeNOP() { // instruction, processor, result unused
+  console.debug(this.name);
   return;
 } // executeNOP()
 

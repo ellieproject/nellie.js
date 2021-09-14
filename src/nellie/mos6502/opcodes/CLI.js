@@ -6,8 +6,9 @@ const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
 function executeCLI(instruction, processor) {
-  console.log(this);
-  return;
+  console.debug(this.name);
+  processor.register.p.bitSet('I', 0);
+  return null;
 } // executeCLI()
 
 const CLI = new Ellie.Opcode(

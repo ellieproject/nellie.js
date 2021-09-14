@@ -6,7 +6,7 @@ const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
 function executeTXS(instruction, processor) {
-  console.log(this);
+  console.debug(this.name);
   return;
 } // executeTXS()
 
