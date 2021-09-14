@@ -2,7 +2,7 @@
   "name": "@ellieproject/nellie",
   "version": "0.1.0",
   "description": "An NES Emulation demo written using the ellie.js library",
-  "main": "index.js",
+  "main": "src/nellie.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "NES",
-    "MOS",
-    "6502",
+    "MOS 6502",
     "Low Level Emulation"
   ],
   "author": "The Ellie Project, Grant Sparks",
@@ -21,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/ellieproject/nellie.js/issues"
   },
-  "homepage": "https://github.com/ellieproject/nellie.js#readme"
+  "homepage": "https://github.com/ellieproject/nellie.js#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  },
+  "dependencies": {
+    "@ellieproject/ellie": "file:../ellie.js/ellieproject-ellie-0.1.0.tgz"
+  }
 }
