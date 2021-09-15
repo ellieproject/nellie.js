@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeLDA(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeLDA()
 
 const LDA = new Ellie.Opcode(

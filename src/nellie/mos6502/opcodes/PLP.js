@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executePLP(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executePLP()
 
 const PLP = new Ellie.Opcode(

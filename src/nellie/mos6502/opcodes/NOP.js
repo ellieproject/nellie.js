@@ -5,9 +5,9 @@
 const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
-function executeNOP() { // instruction, processor, result unused
+function executeNOP() { // instruction, processor unused
   console.debug(this.name);
-  return;
+  return true;
 } // executeNOP()
 
 const NOP = new Ellie.Opcode(

@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executePHP(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executePHP()
 
 const PHP = new Ellie.Opcode(

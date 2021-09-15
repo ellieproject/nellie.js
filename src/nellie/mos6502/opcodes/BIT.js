@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeBIT(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeBIT()
 
 const BIT = new Ellie.Opcode(

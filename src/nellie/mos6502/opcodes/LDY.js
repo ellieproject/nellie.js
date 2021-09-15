@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeLDY(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeLDY()
 
 const LDY = new Ellie.Opcode(

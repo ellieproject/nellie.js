@@ -5,15 +5,15 @@
 const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
-function executeTYA(instruction, processor) { // result unused
+function executeTYA(instruction, processor) {
   console.debug(this.name);
   // negative flag check
   processor.register.p.bitSet('N', processor.register.y.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.y.get() === 0x0);
+  processor.register.p.bitSet('Z', processor.register.y.test(0x0));
   // Y => A
-  processor.register.a.set(processor.register.y.get());
-  return null;
+  processor.register.a.load(processor.register.y);
+  return true;
 } // executeTYA()
 
 const TYA = new Ellie.Opcode(

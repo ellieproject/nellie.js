@@ -4,19 +4,20 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preprocessAccumulator(instruction, processor) {
-  return processor.register.a;
-} // preprocessAccumulator()
+function preexecuteAccumulator(instruction, processor) {
+  processor.register.b.load(processor.register.a);
+  return true;
+} // preexecuteAccumulator()
 
-function postprocessAccumulator(instruction, processor, result) {
-  processor.register.a = result;
-  return null;
-} // postprocessAccumulator()
+function postexecuteAccumulator(instruction, processor) {
+  processor.register.a.load(processor.register.b);
+  return true;
+} // postexecuteAccumulator()
 
 var MODE_ACCUMULATOR = new Ellie.Opcode.Mode(
   'accumulator',
-  preprocessAccumulator,
-  postprocessAccumulator
+  preexecuteAccumulator,
+  postexecuteAccumulator
 );
 
 module.exports = MODE_ACCUMULATOR;

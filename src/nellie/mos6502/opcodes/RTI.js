@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeRTI(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeRTI()
 
 const RTI = new Ellie.Opcode(

@@ -5,19 +5,20 @@
 const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
-function executeLSR(instruction, processor, result) {
+function executeLSR(instruction, processor) {
   console.debug(this.name);
-  // result[0] => carry flag
-  processor.register.p.bitSet('C', (result >> 0) & 0x1);
+  const b = processor.register.b;
+  // buffer[0] => carry flag
+  processor.register.p.bitSet('C', b.bit(0));
   // shift right
-  result >>= 1;
+  b.set(b.get() >> 1);
   // clear bit 7
-  result &= ~(0x1 << 7);
+  b.bitSet(7, 0);
   // negative flag check
-  processor.register.p.bitSet('N', (result >> 7) & 0x1);
+  processor.register.p.bitSet('N', b.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', result === 0x0);
-  return result;
+  processor.register.p.bitSet('Z', b.test(0x0));
+  return true;
 } // executeLSR()
 
 const LSR = new Ellie.Opcode(

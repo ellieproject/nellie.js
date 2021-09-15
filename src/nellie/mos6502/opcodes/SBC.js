@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeSBC(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeSBC()
 
 const SBC = new Ellie.Opcode(

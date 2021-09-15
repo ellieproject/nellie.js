@@ -5,15 +5,15 @@
 const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
-function executeTAX(instruction, processor) { // result unused
+function executeTAX(instruction, processor) {
   console.debug(this.name);
   // negative flag check
   processor.register.p.bitSet('N', processor.register.a.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.a.get() === 0x0);
+  processor.register.p.bitSet('Z', processor.register.a.test(0x0));
   // A => X
-  processor.register.x.set(processor.register.a.get());
-  return null;
+  processor.register.x.load(processor.register.a);
+  return true;
 } // executeTAX()
 
 const TAX = new Ellie.Opcode(

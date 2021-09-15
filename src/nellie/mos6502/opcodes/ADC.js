@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeADC(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeADC()
 
 const ADC = new Ellie.Opcode(

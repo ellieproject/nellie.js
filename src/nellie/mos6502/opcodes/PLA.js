@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executePLA(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executePLA()
 
 const PLA = new Ellie.Opcode(

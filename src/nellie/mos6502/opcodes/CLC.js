@@ -8,7 +8,7 @@ const Ellie = require('@ellieproject/ellie');
 function executeCLC(instruction, processor) {
   console.debug(this.name);
   processor.register.p.bitSet('C', 0);
-  return null;
+  return true;
 } // executeCLC()
 
 const CLC = new Ellie.Opcode(

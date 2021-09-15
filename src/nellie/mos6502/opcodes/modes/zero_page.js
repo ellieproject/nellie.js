@@ -4,11 +4,11 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preprocessZeroPage(instruction, processor) {} // preprocessZeroPage()
+function preexecuteZeroPage(instruction, processor) {} // preexecuteZeroPage()
 
 var MODE_ZERO_PAGE = new Ellie.Opcode.Mode(
   'zero page',
-  preprocessZeroPage
+  preexecuteZeroPage
 );
 
 module.exports = MODE_ZERO_PAGE;

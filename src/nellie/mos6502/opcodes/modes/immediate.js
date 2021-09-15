@@ -4,11 +4,11 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preprocessImmediate(instruction, processor) {} // preprocessImmediate()
+function preexecuteImmediate(instruction, processor) {} // preexecuteImmediate()
 
 var MODE_IMMEDIATE = new Ellie.Opcode.Mode(
   'immediate',
-  preprocessImmediate
+  preexecuteImmediate
 );
 
 module.exports = MODE_IMMEDIATE;

@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executePHA(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executePHA()
 
 const PHA = new Ellie.Opcode(

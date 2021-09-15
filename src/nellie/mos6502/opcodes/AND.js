@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeAND(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeAND()
 
 const AND = new Ellie.Opcode(

@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeCPX(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeCPX()
 
 const CPX = new Ellie.Opcode(

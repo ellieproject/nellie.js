@@ -4,11 +4,11 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preprocessIndirect(instruction, processor) {} // preprocessIndirect()
+function preexecuteIndirect(instruction, processor) {} // preexecuteIndirect()
 
 var MODE_INDIRECT = new Ellie.Opcode.Mode(
   'indirect',
-  preprocessIndirect
+  preexecuteIndirect
 );
 
 module.exports = MODE_INDIRECT;

@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeTSX(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeTSX()
 
 const TSX = new Ellie.Opcode(

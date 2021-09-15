@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeBNE(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeBNE()
 
 const BNE = new Ellie.Opcode(

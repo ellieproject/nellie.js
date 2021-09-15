@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeLDX(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeLDX()
 
 const LDX = new Ellie.Opcode(

@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeTXS(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeTXS()
 
 const TXS = new Ellie.Opcode(

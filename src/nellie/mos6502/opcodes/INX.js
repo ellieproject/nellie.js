@@ -5,15 +5,15 @@
 const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
-function executeINX(instruction, processor) { // result unused
+function executeINX(instruction, processor) {
   console.debug(this.name);
   // X + 1 => X // TODO calculate correctly
   processor.register.x.set(processor.register.x.get() + 1);
   // negative flag check
   processor.register.p.bitSet('N', processor.register.x.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.x.get() === 0x0);
-  return null;
+  processor.register.p.bitSet('Z', processor.register.x.test(0x0));
+  return true;
 } // executeINX()
 
 const INX = new Ellie.Opcode(

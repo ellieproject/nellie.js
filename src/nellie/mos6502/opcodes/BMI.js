@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeBMI(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeBMI()
 
 const BMI = new Ellie.Opcode(

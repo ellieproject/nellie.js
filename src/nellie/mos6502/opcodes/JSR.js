@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeJSR(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeJSR()
 
 const JSR = new Ellie.Opcode(

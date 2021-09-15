@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeBEQ(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeBEQ()
 
 const BEQ = new Ellie.Opcode(

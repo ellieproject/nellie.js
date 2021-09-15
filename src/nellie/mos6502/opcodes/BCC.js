@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeBCC(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeBCC()
 
 const BCC = new Ellie.Opcode(

@@ -8,7 +8,7 @@ const Ellie = require('@ellieproject/ellie');
 function executeSED(instruction, processor) {
   console.debug(this.name);
   processor.register.p.bitSet('D', 1);
-  return;
+  return true;
 } // executeSED()
 
 const SED = new Ellie.Opcode(

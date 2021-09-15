@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeEOR(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeEOR()
 
 const EOR = new Ellie.Opcode(

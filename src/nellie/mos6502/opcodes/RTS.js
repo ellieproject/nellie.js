@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeRTS(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeRTS()
 
 const RTS = new Ellie.Opcode(

@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeINC(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeINC()
 
 const INC = new Ellie.Opcode(

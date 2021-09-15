@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeJMP(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeJMP()
 
 const JMP = new Ellie.Opcode(

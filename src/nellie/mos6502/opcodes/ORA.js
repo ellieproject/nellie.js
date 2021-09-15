@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeORA(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeORA()
 
 const ORA = new Ellie.Opcode(

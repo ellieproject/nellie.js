@@ -4,11 +4,11 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preprocessAbsoluteX(instruction, processor) {} // preprocessAbsoluteX()
+function preexecuteAbsoluteX(instruction, processor) {} // preexecuteAbsoluteX()
 
 var MODE_ABSOLUTE_X = new Ellie.Opcode.Mode(
   'absolute x',
-  preprocessAbsoluteX
+  preexecuteAbsoluteX
 );
 
 module.exports = MODE_ABSOLUTE_X;

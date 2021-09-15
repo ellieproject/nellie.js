@@ -8,7 +8,7 @@ const Ellie = require('@ellieproject/ellie');
 function executeCLI(instruction, processor) {
   console.debug(this.name);
   processor.register.p.bitSet('I', 0);
-  return null;
+  return true;
 } // executeCLI()
 
 const CLI = new Ellie.Opcode(

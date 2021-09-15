@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeBPL(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeBPL()
 
 const BPL = new Ellie.Opcode(

@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeCPY(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeCPY()
 
 const CPY = new Ellie.Opcode(

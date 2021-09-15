@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeBRK(instruction, processor) {
   console.debug(this.name);
-  return;
+  return false;
 } // executeBRK()
 
 const BRK = new Ellie.Opcode(
