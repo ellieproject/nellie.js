@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeINX(instruction, processor) { // result unused
   console.debug(this.name);
-  // X + 1 => X
+  // X + 1 => X // TODO calculate correctly
   processor.register.x.set(processor.register.x.get() + 1);
   // negative flag check
   processor.register.p.bitSet('N', processor.register.x.bit(7));

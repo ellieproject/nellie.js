@@ -15,7 +15,6 @@ for (const name in MOS6502.OPCODES) {
 }
 
 // Registers
-const Cache     = new Ellie.Register('Cache',       8, 0x00);
 const Status    = new Ellie.Register('Status',      8, 0x34);
 const RegisterA = new Ellie.Register('Accumulator', 8, 0x00);
 const RegisterX = new Ellie.Register('Register X',  8, 0x00);
@@ -30,12 +29,21 @@ Status.nameBit(2, 'i').nameBit(2, 'I').nameBit(2, 'interrupt');
 Status.nameBit(1, 'z').nameBit(1, 'Z').nameBit(1, 'zero');
 Status.nameBit(0, 'c').nameBit(0, 'C').nameBit(0, 'carry');
 
-MOS6502.addRegister(Cache,     'cache');
 MOS6502.addRegister(Status,    'p');
 MOS6502.addRegister(RegisterA, 'a');
 MOS6502.addRegister(RegisterX, 'x');
 MOS6502.addRegister(RegisterY, 'y');
 
-MOS6502.run(0x98).run(0x8A).run(0xA8).run(0xAA);
+//MOS6502.run(0x98).run(0x8A).run(0xA8).run(0xAA);
+MOS6502.run(0x38); // SEC
+MOS6502.run(0x2A); // ROL A
+MOS6502.run(0xAA); // TAX
+MOS6502.run(0x6A); // ROR A
+MOS6502.run(0x6A);
+MOS6502.run(0xA8); // TAY
+
+for (var reg in MOS6502.register) {
+  console.log(MOS6502.register[reg].toString());
+}
 
 module.exports = MOS6502;

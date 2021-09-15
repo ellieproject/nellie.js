@@ -5,9 +5,21 @@
 const MODES = require('./modes.js');
 const Ellie = require('@ellieproject/ellie');
 
-function executeROL(instruction, processor) {
+function executeROL(instruction, processor, result) {
   console.debug(this.name);
-  return;
+  // result[7] => newC
+  const newC = result.bit(7);
+  // shift left
+  result.bits <<= 1;
+  // carry flag => result[0]
+  result.bitSet(0, processor.register.p.bit('C'));
+  // newC => carry flag
+  processor.register.p.bitSet('C', newC);
+  // negative flag check
+  processor.register.p.bitSet('N', result.bit(7));
+  // zero flag check
+  processor.register.p.bitSet('Z', result.bits === 0x0);
+  return result;
 } // executeROL()
 
 const ROL = new Ellie.Opcode(

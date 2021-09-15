@@ -7,7 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function executeINY(instruction, processor) { // result unused
   console.debug(this.name);
-  // Y + 1 => Y
+  // Y + 1 => Y // TODO calculate correctly
   processor.register.y.set(processor.register.y.get() + 1);
   // negative flag check
   processor.register.p.bitSet('N', processor.register.y.bit(7));
