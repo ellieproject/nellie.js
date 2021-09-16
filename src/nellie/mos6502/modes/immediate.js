@@ -1,4 +1,4 @@
-/* nellie/opcodes/modes/immediate.js
+/* nellie/mos6502/modes/immediate.js
  *
  */
 

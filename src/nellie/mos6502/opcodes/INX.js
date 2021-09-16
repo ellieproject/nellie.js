@@ -1,8 +1,8 @@
-/* nellie/opcodes/INX.js
+/* nellie/mos6502/opcodes/INX.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeINX(instruction, processor) {

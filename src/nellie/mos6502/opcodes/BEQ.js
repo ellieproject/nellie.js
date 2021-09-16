@@ -1,8 +1,8 @@
-/* nellie/opcodes/BEQ.js
+/* nellie/mos6502/opcodes/BEQ.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeBEQ(instruction, processor) {

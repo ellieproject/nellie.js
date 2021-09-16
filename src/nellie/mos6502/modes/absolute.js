@@ -1,4 +1,4 @@
-/* nellie/opcodes/modes/absolute.js
+/* nellie/mos6502/modes/absolute.js
  *
  */
 

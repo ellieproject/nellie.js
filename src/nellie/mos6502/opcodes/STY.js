@@ -1,8 +1,8 @@
-/* nellie/opcodes/STY.js
+/* nellie/mos6502/opcodes/STY.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeSTY(instruction, processor) {

@@ -1,8 +1,8 @@
-/* nellie/opcodes/BVC.js
+/* nellie/mos6502/opcodes/BVC.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeBVC(instruction, processor) {

@@ -1,8 +1,8 @@
-/* nellie/opcodes/DEX.js
+/* nellie/mos6502/opcodes/DEX.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeDEX(instruction, processor) {

@@ -1,64 +1,64 @@
-/* nellie/opcodes.js
+/* nellie/mos6502/opcodes.js
  *
  */
 
 const OPCODES = {
-  ADC: require('./opcodes/ADC.js'), // Add M to A with Carry
-  AND: require('./opcodes/AND.js'), // "AND" M with A
-  ASL: require('./opcodes/ASL.js'), // Shift Left One Bit (M or A)
-  BCC: require('./opcodes/BCC.js'), // Branch on Carry Clear
-  BCS: require('./opcodes/BCS.js'), // Branch on Carry Set
-  BEQ: require('./opcodes/BEQ.js'), // Branch on Result Zero
-  BIT: require('./opcodes/BIT.js'), // Test Bits in M with A
-  BMI: require('./opcodes/BMI.js'), // Branch on Result Minus
-  BNE: require('./opcodes/BNE.js'), // Branch on Result not Zero
-  BPL: require('./opcodes/BPL.js'), // Branch on Result Plus
-  BRK: require('./opcodes/BRK.js'), // Force Break
-  BVC: require('./opcodes/BVC.js'), // Branch on Overflow Clear
-  BVS: require('./opcodes/BVS.js'), // Branch on Overflow Set
-  CLC: require('./opcodes/CLC.js'), // Clear Carry Flag
-  CLD: require('./opcodes/CLD.js'), // Clear Decimal Mode
-  CLI: require('./opcodes/CLI.js'), // Clear Interrupt Disable Flag
-  CLV: require('./opcodes/CLV.js'), // Clear Overflow Flag
-  CMP: require('./opcodes/CMP.js'), // Compare M and A
-  CPX: require('./opcodes/CPX.js'), // Compare M and X
-  CPY: require('./opcodes/CPY.js'), // Compare M and Y
-  DEC: require('./opcodes/DEC.js'), // Decrement M by One
-  DEX: require('./opcodes/DEX.js'), // Decrement X by One
-  DEY: require('./opcodes/DEY.js'), // Decrement Y by One
-  EOR: require('./opcodes/EOR.js'), // "Exclusive-Or" M with A
-  INC: require('./opcodes/INC.js'), // Increment M by One
-  INX: require('./opcodes/INX.js'), // Increment X by One
-  INY: require('./opcodes/INY.js'), // Increment Y by One
-  JMP: require('./opcodes/JMP.js'), // Jump to Location
-  JSR: require('./opcodes/JSR.js'), // Jump to Location Save Return Address
-  LDA: require('./opcodes/LDA.js'), // Load A with M
-  LDX: require('./opcodes/LDX.js'), // Load X with M
-  LDY: require('./opcodes/LDY.js'), // Load Y with M
-  LSR: require('./opcodes/LSR.js'), // Shift Right One Bit (M or A)
-  NOP: require('./opcodes/NOP.js'), // No Operation
-  ORA: require('./opcodes/ORA.js'), // "OR" M with A
-  PHA: require('./opcodes/PHA.js'), // Push A on Stack
-  PHP: require('./opcodes/PHP.js'), // Push Processor Status on Stack
-  PLA: require('./opcodes/PLA.js'), // Pull A from Stack
-  PLP: require('./opcodes/PLP.js'), // Pull Processor Status from Stack
-  ROL: require('./opcodes/ROL.js'), // Rotate One Bit Left (M or A)
-  ROR: require('./opcodes/ROR.js'), // Rotate One Bit Right (M or A)
-  RTI: require('./opcodes/RTI.js'), // Return from Interrupt
-  RTS: require('./opcodes/RTS.js'), // Return from Subroutine
-  SBC: require('./opcodes/SBC.js'), // Subtract M from A with Borrow
-  SEC: require('./opcodes/SEC.js'), // Set Carry Flag
-  SED: require('./opcodes/SED.js'), // Set Decimal Mode
-  SEI: require('./opcodes/SEI.js'), // Set Interrupt Disable Status
-  STA: require('./opcodes/STA.js'), // Store A in M
-  STX: require('./opcodes/STX.js'), // Store X in M
-  STY: require('./opcodes/STY.js'), // Store Y in M
-  TAX: require('./opcodes/TAX.js'), // Transfer A to X
-  TAY: require('./opcodes/TAY.js'), // Transfer A to Y
-  TSX: require('./opcodes/TSX.js'), // Transfer Stack Pointer to X
-  TXA: require('./opcodes/TXA.js'), // Transfer X to A
-  TXS: require('./opcodes/TXS.js'), // Transfer X to Stack Pointer
-  TYA: require('./opcodes/TYA.js'), // Transfer Y to A
+  ADC: require('@ellieproject/nellie/mos6502/opcodes/ADC'), // Add M to A with Carry
+  AND: require('@ellieproject/nellie/mos6502/opcodes/AND'), // "AND" M with A
+  ASL: require('@ellieproject/nellie/mos6502/opcodes/ASL'), // Shift Left One Bit (M or A)
+  BCC: require('@ellieproject/nellie/mos6502/opcodes/BCC'), // Branch on Carry Clear
+  BCS: require('@ellieproject/nellie/mos6502/opcodes/BCS'), // Branch on Carry Set
+  BEQ: require('@ellieproject/nellie/mos6502/opcodes/BEQ'), // Branch on Result Zero
+  BIT: require('@ellieproject/nellie/mos6502/opcodes/BIT'), // Test Bits in M with A
+  BMI: require('@ellieproject/nellie/mos6502/opcodes/BMI'), // Branch on Result Minus
+  BNE: require('@ellieproject/nellie/mos6502/opcodes/BNE'), // Branch on Result not Zero
+  BPL: require('@ellieproject/nellie/mos6502/opcodes/BPL'), // Branch on Result Plus
+  BRK: require('@ellieproject/nellie/mos6502/opcodes/BRK'), // Force Break
+  BVC: require('@ellieproject/nellie/mos6502/opcodes/BVC'), // Branch on Overflow Clear
+  BVS: require('@ellieproject/nellie/mos6502/opcodes/BVS'), // Branch on Overflow Set
+  CLC: require('@ellieproject/nellie/mos6502/opcodes/CLC'), // Clear Carry Flag
+  CLD: require('@ellieproject/nellie/mos6502/opcodes/CLD'), // Clear Decimal Mode
+  CLI: require('@ellieproject/nellie/mos6502/opcodes/CLI'), // Clear Interrupt Disable Flag
+  CLV: require('@ellieproject/nellie/mos6502/opcodes/CLV'), // Clear Overflow Flag
+  CMP: require('@ellieproject/nellie/mos6502/opcodes/CMP'), // Compare M and A
+  CPX: require('@ellieproject/nellie/mos6502/opcodes/CPX'), // Compare M and X
+  CPY: require('@ellieproject/nellie/mos6502/opcodes/CPY'), // Compare M and Y
+  DEC: require('@ellieproject/nellie/mos6502/opcodes/DEC'), // Decrement M by One
+  DEX: require('@ellieproject/nellie/mos6502/opcodes/DEX'), // Decrement X by One
+  DEY: require('@ellieproject/nellie/mos6502/opcodes/DEY'), // Decrement Y by One
+  EOR: require('@ellieproject/nellie/mos6502/opcodes/EOR'), // "Exclusive-Or" M with A
+  INC: require('@ellieproject/nellie/mos6502/opcodes/INC'), // Increment M by One
+  INX: require('@ellieproject/nellie/mos6502/opcodes/INX'), // Increment X by One
+  INY: require('@ellieproject/nellie/mos6502/opcodes/INY'), // Increment Y by One
+  JMP: require('@ellieproject/nellie/mos6502/opcodes/JMP'), // Jump to Location
+  JSR: require('@ellieproject/nellie/mos6502/opcodes/JSR'), // Jump to Location Save Return Address
+  LDA: require('@ellieproject/nellie/mos6502/opcodes/LDA'), // Load A with M
+  LDX: require('@ellieproject/nellie/mos6502/opcodes/LDX'), // Load X with M
+  LDY: require('@ellieproject/nellie/mos6502/opcodes/LDY'), // Load Y with M
+  LSR: require('@ellieproject/nellie/mos6502/opcodes/LSR'), // Shift Right One Bit (M or A)
+  NOP: require('@ellieproject/nellie/mos6502/opcodes/NOP'), // No Operation
+  ORA: require('@ellieproject/nellie/mos6502/opcodes/ORA'), // "OR" M with A
+  PHA: require('@ellieproject/nellie/mos6502/opcodes/PHA'), // Push A on Stack
+  PHP: require('@ellieproject/nellie/mos6502/opcodes/PHP'), // Push Processor Status on Stack
+  PLA: require('@ellieproject/nellie/mos6502/opcodes/PLA'), // Pull A from Stack
+  PLP: require('@ellieproject/nellie/mos6502/opcodes/PLP'), // Pull Processor Status from Stack
+  ROL: require('@ellieproject/nellie/mos6502/opcodes/ROL'), // Rotate One Bit Left (M or A)
+  ROR: require('@ellieproject/nellie/mos6502/opcodes/ROR'), // Rotate One Bit Right (M or A)
+  RTI: require('@ellieproject/nellie/mos6502/opcodes/RTI'), // Return from Interrupt
+  RTS: require('@ellieproject/nellie/mos6502/opcodes/RTS'), // Return from Subroutine
+  SBC: require('@ellieproject/nellie/mos6502/opcodes/SBC'), // Subtract M from A with Borrow
+  SEC: require('@ellieproject/nellie/mos6502/opcodes/SEC'), // Set Carry Flag
+  SED: require('@ellieproject/nellie/mos6502/opcodes/SED'), // Set Decimal Mode
+  SEI: require('@ellieproject/nellie/mos6502/opcodes/SEI'), // Set Interrupt Disable Status
+  STA: require('@ellieproject/nellie/mos6502/opcodes/STA'), // Store A in M
+  STX: require('@ellieproject/nellie/mos6502/opcodes/STX'), // Store X in M
+  STY: require('@ellieproject/nellie/mos6502/opcodes/STY'), // Store Y in M
+  TAX: require('@ellieproject/nellie/mos6502/opcodes/TAX'), // Transfer A to X
+  TAY: require('@ellieproject/nellie/mos6502/opcodes/TAY'), // Transfer A to Y
+  TSX: require('@ellieproject/nellie/mos6502/opcodes/TSX'), // Transfer Stack Pointer to X
+  TXA: require('@ellieproject/nellie/mos6502/opcodes/TXA'), // Transfer X to A
+  TXS: require('@ellieproject/nellie/mos6502/opcodes/TXS'), // Transfer X to Stack Pointer
+  TYA: require('@ellieproject/nellie/mos6502/opcodes/TYA'), // Transfer Y to A
 };
 
 module.exports = OPCODES;

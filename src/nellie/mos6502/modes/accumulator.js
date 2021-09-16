@@ -1,4 +1,4 @@
-/* nellie/opcodes/modes/accumulator.js
+/* nellie/mos6502/modes/accumulator.js
  *
  */
 

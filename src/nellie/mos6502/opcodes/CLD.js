@@ -1,8 +1,8 @@
-/* nellie/opcodes/CLD.js
+/* nellie/mos6502/opcodes/CLD.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeCLD(instruction, processor) {

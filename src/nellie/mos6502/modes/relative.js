@@ -1,4 +1,4 @@
-/* nellie/opcodes/modes/relative.js
+/* nellie/mos6502/modes/relative.js
  *
  */
 

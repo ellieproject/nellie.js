@@ -1,8 +1,8 @@
-/* nellie/opcodes/TAY.js
+/* nellie/mos6502/opcodes/TAY.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeTAY(instruction, processor) {

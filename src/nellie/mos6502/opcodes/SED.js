@@ -1,8 +1,8 @@
-/* nellie/opcodes/SED.js
+/* nellie/mos6502/opcodes/SED.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeSED(instruction, processor) {

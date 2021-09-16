@@ -1,8 +1,8 @@
-/* nellie/opcodes/CMP.js
+/* nellie/mos6502/opcodes/CMP.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeCMP(instruction, processor) {

@@ -1,4 +1,4 @@
-/* nellie/cpu6502.js
+/* nellie/mos6502.js
  *
  */
 
@@ -8,7 +8,7 @@ const MOS6502 = new Ellie.Processor('6502');
 
 // Opcodes
 // TODO should I move opcodes.js to here?
-MOS6502.OPCODES = require('./mos6502/opcodes.js');
+MOS6502.OPCODES = require('@ellieproject/nellie/mos6502/opcodes');
 
 for (const name in MOS6502.OPCODES) {
   MOS6502.addOpcode(MOS6502.OPCODES[name]);
@@ -35,19 +35,5 @@ MOS6502.addRegister(Status,    'p');
 MOS6502.addRegister(RegisterA, 'a');
 MOS6502.addRegister(RegisterX, 'x');
 MOS6502.addRegister(RegisterY, 'y');
-
-MOS6502.run(0x38); // SEC
-MOS6502.run(0x2A); // ROL A
-MOS6502.run(0xAA); // TAX
-MOS6502.run(0x2A); // ROL A
-MOS6502.run(0x88); // DEY
-MOS6502.run(0xCA); // DEX
-MOS6502.run(0xCA);
-MOS6502.run(0xE8); // INX
-MOS6502.run(0xE8);
-
-for (var reg in MOS6502.register) {
-  console.log(MOS6502.register[reg].toString());
-}
 
 module.exports = MOS6502;

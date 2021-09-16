@@ -1,8 +1,8 @@
-/* nellie/opcodes/LDA.js
+/* nellie/mos6502/opcodes/LDA.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeLDA(instruction, processor) {

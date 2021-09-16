@@ -1,4 +1,4 @@
-/* nellie/opcodes/modes/indirect_x.js
+/* nellie/mos6502/modes/indirect_x.js
  *
  */
 

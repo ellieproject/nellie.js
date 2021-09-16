@@ -1,8 +1,8 @@
-/* nellie/opcodes/EOR.js
+/* nellie/mos6502/opcodes/EOR.js
  *
  */
 
-const MODES = require('./modes.js');
+const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeEOR(instruction, processor) {
