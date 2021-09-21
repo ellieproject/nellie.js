@@ -10,12 +10,12 @@ function executeTXS(instruction, processor) {
   return false;
 } // executeTXS()
 
-const TXS = new Ellie.Opcode(
+const TXS = new Ellie.Processor.Operation(
   'TXS',
   'Transfer X to Stack Pointer',
   executeTXS
 ); // TXS
 
-TXS.addAddressingMode(0x9A, MODES.IMPLIED);
+TXS.addMode(0x9A, MODES.IMPLIED);
 
 module.exports = TXS;

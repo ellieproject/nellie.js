@@ -10,15 +10,15 @@ function executeDEC(instruction, processor) {
   return false;
 } // executeDEC()
 
-const DEC = new Ellie.Opcode(
+const DEC = new Ellie.Processor.Operation(
   'DEC',
   'Decrement Memory',
   executeDEC
 ); // DEC
 
-DEC.addAddressingMode(0xDE, MODES.ABSOLUTE_X);
-DEC.addAddressingMode(0xCE, MODES.ABSOLUTE);
-DEC.addAddressingMode(0xD6, MODES.ZERO_PAGE_X);
-DEC.addAddressingMode(0xC6, MODES.ZERO_PAGE);
+DEC.addMode(0xDE, MODES.ABSOLUTE_X);
+DEC.addMode(0xCE, MODES.ABSOLUTE);
+DEC.addMode(0xD6, MODES.ZERO_PAGE_X);
+DEC.addMode(0xC6, MODES.ZERO_PAGE);
 
 module.exports = DEC;

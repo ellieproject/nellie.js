@@ -16,12 +16,12 @@ function executeTYA(instruction, processor) {
   return true;
 } // executeTYA()
 
-const TYA = new Ellie.Opcode(
+const TYA = new Ellie.Processor.Operation(
   'TYA',
   'Transfer Y to A',
   executeTYA
 ); // TYA
 
-TYA.addAddressingMode(0x98, MODES.IMPLIED);
+TYA.addMode(0x98, MODES.IMPLIED);
 
 module.exports = TYA;

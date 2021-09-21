@@ -10,12 +10,12 @@ function executeBCS(instruction, processor) {
   return false;
 } // executeBCS()
 
-const BCS = new Ellie.Opcode(
+const BCS = new Ellie.Processor.Operation(
   'BCS',
   'Branch on Carry Set',
   executeBCS
 ); // BCS
 
-BCS.addAddressingMode(0xB0, MODES.IMPLIED);
+BCS.addMode(0xB0, MODES.IMPLIED);
 
 module.exports = BCS;

@@ -10,12 +10,12 @@ function executeBMI(instruction, processor) {
   return false;
 } // executeBMI()
 
-const BMI = new Ellie.Opcode(
+const BMI = new Ellie.Processor.Operation(
   'BMI',
   'Branch on Result Minus',
   executeBMI
 ); // BMI
 
-BMI.addAddressingMode(0x30, MODES.IMPLIED);
+BMI.addMode(0x30, MODES.IMPLIED);
 
 module.exports = BMI;

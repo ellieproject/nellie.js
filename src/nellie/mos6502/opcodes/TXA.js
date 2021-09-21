@@ -16,12 +16,12 @@ function executeTXA(instruction, processor) {
   return true;
 } // executeTXA()
 
-const TXA = new Ellie.Opcode(
+const TXA = new Ellie.Processor.Operation(
   'TXA',
   'Transfer X to A',
   executeTXA
 ); // TXA
 
-TXA.addAddressingMode(0x8A, MODES.IMPLIED);
+TXA.addMode(0x8A, MODES.IMPLIED);
 
 module.exports = TXA;

@@ -10,14 +10,14 @@ function executeCPX(instruction, processor) {
   return false;
 } // executeCPX()
 
-const CPX = new Ellie.Opcode(
+const CPX = new Ellie.Processor.Operation(
   'CPX',
   'Compare Memory with X',
   executeCPX
 ); // CPX
 
-CPX.addAddressingMode(0xEC, MODES.ABSOLUTE);
-CPX.addAddressingMode(0xE0, MODES.IMMEDIATE);
-CPX.addAddressingMode(0xE4, MODES.ZERO_PAGE);
+CPX.addMode(0xEC, MODES.ABSOLUTE);
+CPX.addMode(0xE0, MODES.IMMEDIATE);
+CPX.addMode(0xE4, MODES.ZERO_PAGE);
 
 module.exports = CPX;

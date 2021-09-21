@@ -10,12 +10,12 @@ function executeRTS(instruction, processor) {
   return false;
 } // executeRTS()
 
-const RTS = new Ellie.Opcode(
+const RTS = new Ellie.Processor.Operation(
   'RTS',
   'Return from Subroutine',
   executeRTS
 ); // RTS
 
-RTS.addAddressingMode(0x60, MODES.IMPLIED);
+RTS.addMode(0x60, MODES.IMPLIED);
 
 module.exports = RTS;

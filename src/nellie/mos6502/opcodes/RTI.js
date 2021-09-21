@@ -10,12 +10,12 @@ function executeRTI(instruction, processor) {
   return false;
 } // executeRTI()
 
-const RTI = new Ellie.Opcode(
+const RTI = new Ellie.Processor.Operation(
   'RTI',
   'Return from Interrupt',
   executeRTI
 ); // RTI
 
-RTI.addAddressingMode(0x40, MODES.IMPLIED);
+RTI.addMode(0x40, MODES.IMPLIED);
 
 module.exports = RTI;

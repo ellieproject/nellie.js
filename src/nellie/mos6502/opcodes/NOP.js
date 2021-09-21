@@ -10,12 +10,12 @@ function executeNOP() { // instruction, processor unused
   return true;
 } // executeNOP()
 
-const NOP = new Ellie.Opcode(
+const NOP = new Ellie.Processor.Operation(
   'NOP',
   'No Operation',
   executeNOP
 ); // NOP
 
-NOP.addAddressingMode(0xEA, MODES.IMPLIED);
+NOP.addMode(0xEA, MODES.IMPLIED);
 
 module.exports = NOP;

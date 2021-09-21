@@ -11,12 +11,12 @@ function executeSEC(instruction, processor) {
   return true;
 } // executeSEC()
 
-const SEC = new Ellie.Opcode(
+const SEC = new Ellie.Processor.Operation(
   'SEC',
   'Set Carry Flag',
   executeSEC
 ); // SEC
 
-SEC.addAddressingMode(0x38, MODES.IMPLIED);
+SEC.addMode(0x38, MODES.IMPLIED);
 
 module.exports = SEC;

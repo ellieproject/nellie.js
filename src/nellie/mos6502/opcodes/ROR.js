@@ -23,16 +23,16 @@ function executeROR(instruction, processor) {
   return true;
 } // executeROR()
 
-const ROR = new Ellie.Opcode(
+const ROR = new Ellie.Processor.Operation(
   'ROR',
   'Rotate Right',
   executeROR
 ); // ROR
 
-ROR.addAddressingMode(0x7E, MODES.ABSOLUTE_X);
-ROR.addAddressingMode(0x6E, MODES.ABSOLUTE);
-ROR.addAddressingMode(0x6A, MODES.ACCUMULATOR);
-ROR.addAddressingMode(0x76, MODES.ZERO_PAGE_X);
-ROR.addAddressingMode(0x66, MODES.ZERO_PAGE);
+ROR.addMode(0x7E, MODES.ABSOLUTE_X);
+ROR.addMode(0x6E, MODES.ABSOLUTE);
+ROR.addMode(0x6A, MODES.ACCUMULATOR);
+ROR.addMode(0x76, MODES.ZERO_PAGE_X);
+ROR.addMode(0x66, MODES.ZERO_PAGE);
 
 module.exports = ROR;

@@ -10,13 +10,13 @@ function executeJMP(instruction, processor) {
   return false;
 } // executeJMP()
 
-const JMP = new Ellie.Opcode(
+const JMP = new Ellie.Processor.Operation(
   'JMP',
   'Jump',
   executeJMP
 ); // JMP
 
-JMP.addAddressingMode(0x4C, MODES.ABSOLUTE);
-JMP.addAddressingMode(0x6C, MODES.INDIRECT);
+JMP.addMode(0x4C, MODES.ABSOLUTE);
+JMP.addMode(0x6C, MODES.INDIRECT);
 
 module.exports = JMP;

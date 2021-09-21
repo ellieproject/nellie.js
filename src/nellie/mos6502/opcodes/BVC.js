@@ -10,12 +10,12 @@ function executeBVC(instruction, processor) {
   return false;
 } // executeBVC()
 
-const BVC = new Ellie.Opcode(
+const BVC = new Ellie.Processor.Operation(
   'BVC',
   'Branch on Overflow Clear',
   executeBVC
 ); // BVC
 
-BVC.addAddressingMode(0x50, MODES.IMPLIED);
+BVC.addMode(0x50, MODES.IMPLIED);
 
 module.exports = BVC;

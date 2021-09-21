@@ -10,16 +10,16 @@ function executeLDY(instruction, processor) {
   return false;
 } // executeLDY()
 
-const LDY = new Ellie.Opcode(
+const LDY = new Ellie.Processor.Operation(
   'LDY',
   'Load Y from Memory',
   executeLDY
 ); // LDY
 
-LDY.addAddressingMode(0xBC, MODES.ABSOLUTE_Y);
-LDY.addAddressingMode(0xAC, MODES.ABSOLUTE);
-LDY.addAddressingMode(0xA0, MODES.IMMEDIATE);
-LDY.addAddressingMode(0xB4, MODES.ZERO_PAGE_Y);
-LDY.addAddressingMode(0xA4, MODES.ZERO_PAGE);
+LDY.addMode(0xBC, MODES.ABSOLUTE_Y);
+LDY.addMode(0xAC, MODES.ABSOLUTE);
+LDY.addMode(0xA0, MODES.IMMEDIATE);
+LDY.addMode(0xB4, MODES.ZERO_PAGE_Y);
+LDY.addMode(0xA4, MODES.ZERO_PAGE);
 
 module.exports = LDY;

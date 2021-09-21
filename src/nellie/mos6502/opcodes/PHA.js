@@ -10,12 +10,12 @@ function executePHA(instruction, processor) {
   return false;
 } // executePHA()
 
-const PHA = new Ellie.Opcode(
+const PHA = new Ellie.Processor.Operation(
   'PHA',
   'Push A on Stack',
   executePHA
 ); // PHA
 
-PHA.addAddressingMode(0x48, MODES.IMPLIED);
+PHA.addMode(0x48, MODES.IMPLIED);
 
 module.exports = PHA;

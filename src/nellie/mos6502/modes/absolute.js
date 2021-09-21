@@ -6,7 +6,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function preexecuteAbsolute(instruction, processor) {} // preexecuteAbsolute()
 
-var MODE_ABSOLUTE = new Ellie.Opcode.Mode(
+var MODE_ABSOLUTE = new Ellie.Processor.Mode(
   'absolute',
   preexecuteAbsolute
 );

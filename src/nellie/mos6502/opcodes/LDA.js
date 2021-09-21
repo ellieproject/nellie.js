@@ -10,19 +10,19 @@ function executeLDA(instruction, processor) {
   return false;
 } // executeLDA()
 
-const LDA = new Ellie.Opcode(
+const LDA = new Ellie.Processor.Operation(
   'LDA',
   'Load from Memory',
   executeLDA
 ); // LDA
 
-LDA.addAddressingMode(0xBD, MODES.ABSOLUTE_X);
-LDA.addAddressingMode(0xB9, MODES.ABSOLUTE_Y);
-LDA.addAddressingMode(0xAD, MODES.ABSOLUTE);
-LDA.addAddressingMode(0xA9, MODES.IMMEDIATE);
-LDA.addAddressingMode(0xA1, MODES.INDIRECT_X);
-LDA.addAddressingMode(0xB1, MODES.INDIRECT_Y);
-LDA.addAddressingMode(0xB5, MODES.ZERO_PAGE_X);
-LDA.addAddressingMode(0xA5, MODES.ZERO_PAGE);
+LDA.addMode(0xBD, MODES.ABSOLUTE_X);
+LDA.addMode(0xB9, MODES.ABSOLUTE_Y);
+LDA.addMode(0xAD, MODES.ABSOLUTE);
+LDA.addMode(0xA9, MODES.IMMEDIATE);
+LDA.addMode(0xA1, MODES.INDIRECT_X);
+LDA.addMode(0xB1, MODES.INDIRECT_Y);
+LDA.addMode(0xB5, MODES.ZERO_PAGE_X);
+LDA.addMode(0xA5, MODES.ZERO_PAGE);
 
 module.exports = LDA;

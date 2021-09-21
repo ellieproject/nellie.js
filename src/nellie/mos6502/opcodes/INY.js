@@ -16,12 +16,12 @@ function executeINY(instruction, processor) {
   return true;
 } // executeINY()
 
-const INY = new Ellie.Opcode(
+const INY = new Ellie.Processor.Operation(
   'INY',
   'Increment Y',
   executeINY
 ); // INY
 
-INY.addAddressingMode(0xC8, MODES.IMPLIED);
+INY.addMode(0xC8, MODES.IMPLIED);
 
 module.exports = INY;

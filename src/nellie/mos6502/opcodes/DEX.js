@@ -16,12 +16,12 @@ function executeDEX(instruction, processor) {
   return true;
 } // executeDEX()
 
-const DEX = new Ellie.Opcode(
+const DEX = new Ellie.Processor.Operation(
   'DEX',
   'Decrement X',
   executeDEX
 ); // DEX
 
-DEX.addAddressingMode(0xCA, MODES.IMPLIED);
+DEX.addMode(0xCA, MODES.IMPLIED);
 
 module.exports = DEX;

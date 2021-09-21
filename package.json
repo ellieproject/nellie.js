@@ -6,10 +6,21 @@
   "exports": {
     ".": "./src/nellie.js",
     "./*": "./src/nellie/*.js",
-    ".package.json": "./package.json"
+    "./package.json": "./package.json"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "coverage": "nyc --reporter html --reporter text --report-dir docs/coverage npm run test:html",
+    "lint": "eslint src/",
+    "test": "npm run test:text test:html",
+    "test:github": "ava --color",
+    "test:text": "ava --color | tee >(sed -n 's/\\x1B\\[[0-9;]\\{1,\\}[A-Za-z]//gw docs/test.log')",
+    "test:html": "ava --tap | taplet -o docs/test.html"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ],
+    "verbose": true
   },
   "repository": {
     "type": "git",
@@ -27,7 +38,10 @@
   },
   "homepage": "https://github.com/ellieproject/nellie.js#readme",
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "ava": "^3.15.0",
+    "eslint": "^7.32.0",
+    "nyc": "^15.1.0",
+    "taplet": "^0.2.0"
   },
   "dependencies": {
     "@ellieproject/ellie": "file:../ellie.js/ellieproject-ellie-0.1.0.tgz"

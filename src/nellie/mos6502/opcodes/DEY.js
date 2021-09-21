@@ -16,12 +16,12 @@ function executeDEY(instruction, processor) {
   return true;
 } // executeDEY()
 
-const DEY = new Ellie.Opcode(
+const DEY = new Ellie.Processor.Operation(
   'DEY',
   'Decrement Y',
   executeDEY
 ); // DEY
 
-DEY.addAddressingMode(0x88, MODES.IMPLIED);
+DEY.addMode(0x88, MODES.IMPLIED);
 
 module.exports = DEY;

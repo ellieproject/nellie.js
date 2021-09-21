@@ -10,12 +10,12 @@ function executeBPL(instruction, processor) {
   return false;
 } // executeBPL()
 
-const BPL = new Ellie.Opcode(
+const BPL = new Ellie.Processor.Operation(
   'BPL',
   'Branch on Result Plus',
   executeBPL
 ); // BPL
 
-BPL.addAddressingMode(0x10, MODES.IMPLIED);
+BPL.addMode(0x10, MODES.IMPLIED);
 
 module.exports = BPL;

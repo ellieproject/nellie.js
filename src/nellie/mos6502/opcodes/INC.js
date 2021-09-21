@@ -10,15 +10,15 @@ function executeINC(instruction, processor) {
   return false;
 } // executeINC()
 
-const INC = new Ellie.Opcode(
+const INC = new Ellie.Processor.Operation(
   'INC',
   'Increment Memory',
   executeINC
 ); // INC
 
-INC.addAddressingMode(0xFE, MODES.ABSOLUTE_X);
-INC.addAddressingMode(0xEE, MODES.ABSOLUTE);
-INC.addAddressingMode(0xF6, MODES.ZERO_PAGE_X);
-INC.addAddressingMode(0xE6, MODES.ZERO_PAGE);
+INC.addMode(0xFE, MODES.ABSOLUTE_X);
+INC.addMode(0xEE, MODES.ABSOLUTE);
+INC.addMode(0xF6, MODES.ZERO_PAGE_X);
+INC.addMode(0xE6, MODES.ZERO_PAGE);
 
 module.exports = INC;

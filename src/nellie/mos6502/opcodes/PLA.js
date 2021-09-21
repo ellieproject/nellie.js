@@ -10,12 +10,12 @@ function executePLA(instruction, processor) {
   return false;
 } // executePLA()
 
-const PLA = new Ellie.Opcode(
+const PLA = new Ellie.Processor.Operation(
   'PLA',
   'Pull A from Stack',
   executePLA
 ); // PLA
 
-PLA.addAddressingMode(0x68, MODES.IMPLIED);
+PLA.addMode(0x68, MODES.IMPLIED);
 
 module.exports = PLA;

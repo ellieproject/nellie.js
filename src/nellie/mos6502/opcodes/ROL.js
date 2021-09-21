@@ -23,16 +23,16 @@ function executeROL(instruction, processor) {
   return true;
 } // executeROL()
 
-const ROL = new Ellie.Opcode(
+const ROL = new Ellie.Processor.Operation(
   'ROL',
   'Rotate Left',
   executeROL
 ); // ROL
 
-ROL.addAddressingMode(0x3E, MODES.ABSOLUTE_X);
-ROL.addAddressingMode(0x2E, MODES.ABSOLUTE);
-ROL.addAddressingMode(0x2A, MODES.ACCUMULATOR);
-ROL.addAddressingMode(0x36, MODES.ZERO_PAGE_X);
-ROL.addAddressingMode(0x26, MODES.ZERO_PAGE);
+ROL.addMode(0x3E, MODES.ABSOLUTE_X);
+ROL.addMode(0x2E, MODES.ABSOLUTE);
+ROL.addMode(0x2A, MODES.ACCUMULATOR);
+ROL.addMode(0x36, MODES.ZERO_PAGE_X);
+ROL.addMode(0x26, MODES.ZERO_PAGE);
 
 module.exports = ROL;

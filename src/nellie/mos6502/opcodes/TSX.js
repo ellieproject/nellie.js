@@ -10,12 +10,12 @@ function executeTSX(instruction, processor) {
   return false;
 } // executeTSX()
 
-const TSX = new Ellie.Opcode(
+const TSX = new Ellie.Processor.Operation(
   'TSX',
   'Transfer Stack Pointer to X',
   executeTSX
 ); // TSX
 
-TSX.addAddressingMode(0xBA, MODES.IMPLIED);
+TSX.addMode(0xBA, MODES.IMPLIED);
 
 module.exports = TSX;

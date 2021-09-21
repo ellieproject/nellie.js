@@ -6,7 +6,7 @@ const Ellie = require('@ellieproject/ellie');
 
 function preexecuteImmediate(instruction, processor) {} // preexecuteImmediate()
 
-var MODE_IMMEDIATE = new Ellie.Opcode.Mode(
+var MODE_IMMEDIATE = new Ellie.Processor.Mode(
   'immediate',
   preexecuteImmediate
 );

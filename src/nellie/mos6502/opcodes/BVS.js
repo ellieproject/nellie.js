@@ -10,12 +10,12 @@ function executeBVS(instruction, processor) {
   return false;
 } // executeBVS()
 
-const BVS = new Ellie.Opcode(
+const BVS = new Ellie.Processor.Operation(
   'BVS',
   'Branch on Overflow Set',
   executeBVS
 ); // BVS
 
-BVS.addAddressingMode(0x70, MODES.IMPLIED);
+BVS.addMode(0x70, MODES.IMPLIED);
 
 module.exports = BVS;

@@ -19,16 +19,16 @@ function executeASL(instruction, processor) {
   return true;
 } // executeASL()
 
-const ASL = new Ellie.Opcode(
+const ASL = new Ellie.Processor.Operation(
   'ASL',
   'Shift Left One Bit',
   executeASL
 ); // ASL
 
-ASL.addAddressingMode(0x1E, MODES.ABSOLUTE_X);
-ASL.addAddressingMode(0x0E, MODES.ABSOLUTE);
-ASL.addAddressingMode(0x0A, MODES.ACCUMULATOR);
-ASL.addAddressingMode(0x16, MODES.ZERO_PAGE_X);
-ASL.addAddressingMode(0x06, MODES.ZERO_PAGE);
+ASL.addMode(0x1E, MODES.ABSOLUTE_X);
+ASL.addMode(0x0E, MODES.ABSOLUTE);
+ASL.addMode(0x0A, MODES.ACCUMULATOR);
+ASL.addMode(0x16, MODES.ZERO_PAGE_X);
+ASL.addMode(0x06, MODES.ZERO_PAGE);
 
 module.exports = ASL;

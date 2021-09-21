@@ -10,12 +10,12 @@ function executeBRK(instruction, processor) {
   return false;
 } // executeBRK()
 
-const BRK = new Ellie.Opcode(
+const BRK = new Ellie.Processor.Operation(
   'BRK',
   'Force Break',
   executeBRK
 ); // BRK
 
-BRK.addAddressingMode(0x00, MODES.IMMEDIATE);
+BRK.addMode(0x00, MODES.IMMEDIATE);
 
 module.exports = BRK;

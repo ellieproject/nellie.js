@@ -11,12 +11,12 @@ function executeCLD(instruction, processor) {
   return true;
 } // executeCLD()
 
-const CLD = new Ellie.Opcode(
+const CLD = new Ellie.Processor.Operation(
   'CLD',
   'Clear Decimal Mode',
   executeCLD
 ); // CLD
 
-CLD.addAddressingMode(0xD8, MODES.IMPLIED);
+CLD.addMode(0xD8, MODES.IMPLIED);
 
 module.exports = CLD;

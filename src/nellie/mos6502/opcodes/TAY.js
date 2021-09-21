@@ -16,12 +16,12 @@ function executeTAY(instruction, processor) {
   return true;
 } // executeTAY()
 
-const TAY = new Ellie.Opcode(
+const TAY = new Ellie.Processor.Operation(
   'TAY',
   'Transfer A to Y',
   executeTAY
 ); // TAY
 
-TAY.addAddressingMode(0xA8, MODES.IMPLIED);
+TAY.addMode(0xA8, MODES.IMPLIED);
 
 module.exports = TAY;

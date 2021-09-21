@@ -11,12 +11,12 @@ function executeCLV(instruction, processor) {
   return true;
 } // executeCLV()
 
-const CLV = new Ellie.Opcode(
+const CLV = new Ellie.Processor.Operation(
   'CLV',
   'Clear Overflow Flag',
   executeCLV
 ); // CLV
 
-CLV.addAddressingMode(0xB8, MODES.IMPLIED);
+CLV.addMode(0xB8, MODES.IMPLIED);
 
 module.exports = CLV;

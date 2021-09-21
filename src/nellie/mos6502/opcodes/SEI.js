@@ -11,12 +11,12 @@ function executeSEI(instruction, processor) {
   return true;
 } // executeSEI()
 
-const SEI = new Ellie.Opcode(
+const SEI = new Ellie.Processor.Operation(
   'SEI',
   'Set Interrupt Disable Status',
   executeSEI
 ); // SEI
 
-SEI.addAddressingMode(0x78, MODES.IMPLIED);
+SEI.addMode(0x78, MODES.IMPLIED);
 
 module.exports = SEI;

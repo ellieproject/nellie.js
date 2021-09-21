@@ -10,12 +10,12 @@ function executeBCC(instruction, processor) {
   return false;
 } // executeBCC()
 
-const BCC = new Ellie.Opcode(
+const BCC = new Ellie.Processor.Operation(
   'BCC',
   'Branch on Carry Clear',
   executeBCC
 ); // BCC
 
-BCC.addAddressingMode(0x90, MODES.IMPLIED);
+BCC.addMode(0x90, MODES.IMPLIED);
 
 module.exports = BCC;

@@ -10,16 +10,16 @@ function executeLDX(instruction, processor) {
   return false;
 } // executeLDX()
 
-const LDX = new Ellie.Opcode(
+const LDX = new Ellie.Processor.Operation(
   'LDX',
   'Load X from Memory',
   executeLDX
 ); // LDX
 
-LDX.addAddressingMode(0xBE, MODES.ABSOLUTE_Y);
-LDX.addAddressingMode(0xAE, MODES.ABSOLUTE);
-LDX.addAddressingMode(0xA2, MODES.IMMEDIATE);
-LDX.addAddressingMode(0xB6, MODES.ZERO_PAGE_Y);
-LDX.addAddressingMode(0xA6, MODES.ZERO_PAGE);
+LDX.addMode(0xBE, MODES.ABSOLUTE_Y);
+LDX.addMode(0xAE, MODES.ABSOLUTE);
+LDX.addMode(0xA2, MODES.IMMEDIATE);
+LDX.addMode(0xB6, MODES.ZERO_PAGE_Y);
+LDX.addMode(0xA6, MODES.ZERO_PAGE);
 
 module.exports = LDX;

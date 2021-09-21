@@ -4,7 +4,7 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-var MODE_IMPLIED = new Ellie.Opcode.Mode(
+var MODE_IMPLIED = new Ellie.Processor.Mode(
   'implied'
 );
 

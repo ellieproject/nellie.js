@@ -11,12 +11,12 @@ function executeCLC(instruction, processor) {
   return true;
 } // executeCLC()
 
-const CLC = new Ellie.Opcode(
+const CLC = new Ellie.Processor.Operation(
   'CLC',
   'Clear Carry Flag',
   executeCLC
 ); // CLC
 
-CLC.addAddressingMode(0x18, MODES.IMPLIED);
+CLC.addMode(0x18, MODES.IMPLIED);
 
 module.exports = CLC;

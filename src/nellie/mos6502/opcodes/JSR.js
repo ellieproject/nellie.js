@@ -10,12 +10,12 @@ function executeJSR(instruction, processor) {
   return false;
 } // executeJSR()
 
-const JSR = new Ellie.Opcode(
+const JSR = new Ellie.Processor.Operation(
   'JSR',
   'Jump to Location Save Return Address',
   executeJSR
 ); // JSR
 
-JSR.addAddressingMode(0x20, MODES.ABSOLUTE);
+JSR.addMode(0x20, MODES.ABSOLUTE);
 
 module.exports = JSR;

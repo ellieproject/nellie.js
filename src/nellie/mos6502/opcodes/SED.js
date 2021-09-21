@@ -11,12 +11,12 @@ function executeSED(instruction, processor) {
   return true;
 } // executeSED()
 
-const SED = new Ellie.Opcode(
+const SED = new Ellie.Processor.Operation(
   'SED',
   'Set Decimal Mode',
   executeSED
 ); // SED
 
-SED.addAddressingMode(0xF8, MODES.IMPLIED);
+SED.addMode(0xF8, MODES.IMPLIED);
 
 module.exports = SED;

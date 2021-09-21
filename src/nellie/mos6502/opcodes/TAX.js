@@ -16,12 +16,12 @@ function executeTAX(instruction, processor) {
   return true;
 } // executeTAX()
 
-const TAX = new Ellie.Opcode(
+const TAX = new Ellie.Processor.Operation(
   'TAX',
   'Transfer A to X',
   executeTAX
 ); // TAX
 
-TAX.addAddressingMode(0xAA, MODES.IMPLIED);
+TAX.addMode(0xAA, MODES.IMPLIED);
 
 module.exports = TAX;

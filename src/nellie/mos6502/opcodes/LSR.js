@@ -21,16 +21,16 @@ function executeLSR(instruction, processor) {
   return true;
 } // executeLSR()
 
-const LSR = new Ellie.Opcode(
+const LSR = new Ellie.Processor.Operation(
   'LSR',
   'Shift Right One Bit',
   executeLSR
 ); // LSR
 
-LSR.addAddressingMode(0x5E, MODES.ABSOLUTE_X);
-LSR.addAddressingMode(0x4E, MODES.ABSOLUTE);
-LSR.addAddressingMode(0x4A, MODES.ACCUMULATOR);
-LSR.addAddressingMode(0x56, MODES.ZERO_PAGE_X);
-LSR.addAddressingMode(0x46, MODES.ZERO_PAGE);
+LSR.addMode(0x5E, MODES.ABSOLUTE_X);
+LSR.addMode(0x4E, MODES.ABSOLUTE);
+LSR.addMode(0x4A, MODES.ACCUMULATOR);
+LSR.addMode(0x56, MODES.ZERO_PAGE_X);
+LSR.addMode(0x46, MODES.ZERO_PAGE);
 
 module.exports = LSR;

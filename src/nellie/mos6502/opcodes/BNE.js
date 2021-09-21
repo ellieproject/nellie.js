@@ -10,12 +10,12 @@ function executeBNE(instruction, processor) {
   return false;
 } // executeBNE()
 
-const BNE = new Ellie.Opcode(
+const BNE = new Ellie.Processor.Operation(
   'BNE',
   'Branch on Result not Zero',
   executeBNE
 ); // BNE
 
-BNE.addAddressingMode(0xD0, MODES.IMPLIED);
+BNE.addMode(0xD0, MODES.IMPLIED);
 
 module.exports = BNE;

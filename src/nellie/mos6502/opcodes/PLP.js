@@ -10,12 +10,12 @@ function executePLP(instruction, processor) {
   return false;
 } // executePLP()
 
-const PLP = new Ellie.Opcode(
+const PLP = new Ellie.Processor.Operation(
   'PLP',
   'Pull Processor Status from Stack',
   executePLP
 ); // PLP
 
-PLP.addAddressingMode(0x28, MODES.IMPLIED);
+PLP.addMode(0x28, MODES.IMPLIED);
 
 module.exports = PLP;

@@ -11,12 +11,12 @@ function executeCLI(instruction, processor) {
   return true;
 } // executeCLI()
 
-const CLI = new Ellie.Opcode(
+const CLI = new Ellie.Processor.Operation(
   'CLI',
   'Clear Interrupt Disable Bit',
   executeCLI
 ); // CLI
 
-CLI.addAddressingMode(0x58, MODES.IMPLIED);
+CLI.addMode(0x58, MODES.IMPLIED);
 
 module.exports = CLI;

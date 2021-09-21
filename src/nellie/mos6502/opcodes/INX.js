@@ -16,12 +16,12 @@ function executeINX(instruction, processor) {
   return true;
 } // executeINX()
 
-const INX = new Ellie.Opcode(
+const INX = new Ellie.Processor.Operation(
   'INX',
   'Increment X',
   executeINX
 ); // INX
 
-INX.addAddressingMode(0xE8, MODES.IMPLIED);
+INX.addMode(0xE8, MODES.IMPLIED);
 
 module.exports = INX;

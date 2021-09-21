@@ -10,12 +10,12 @@ function executePHP(instruction, processor) {
   return false;
 } // executePHP()
 
-const PHP = new Ellie.Opcode(
+const PHP = new Ellie.Processor.Operation(
   'PHP',
   'Push Processor Status on Stack',
   executePHP
 ); // PHP
 
-PHP.addAddressingMode(0x08, MODES.IMPLIED);
+PHP.addMode(0x08, MODES.IMPLIED);
 
 module.exports = PHP;

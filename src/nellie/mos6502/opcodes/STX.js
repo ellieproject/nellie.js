@@ -10,14 +10,14 @@ function executeSTX(instruction, processor) {
   return false;
 } // executeSTX()
 
-const STX = new Ellie.Opcode(
+const STX = new Ellie.Processor.Operation(
   'STX',
   'Store X to Memory',
   executeSTX
 ); // STX
 
-STX.addAddressingMode(0x8E, MODES.ABSOLUTE);
-STX.addAddressingMode(0x96, MODES.ZERO_PAGE_Y);
-STX.addAddressingMode(0x86, MODES.ZERO_PAGE);
+STX.addMode(0x8E, MODES.ABSOLUTE);
+STX.addMode(0x96, MODES.ZERO_PAGE_Y);
+STX.addMode(0x86, MODES.ZERO_PAGE);
 
 module.exports = STX;

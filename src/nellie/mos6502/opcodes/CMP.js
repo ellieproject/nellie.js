@@ -10,19 +10,19 @@ function executeCMP(instruction, processor) {
   return false;
 } // executeCMP()
 
-const CMP = new Ellie.Opcode(
+const CMP = new Ellie.Processor.Operation(
   'CMP',
   'Compare Memory with A',
   executeCMP
 ); // CMP
 
-CMP.addAddressingMode(0xDD, MODES.ABSOLUTE_X);
-CMP.addAddressingMode(0xD9, MODES.ABSOLUTE_Y);
-CMP.addAddressingMode(0xCD, MODES.ABSOLUTE);
-CMP.addAddressingMode(0xC9, MODES.IMMEDIATE);
-CMP.addAddressingMode(0xC1, MODES.INDIRECT_X);
-CMP.addAddressingMode(0xD1, MODES.INDIRECT_Y);
-CMP.addAddressingMode(0xD5, MODES.ZERO_PAGE_X);
-CMP.addAddressingMode(0xC5, MODES.ZERO_PAGE);
+CMP.addMode(0xDD, MODES.ABSOLUTE_X);
+CMP.addMode(0xD9, MODES.ABSOLUTE_Y);
+CMP.addMode(0xCD, MODES.ABSOLUTE);
+CMP.addMode(0xC9, MODES.IMMEDIATE);
+CMP.addMode(0xC1, MODES.INDIRECT_X);
+CMP.addMode(0xD1, MODES.INDIRECT_Y);
+CMP.addMode(0xD5, MODES.ZERO_PAGE_X);
+CMP.addMode(0xC5, MODES.ZERO_PAGE);
 
 module.exports = CMP;

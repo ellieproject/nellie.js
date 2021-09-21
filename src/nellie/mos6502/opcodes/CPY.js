@@ -10,14 +10,14 @@ function executeCPY(instruction, processor) {
   return false;
 } // executeCPY()
 
-const CPY = new Ellie.Opcode(
+const CPY = new Ellie.Processor.Operation(
   'CPY',
   'Compare Memory with Y',
   executeCPY
 ); // CPY
 
-CPY.addAddressingMode(0xCC, MODES.ABSOLUTE);
-CPY.addAddressingMode(0xC0, MODES.IMMEDIATE);
-CPY.addAddressingMode(0xC4, MODES.ZERO_PAGE);
+CPY.addMode(0xCC, MODES.ABSOLUTE);
+CPY.addMode(0xC0, MODES.IMMEDIATE);
+CPY.addMode(0xC4, MODES.ZERO_PAGE);
 
 module.exports = CPY;
