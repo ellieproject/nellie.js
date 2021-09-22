@@ -13,10 +13,11 @@
     "lint": "eslint src/ test/",
     "lint:src": "eslint src/",
     "lint:test": "eslint test/",
-    "test": "npm run test:text test:html",
+    "test": "npm run test:log && npm run test:json && npm run test:html",
     "test:github": "ava --color",
-    "test:text": "ava --color | tee >(sed -n 's/\\x1B\\[[0-9;]\\{1,\\}[A-Za-z]//gw docs/test.log')",
-    "test:html": "ava --tap | taplet -o docs/test.html"
+    "test:html": "ava --tap | taplet -o docs/test.html",
+    "test:json": "ava --tap | ava-tap-json > docs/test.json",
+    "test:log": "ava --color | tee >(sed -n 's/\\x1B\\[[0-9;]\\{1,\\}[A-Za-z]//gw docs/test.log')"
   },
   "ava": {
     "files": [
@@ -41,6 +42,7 @@
   "homepage": "https://github.com/ellieproject/nellie.js#readme",
   "devDependencies": {
     "ava": "^3.15.0",
+    "ava-tap-json": "^2.0.4",
     "eslint": "^7.32.0",
     "nyc": "^15.1.0",
     "taplet": "^0.2.0"
