@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/ROR.js
+/* nellie/mos6502/operations/ROR.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/CMP.js
+/* nellie/mos6502/operations/CMP.js
  *
  */
 

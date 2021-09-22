@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/RTI.js
+/* nellie/mos6502/operations/RTI.js
  *
  */
 

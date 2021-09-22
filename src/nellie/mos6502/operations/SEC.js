@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/SEC.js
+/* nellie/mos6502/operations/SEC.js
  *
  */
 

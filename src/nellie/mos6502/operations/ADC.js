@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/ADC.js
+/* nellie/mos6502/operations/ADC.js
  *
  */
 

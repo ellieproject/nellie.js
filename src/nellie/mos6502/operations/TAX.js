@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/TAX.js
+/* nellie/mos6502/operations/TAX.js
  *
  */
 

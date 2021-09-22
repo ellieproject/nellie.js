@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/TXA.js
+/* nellie/mos6502/operations/TXA.js
  *
  */
 

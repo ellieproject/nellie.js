@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/INC.js
+/* nellie/mos6502/operations/INC.js
  *
  */
 

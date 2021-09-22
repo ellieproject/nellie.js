@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/INY.js
+/* nellie/mos6502/operations/INY.js
  *
  */
 

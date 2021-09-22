@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/SBC.js
+/* nellie/mos6502/operations/SBC.js
  *
  */
 

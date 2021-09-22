@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/JMP.js
+/* nellie/mos6502/operations/JMP.js
  *
  */
 

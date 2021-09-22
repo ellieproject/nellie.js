@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/BIT.js
+/* nellie/mos6502/operations/BIT.js
  *
  */
 

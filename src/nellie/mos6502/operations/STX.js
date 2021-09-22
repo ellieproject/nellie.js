@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/STX.js
+/* nellie/mos6502/operations/STX.js
  *
  */
 

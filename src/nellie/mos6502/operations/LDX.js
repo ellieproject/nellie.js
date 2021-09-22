@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/LDX.js
+/* nellie/mos6502/operations/LDX.js
  *
  */
 

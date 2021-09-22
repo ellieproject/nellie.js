@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/PLP.js
+/* nellie/mos6502/operations/PLP.js
  *
  */
 

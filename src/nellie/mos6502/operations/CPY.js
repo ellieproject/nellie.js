@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/CPY.js
+/* nellie/mos6502/operations/CPY.js
  *
  */
 

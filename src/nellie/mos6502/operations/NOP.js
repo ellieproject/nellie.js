@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/NOP.js
+/* nellie/mos6502/operations/NOP.js
  *
  */
 

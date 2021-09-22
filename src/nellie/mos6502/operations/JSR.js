@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/JSR.js
+/* nellie/mos6502/operations/JSR.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/INX.js
+/* nellie/mos6502/operations/INX.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/BRK.js
+/* nellie/mos6502/operations/BRK.js
  *
  */
 

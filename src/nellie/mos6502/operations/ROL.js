@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/ROL.js
+/* nellie/mos6502/operations/ROL.js
  *
  */
 

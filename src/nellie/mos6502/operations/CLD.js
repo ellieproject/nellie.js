@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/CLD.js
+/* nellie/mos6502/operations/CLD.js
  *
  */
 

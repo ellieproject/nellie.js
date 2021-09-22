@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/BNE.js
+/* nellie/mos6502/operations/BNE.js
  *
  */
 

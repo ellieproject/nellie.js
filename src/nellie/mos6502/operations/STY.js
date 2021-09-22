@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/STY.js
+/* nellie/mos6502/operations/STY.js
  *
  */
 

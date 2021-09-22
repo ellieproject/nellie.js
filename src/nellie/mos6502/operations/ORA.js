@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/ORA.js
+/* nellie/mos6502/operations/ORA.js
  *
  */
 

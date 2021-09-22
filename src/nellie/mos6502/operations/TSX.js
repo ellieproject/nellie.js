@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/TSX.js
+/* nellie/mos6502/operations/TSX.js
  *
  */
 

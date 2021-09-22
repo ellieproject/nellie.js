@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/BVS.js
+/* nellie/mos6502/operations/BVS.js
  *
  */
 

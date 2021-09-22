@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/ASL.js
+/* nellie/mos6502/operations/ASL.js
  *
  */
 

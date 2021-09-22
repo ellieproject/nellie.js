@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/EOR.js
+/* nellie/mos6502/operations/EOR.js
  *
  */
 

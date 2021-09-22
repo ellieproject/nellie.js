@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/TXS.js
+/* nellie/mos6502/operations/TXS.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/BCC.js
+/* nellie/mos6502/operations/BCC.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/PHP.js
+/* nellie/mos6502/operations/PHP.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/BPL.js
+/* nellie/mos6502/operations/BPL.js
  *
  */
 

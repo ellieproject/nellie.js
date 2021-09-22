@@ -1,4 +1,4 @@
-/* nellie/mos6502/opcodes/LSR.js
+/* nellie/mos6502/operations/LSR.js
  *
  */
 
