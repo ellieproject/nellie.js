@@ -8,7 +8,7 @@ const MOS6502 = new Ellie.Processor('6502');
 
 // Opcodes
 MOS6502.MODES   = require('@ellieproject/nellie/mos6502/modes');
-MOS6502.OPCODES = require('@ellieproject/nellie/mos6502/opcodes');
+MOS6502.OPCODES = require('@ellieproject/nellie/mos6502/operations');
 
 for (const name in MOS6502.OPCODES) {
   MOS6502.addOperation(MOS6502.OPCODES[name]);
