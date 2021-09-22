@@ -15,6 +15,7 @@ function postexecuteAccumulator(instruction, processor) {
 } // postexecuteAccumulator()
 
 var MODE_ACCUMULATOR = new Ellie.Processor.Mode(
+  'ACCUMULATOR',
   'accumulator',
   preexecuteAccumulator,
   postexecuteAccumulator

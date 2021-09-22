@@ -7,6 +7,7 @@ const Ellie = require('@ellieproject/ellie');
 function preexecuteZeroPage(instruction, processor) {} // preexecuteZeroPage()
 
 var MODE_ZERO_PAGE = new Ellie.Processor.Mode(
+  'ZERO_PAGE',
   'zero page',
   preexecuteZeroPage
 );
