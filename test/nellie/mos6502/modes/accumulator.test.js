@@ -10,7 +10,7 @@ test.beforeEach((t) => {
 });
 
 test('beforeExecute() should return true', (t) => {
-  t.is(t.context.MODE.beforeExecute(null, t.context.MOS6502), true);
+  t.is(t.context.MODE.beforeExecute(t.context.MOS6502), true);
 });
 
 test('beforeExecute() should load the accumulator into the ALU', (t) => {
@@ -20,14 +20,14 @@ test('beforeExecute() should load the accumulator into the ALU', (t) => {
   // verify the numbers are different
   t.is(MOS6502.register.a.bits, 0xFF);
   t.is(MOS6502.register.b.bits, 0x00);
-  t.context.MODE.beforeExecute(null, MOS6502);
+  t.context.MODE.beforeExecute(MOS6502);
   // verify the numbers have loaded their new values
   t.is(MOS6502.register.a.bits, 0xFF);
   t.is(MOS6502.register.b.bits, 0xFF);
 });
 
 test('afterExecute() should return true', (t) => {
-  t.is(t.context.MODE.afterExecute(null, t.context.MOS6502), true);
+  t.is(t.context.MODE.afterExecute(t.context.MOS6502), true);
 });
 
 test('afterExecute() should load the ALU into the accumulator', (t) => {
@@ -37,7 +37,7 @@ test('afterExecute() should load the ALU into the accumulator', (t) => {
   // verify the numbers are different
   t.is(MOS6502.register.a.bits, 0x00);
   t.is(MOS6502.register.b.bits, 0xFF);
-  t.context.MODE.afterExecute(null, MOS6502);
+  t.context.MODE.afterExecute(MOS6502);
   // verify the numbers have loaded their new values
   t.is(MOS6502.register.a.bits, 0xFF);
   t.is(MOS6502.register.b.bits, 0xFF);

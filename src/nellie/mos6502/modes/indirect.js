@@ -4,7 +4,7 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function beforeExecuteIndirect(instruction, processor) {} // beforeExecuteIndirect()
+function beforeExecuteIndirect(processor) {} // beforeExecuteIndirect()
 
 var MODE_INDIRECT = new Ellie.Processor.Mode(
   'INDIRECT',

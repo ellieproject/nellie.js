@@ -5,8 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeSEI(instruction, processor) {
-  console.debug(this.name);
+function executeSEI(processor) {
   processor.register.p.bitSet('I', 1);
   return true;
 } // executeSEI()

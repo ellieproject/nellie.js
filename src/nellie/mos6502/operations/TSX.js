@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeTSX(instruction, processor) {
+function executeTSX(processor) {
   console.debug(this.name);
   return false;
 } // executeTSX()

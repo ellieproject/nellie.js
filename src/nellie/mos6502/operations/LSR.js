@@ -5,8 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeLSR(instruction, processor) {
-  console.debug(this.name);
+function executeLSR(processor) {
   const b = processor.register.b;
   // buffer[0] => carry flag
   processor.register.p.bitSet('C', b.bit(0));

@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeINY(instruction, processor) {
+function executeINY(processor) {
   console.debug(this.name);
   // Y + 1 => Y // TODO calculate correctly
   processor.register.y.set(processor.register.y.get() + 1);

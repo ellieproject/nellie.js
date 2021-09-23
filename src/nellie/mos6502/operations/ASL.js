@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeASL(instruction, processor) {
+function executeASL(processor) {
   console.debug(this.name);
   const b = processor.register.b;
   // buffer[7] => carry flag

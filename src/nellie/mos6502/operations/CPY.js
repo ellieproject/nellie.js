@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeCPY(instruction, processor) {
+function executeCPY(processor) {
   console.debug(this.name);
   return false;
 } // executeCPY()

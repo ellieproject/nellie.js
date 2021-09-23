@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeINC(instruction, processor) {
+function executeINC(processor) {
   console.debug(this.name);
   return false;
 } // executeINC()

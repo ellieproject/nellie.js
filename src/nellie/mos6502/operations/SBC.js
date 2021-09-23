@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeSBC(instruction, processor) {
+function executeSBC(processor) {
   console.debug(this.name);
   return false;
 } // executeSBC()

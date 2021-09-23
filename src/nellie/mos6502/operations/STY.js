@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeSTY(instruction, processor) {
+function executeSTY(processor) {
   console.debug(this.name);
   return false;
 } // executeSTY()

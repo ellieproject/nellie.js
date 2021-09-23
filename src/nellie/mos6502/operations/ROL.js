@@ -5,8 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeROL(instruction, processor) {
-  console.debug(this.name);
+function executeROL(processor) {
   const b = processor.register.b;
   // buffer[7] => newC
   const newC = b.bit(7);

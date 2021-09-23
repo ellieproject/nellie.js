@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBVC(instruction, processor) {
+function executeBVC(processor) {
   console.debug(this.name);
   return false;
 } // executeBVC()

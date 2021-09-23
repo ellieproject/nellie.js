@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeCLI(instruction, processor) {
+function executeCLI(processor) {
   console.debug(this.name);
   processor.register.p.bitSet('I', 0);
   return true;

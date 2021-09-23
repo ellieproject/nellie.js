@@ -4,7 +4,7 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function beforeExecuteImmediate(instruction, processor) {
+function beforeExecuteImmediate(processor) {
   // step forward to read the next (immediate) byte
   processor.register.pc.set(processor.register.pc.get() + 1);
   let imm = processor.memory.main.data[ processor.register.pc.get() ];

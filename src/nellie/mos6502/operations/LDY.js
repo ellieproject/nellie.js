@@ -5,9 +5,14 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeLDY(instruction, processor) {
-  console.debug(this.name);
-  return false;
+function executeLDY(processor) {
+  // negative flag check
+  processor.register.p.bitSet('N', processor.register.b.bit(7));
+  // zero flag check
+  processor.register.p.bitSet('Z', processor.register.b.test(0x0));
+  // B => Y
+  processor.register.y.load(processor.register.b);
+  return true;
 } // executeLDY()
 
 const LDY = new Ellie.Processor.Operation(

@@ -5,8 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeNOP() { // instruction, processor unused
-  console.debug(this.name);
+function executeNOP() { // processor unused
   return true;
 } // executeNOP()
 

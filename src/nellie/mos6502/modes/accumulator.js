@@ -4,12 +4,12 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function beforeExecuteAccumulator(instruction, processor) {
+function beforeExecuteAccumulator(processor) {
   processor.register.b.load(processor.register.a);
   return true;
 } // beforeExecuteAccumulator()
 
-function afterExecuteAccumulator(instruction, processor) {
+function afterExecuteAccumulator(processor) {
   processor.register.a.load(processor.register.b);
   return true;
 } // afterExecuteAccumulator()

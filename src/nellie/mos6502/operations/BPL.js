@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBPL(instruction, processor) {
+function executeBPL(processor) {
   console.debug(this.name);
   return false;
 } // executeBPL()

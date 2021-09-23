@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBRK(instruction, processor) {
+function executeBRK(processor) {
   console.debug(this.name);
   return false;
 } // executeBRK()

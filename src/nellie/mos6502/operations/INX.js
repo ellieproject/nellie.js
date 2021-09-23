@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeINX(instruction, processor) {
+function executeINX(processor) {
   console.debug(this.name);
   // X + 1 => X // TODO calculate correctly
   processor.register.x.set(processor.register.x.get() + 1);

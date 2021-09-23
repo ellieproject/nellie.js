@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeEOR(instruction, processor) {
+function executeEOR(processor) {
   console.debug(this.name);
   return false;
 } // executeEOR()

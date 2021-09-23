@@ -4,7 +4,7 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function beforeExecuteAbsoluteY(instruction, processor) {} // beforeExecuteAbsoluteY()
+function beforeExecuteAbsoluteY(processor) {} // beforeExecuteAbsoluteY()
 
 var MODE_ABSOLUTE_Y = new Ellie.Processor.Mode(
   'ABSOLUTE_Y',

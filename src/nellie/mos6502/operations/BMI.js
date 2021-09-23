@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBMI(instruction, processor) {
+function executeBMI(processor) {
   console.debug(this.name);
   return false;
 } // executeBMI()

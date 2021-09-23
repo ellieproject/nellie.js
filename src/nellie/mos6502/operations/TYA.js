@@ -5,8 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeTYA(instruction, processor) {
-  console.debug(this.name);
+function executeTYA(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.y.bit(7));
   // zero flag check

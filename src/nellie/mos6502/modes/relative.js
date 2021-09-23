@@ -4,7 +4,7 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function beforeExecuteRelative(instruction, processor) {} // beforeExecuteRelative()
+function beforeExecuteRelative(processor) {} // beforeExecuteRelative()
 
 var MODE_RELATIVE = new Ellie.Processor.Mode(
   'RELATIVE',

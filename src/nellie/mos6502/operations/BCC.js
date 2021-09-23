@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBCC(instruction, processor) {
+function executeBCC(processor) {
   console.debug(this.name);
   return false;
 } // executeBCC()
