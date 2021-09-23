@@ -18,77 +18,76 @@ There is currently no support.
 
 The MOS6502 currently lacks a clock and most of its feature set, including a good way to feed instructions in.
 
-#### Opcodes
+#### Opcodes & Address Modes
 
-- ADC = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌)
-- AND = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌)
-- ASL =  partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE ❌, ACCUMULATOR ✔️, ZERO PAGE X ❌, ZERO PAGE ❌)
-- BCC = incomplete ❌
-- BCS = incomplete ❌
-- BEQ = incomplete ❌
-- BIT = incomplete ❌
-- BMI = incomplete ❌
-- BNE = incomplete ❌
-- BPL = incomplete ❌
-- BRK = incomplete ❌
-- BVC = incomplete ❌
-- BVS = incomplete ❌
-- CLC = needs tests ❔
-- CLD = needs tests ❔
-- CLI = needs tests ❔
-- CLV = needs tests ❔
-- CMP = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌)
-- CPX = partial ⚠️ (ABSOLUTE ❌, IMMEDIATE ✔️, ZERO PAGE ❌)
-- CPY = partial ⚠️ (ABSOLUTE ❌, IMMEDIATE ✔️, ZERO PAGE ❌)
-- DEC = incomplete ❌
-- DEX = needs tests ❔
-- DEY = needs tests ❔
-- EOR = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌)
-- INC = incomplete ❌
-- INX = needs tests ❔
-- INY = needs tests ❔
-- JMP = incomplete ❌
-- JSR = incomplete ❌
-- LDA = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌)
-- LDX = partial ⚠️partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌) ❌, ABSOLUTE ❌, IMMEDIATE ✔️, ZERO PAGE Y ❌, ZERO PAGE ❌)
-- LDY = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE ❌, IMMEDIATE ✔️, ZERO PAGE X ❌, ZERO PAGE ❌)
-- LSR =  partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE ❌, ACCUMULATOR ✔️, ZERO PAGE X ❌, ZERO PAGE ❌)
-- NOP = needs tests ❔
-- ORA = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌)
-- PHA = incomplete ❌
-- PHP = incomplete ❌
-- PLA = incomplete ❌
-- PLP = incomplete ❌
-- ROL =  partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE ❌, ACCUMULATOR ✔️, ZERO PAGE X ❌, ZERO PAGE ❌)
-- ROR = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE ❌, ACCUMULATOR ✔️, ZERO PAGE X ❌, ZERO PAGE ❌)
-- RTI = incomplete ❌
-- RTS = incomplete ❌
-- SBC = partial ⚠️ (ABSOLUTE X ❌, ABSOLUTE Y, ABSOLUTE ❌, IMMEDIATE ✔️, INDIRECT X ❌, INDIRECT Y ❌, ZERO PAGE X ❌, ZERO PAGE ❌)
-- SEC = needs tests ❔
-- SED = needs tests ❔
-- SEI = needs tests ❔
-- STA = incomplete ❌
-- STX = incomplete ❌
-- STY = incomplete ❌
-- TAX = needs tests ❔
-- TAY = needs tests ❔
-- TSX = incomplete ❌
-- TXA = needs tests ❔
-- TXS = incomplete ❌
-- TYA = needs tests ❔
+|   |                          |
+|--:|--------------------------|
+| ❌ | Neither Opcode nor Mode  |
+| ❕ | Mode Tested              |
+| ❔ | Opcode Tested            |
+| ✔️ | Opcode and Mode Complete |
+|   |                          |
 
-#### Addressing Modes
+|             | ADC | AND | ASL | BCC | BCS | BEQ | BIT | BMI | BNE | BPL | BRK | BVC | BVS | CLC |
+|:-----------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  ABSOLUTE X |  ❌  |  ❌  |  ❌  |     |     |     |     |     |     |     |     |     |     |     |
+|  ABSOLUTE Y |  ❌  |  ❌  |     |     |     |     |     |     |     |     |     |     |     |     |
+|   ABSOLUTE  |  ❌  |  ❌  |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |
+| ACCUMULATOR |     |     |  ❕  |     |     |     |     |     |     |     |     |     |     |     |
+|  IMMEDIATE  |  ❕  |  ❕  |     |     |     |     |     |     |     |     |     |     |     |     |
+|   IMPLIED   |     |     |     |     |     |     |     |     |     |     |  ❕  |     |     |  ❕  |
+|  INDIRECT X |  ❌  |  ❌  |     |     |     |     |     |     |     |     |     |     |     |     |
+|  INDIRECT Y |  ❌  |  ❌  |     |     |     |     |     |     |     |     |     |     |     |     |
+|   INDIRECT  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|   RELATIVE  |     |     |     |  ❌  |  ❌  |  ❌  |     |  ❌  |  ❌  |  ❌  |     |  ❌  |  ❌  |     |
+| ZERO PAGE X |  ❌  |  ❌  |  ❌  |     |     |     |     |     |     |     |     |     |     |     |
+| ZERO PAGE Y |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|  ZERO PAGE  |  ❌  |  ❌  |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |
 
-- Absolute X = incomplete ❌
-- Absolute Y = incomplete ❌
-- Absolute = incomplete ❌
-- Accumulator = Complete ✔️
-- Immediate = Complete ✔️
-- Implied = Complete ✔️
-- Indirect X = incomplete ❌
-- Indirect Y = incomplete ❌
-- Indirect = incomplete ❌
-- Relative = incomplete ❌
-- Zero Page X = incomplete ❌
-- Zero Page Y = incomplete ❌
-- Zero Page = incomplete ❌
+|             | CLD | CLI | CLV | CMP | CPX | CPY | DEC | DEX | DEY | EOR | INC | INX | INY | JMP |
+|:-----------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  ABSOLUTE X |     |     |     |  ❌  |     |     |  ❌  |     |     |  ❌  |  ❌  |     |     |     |
+|  ABSOLUTE Y |     |     |     |  ❌  |     |     |     |     |     |  ❌  |     |     |     |     |
+|   ABSOLUTE  |     |     |     |  ❌  |  ❌  |  ❌  |  ❌  |     |     |  ❌  |  ❌  |     |     |  ❌  |
+| ACCUMULATOR |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|  IMMEDIATE  |     |     |     |  ❕  |  ❕  |  ❕  |     |     |     |  ❕  |     |     |     |     |
+|   IMPLIED   |  ❕  |  ❕  |  ❕  |     |     |     |     |  ❕  |  ❕  |     |     |  ❕  |  ❕  |     |
+|  INDIRECT X |     |     |     |  ❌  |     |     |     |     |     |  ❌  |     |     |     |     |
+|  INDIRECT Y |     |     |     |  ❌  |     |     |     |     |     |  ❌  |     |     |     |     |
+|   INDIRECT  |     |     |     |     |     |     |     |     |     |     |     |     |     |  ❌  |
+|   RELATIVE  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+| ZERO PAGE X |     |     |     |  ❌  |     |     |  ❌  |     |     |  ❌  |  ❌  |     |     |     |
+| ZERO PAGE Y |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|  ZERO PAGE  |     |     |     |  ❌  |  ❌  |  ❌  |  ❌  |     |     |  ❌  |  ❌  |     |     |     |
+
+|             | JSR | LDA | LDX | LDY | LSR | NOP | ORA | PHA | PHP | PLA | PLP | ROL | ROR | RTI |
+|:-----------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  ABSOLUTE X |     |  ❌  |     |  ❌  |  ❌  |     |  ❌  |     |     |     |     |  ❌  |  ❌  |     |
+|  ABSOLUTE Y |     |  ❌  |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |
+|   ABSOLUTE  |  ❌  |  ❌  |  ❌  |  ❌  |  ❌  |     |  ❌  |     |     |     |     |  ❌  |  ❌  |     |
+| ACCUMULATOR |     |     |     |     |  ❕  |     |     |     |     |     |     |  ❕  |  ❕  |     |
+|  IMMEDIATE  |     |  ❕  |  ❕  |  ❕  |     |     |  ❕  |     |     |     |     |     |     |     |
+|   IMPLIED   |     |     |     |     |     |  ❕  |     |  ❕  |  ❕  |  ❕  |  ❕  |     |     |  ❕  |
+|  INDIRECT X |     |  ❌  |     |     |     |     |  ❌  |     |     |     |     |     |     |     |
+|  INDIRECT Y |     |  ❌  |     |     |     |     |  ❌  |     |     |     |     |     |     |     |
+|   INDIRECT  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|   RELATIVE  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+| ZERO PAGE X |     |  ❌  |     |  ❌  |  ❌  |     |  ❌  |     |     |     |     |  ❌  |  ❌  |     |
+| ZERO PAGE Y |     |     |  ❌  |     |     |     |     |     |     |     |     |     |     |     |
+|  ZERO PAGE  |     |  ❌  |  ❌  |  ❌  |  ❌  |     |  ❌  |     |     |     |     |  ❌  |  ❌  |     |
+
+|             | RTS | SBC | SEC | SED | SEI | STA | STX | STY | TAX | TAY | TSX | TXA | TXS | TYA |
+|:-----------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|  ABSOLUTE X |     |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |     |
+|  ABSOLUTE Y |     |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |     |
+|   ABSOLUTE  |     |  ❌  |     |     |     |  ❌  |  ❌  |  ❌  |     |     |     |     |     |     |
+| ACCUMULATOR |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|  IMMEDIATE  |     |  ❕  |     |     |     |     |     |     |     |     |     |     |     |     |
+|   IMPLIED   |  ❕  |     |  ❕  |  ❕  |  ❕  |     |     |     |  ❕  |  ❕  |  ❕  |  ❕  |  ❕  |  ❕  |
+|  INDIRECT X |     |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |     |
+|  INDIRECT Y |     |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |     |
+|   INDIRECT  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+|   RELATIVE  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+| ZERO PAGE X |     |  ❌  |     |     |     |  ❌  |     |  ❌  |     |     |     |     |     |     |
+| ZERO PAGE Y |     |     |     |     |     |     |  ❌  |     |     |     |     |     |     |     |
+|  ZERO PAGE  |     |  ❌  |     |     |     |  ❌  |  ❌  |  ❌  |     |     |     |     |     |     |
