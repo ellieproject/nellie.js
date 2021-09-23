@@ -4,12 +4,12 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preexecuteAbsoluteY(instruction, processor) {} // preexecuteAbsoluteY()
+function beforeExecuteAbsoluteY(instruction, processor) {} // beforeExecuteAbsoluteY()
 
 var MODE_ABSOLUTE_Y = new Ellie.Processor.Mode(
   'ABSOLUTE_Y',
   'absolute y',
-  preexecuteAbsoluteY
+  beforeExecuteAbsoluteY
 );
 
 module.exports = MODE_ABSOLUTE_Y;

@@ -4,12 +4,12 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preexecuteZeroPageY(instruction, processor) {} // preexecuteZeroPageY()
+function beforeExecuteZeroPageY(instruction, processor) {} // beforeExecuteZeroPageY()
 
 var MODE_ZERO_PAGE_Y = new Ellie.Processor.Mode(
   'ZERO_PAGE_Y',
   'zero page y',
-  preexecuteZeroPageY
+  beforeExecuteZeroPageY
 );
 
 module.exports = MODE_ZERO_PAGE_Y;

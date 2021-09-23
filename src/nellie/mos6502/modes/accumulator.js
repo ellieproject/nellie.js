@@ -4,21 +4,21 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preexecuteAccumulator(instruction, processor) {
+function beforeExecuteAccumulator(instruction, processor) {
   processor.register.b.load(processor.register.a);
   return true;
-} // preexecuteAccumulator()
+} // beforeExecuteAccumulator()
 
-function postexecuteAccumulator(instruction, processor) {
+function afterExecuteAccumulator(instruction, processor) {
   processor.register.a.load(processor.register.b);
   return true;
-} // postexecuteAccumulator()
+} // afterExecuteAccumulator()
 
 var MODE_ACCUMULATOR = new Ellie.Processor.Mode(
   'ACCUMULATOR',
   'accumulator',
-  preexecuteAccumulator,
-  postexecuteAccumulator
+  beforeExecuteAccumulator,
+  afterExecuteAccumulator
 );
 
 module.exports = MODE_ACCUMULATOR;

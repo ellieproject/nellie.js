@@ -4,12 +4,12 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function preexecuteIndirectY(instruction, processor) {} // preexecuteIndirectY()
+function beforeExecuteIndirectY(instruction, processor) {} // beforeExecuteIndirectY()
 
 var MODE_INDIRECT_Y = new Ellie.Processor.Mode(
   'INDIRECT_Y',
   'indirect (post-y)',
-  preexecuteIndirectY
+  beforeExecuteIndirectY
 );
 
 module.exports = MODE_INDIRECT_Y;
