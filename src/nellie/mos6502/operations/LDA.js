@@ -6,8 +6,13 @@ const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeLDA(processor) {
-  console.debug(this.name);
-  return false;
+  // negative flag check
+  processor.register.p.bitSet('N', processor.register.b.bit(7));
+  // zero flag check
+  processor.register.p.bitSet('Z', processor.register.b.test(0x0));
+  // B => Y
+  processor.register.a.load(processor.register.b);
+  return true;
 } // executeLDA()
 
 const LDA = new Ellie.Processor.Operation(

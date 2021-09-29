@@ -6,8 +6,22 @@ const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeBEQ(processor) {
-  console.debug(this.name);
-  return false;
+  // TODO: I really need an Ellie.ALU for arithmatic...
+  let rel = processor.register.b.get();
+  let page = processor.register.pc.bit(8); // even or odd page?
+  // takes two ticks, hit or miss
+  if (processor.register.p.bit('Z') === 1) {
+    if (rel > 0x7F) {
+      rel -= 0x100;
+    }
+    // take an extra tick on a hit
+    processor.register.pc.set(processor.register.pc.get() + rel);
+    if (page !== processor.register.pc.bit(8)) {
+      // take an extra tick for a page boundary
+      console.log(`BEQ page cross! PC = 0x${processor.register.pc.get().toString(16)}`);
+    }
+  }
+  return true;
 } // executeBEQ()
 
 const BEQ = new Ellie.Processor.Operation(
@@ -16,6 +30,6 @@ const BEQ = new Ellie.Processor.Operation(
   executeBEQ
 ); // BEQ
 
-BEQ.addMode(0xF0, MODES.IMPLIED);
+BEQ.addMode(0xF0, MODES.RELATIVE);
 
 module.exports = BEQ;

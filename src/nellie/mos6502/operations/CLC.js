@@ -6,7 +6,6 @@ const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeCLC(processor) {
-  console.debug(this.name);
   processor.register.p.bitSet('C', 0);
   return true;
 } // executeCLC()

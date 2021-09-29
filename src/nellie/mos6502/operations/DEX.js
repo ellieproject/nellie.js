@@ -6,7 +6,6 @@ const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeDEX(processor) {
-  console.debug(this.name);
   // X - 1 => X // TODO clamp this?
   processor.register.x.set(processor.register.x.get() - 1);
   // negative flag check
