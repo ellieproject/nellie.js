@@ -6,8 +6,8 @@ const Ellie = require('@ellieproject/ellie');
 
 function beforeExecuteRelative(processor) {
   // step forward to read the next (relative) byte
-  processor.register.pc.set(processor.register.pc.get() + 1);
-  let rel = processor.memory.main.data[ processor.register.pc.get() ];
+  const addr = processor.register.pc.inc();
+  const rel = processor.memory.main.data[ addr ];
   processor.register.b.set(rel);
   return true;
 } // beforeExecuteRelative()

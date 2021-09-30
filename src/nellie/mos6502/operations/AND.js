@@ -6,8 +6,13 @@ const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeAND(processor) {
-  console.debug(this.name);
-  return false;
+  // A & B => A
+  processor.register.a.and(processor.register.b);
+  // negative flag check
+  processor.register.p.bitSet('N', processor.register.a.bit(7));
+  // zero flag check
+  processor.register.p.bitSet('Z', processor.register.a.test(0x0));
+  return true;
 } // executeAND()
 
 const AND = new Ellie.Processor.Operation(

@@ -15,7 +15,7 @@ function executeBVS(processor) {
       rel -= 0x100;
     }
     // take an extra tick on a hit
-    processor.register.pc.set(processor.register.pc.get() + rel);
+    processor.register.pc.inc(rel);
     if (page !== processor.register.pc.bit(8)) {
       // take an extra tick for a page boundary
       console.log(`BVS page cross! PC = 0x${processor.register.pc.get().toString(16)}`);
