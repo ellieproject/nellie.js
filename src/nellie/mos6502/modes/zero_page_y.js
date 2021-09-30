@@ -10,6 +10,8 @@ function beforeExecuteZeroPageY(processor) {
   this.addr   = processor.memory.main.data[ operand ];
   // add X to the address before lookup
   this.addr  += processor.register.y.get();
+  // take only the bottom 8 bits (zero page)
+  this.addr  &= 0xFF;
   // lookup the value at this.addr
   let zpy = processor.memory.main.data[ this.addr ];
   processor.register.b.set(zpy);

@@ -58,10 +58,33 @@ test('run() ABSOLUTE_X mode should return this', (t) => {
   t.is(OP.run(OP.mode.ABSOLUTE_X, MOS6502), OP);
 });
 
+test('run() ABSOLUTE_X mode should load Y from PC', (t) => {
+  const MOS6502 = t.context.MOS6502;
+  const OP = t.context.OP;
+  MOS6502.register.pc.set(0x0000);
+  MOS6502.register.x.set(0xFF);
+  MOS6502.memory.main.data[0x0001] = 0x00;
+  MOS6502.memory.main.data[0x0002] = 0x01;
+  MOS6502.memory.main.data[0x01FF] = 0xAA;
+  OP.run(OP.mode.ABSOLUTE_X, MOS6502);
+  t.is(MOS6502.register.y.get(), 0xAA);
+});
+
 test('run() ABSOLUTE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   t.is(OP.run(OP.mode.ABSOLUTE, MOS6502), OP);
+});
+
+test('run() ABSOLUTE mode should load Y from PC', (t) => {
+  const MOS6502 = t.context.MOS6502;
+  const OP = t.context.OP;
+  MOS6502.register.pc.set(0x0000);
+  MOS6502.memory.main.data[0x0001] = 0xFF;
+  MOS6502.memory.main.data[0x0002] = 0x01;
+  MOS6502.memory.main.data[0x01FF] = 0xAA;
+  OP.run(OP.mode.ABSOLUTE, MOS6502);
+  t.is(MOS6502.register.y.get(), 0xAA);
 });
 
 test('run() IMMEDIATE mode should return this', (t) => {
@@ -85,8 +108,29 @@ test('run() ZERO_PAGE_X mode should return this', (t) => {
   t.is(OP.run(OP.mode.ZERO_PAGE_X, MOS6502), OP);
 });
 
+test('run() ZERO_PAGE_X mode should load Y from PC', (t) => {
+  const MOS6502 = t.context.MOS6502;
+  const OP = t.context.OP;
+  MOS6502.register.pc.set(0x0000);
+  MOS6502.register.x.set(0xFF);
+  MOS6502.memory.main.data[0x0001] = 0x80;
+  MOS6502.memory.main.data[0x007F] = 0xAA;
+  OP.run(OP.mode.ZERO_PAGE_X, MOS6502);
+  t.is(MOS6502.register.y.get(), 0xAA);
+});
+
 test('run() ZERO_PAGE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   t.is(OP.run(OP.mode.ZERO_PAGE, MOS6502), OP);
+});
+
+test('run() ZERO_PAGE mode should load Y from PC', (t) => {
+  const MOS6502 = t.context.MOS6502;
+  const OP = t.context.OP;
+  MOS6502.register.pc.set(0x0000);
+  MOS6502.memory.main.data[0x0001] = 0x80;
+  MOS6502.memory.main.data[0x0080] = 0xAA;
+  OP.run(OP.mode.ZERO_PAGE, MOS6502);
+  t.is(MOS6502.register.y.get(), 0xAA);
 });

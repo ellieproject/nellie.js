@@ -21,10 +21,10 @@ const LDY = new Ellie.Processor.Operation(
   executeLDY
 ); // LDY
 
-LDY.addMode(0xBC, MODES.ABSOLUTE_Y);
+LDY.addMode(0xBC, MODES.ABSOLUTE_X);
 LDY.addMode(0xAC, MODES.ABSOLUTE);
 LDY.addMode(0xA0, MODES.IMMEDIATE);
-LDY.addMode(0xB4, MODES.ZERO_PAGE_Y);
+LDY.addMode(0xB4, MODES.ZERO_PAGE_X);
 LDY.addMode(0xA4, MODES.ZERO_PAGE);
 
 module.exports = LDY;
