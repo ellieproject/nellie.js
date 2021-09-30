@@ -14,7 +14,7 @@ test('beforeExecute() should return true', (t) => {
   t.is(t.context.MODE.beforeExecute(MOS6502), true);
 });
 
-test('beforeExecute() should load the zero page operand into ALU', (t) => {
+test('beforeExecute() should load the ALU from memory', (t) => {
   let MOS6502 = t.context.MOS6502;
   MOS6502.register.pc.set(0x0000);
   MOS6502.register.b.set(0x00);
@@ -41,7 +41,7 @@ test('afterExecute() should return true', (t) => {
   t.is(t.context.MODE.afterExecute(MOS6502), true);
 });
 
-test('afterExecute() should load zero page memory from ALU', (t) => {
+test('afterExecute() should load memory from ALU', (t) => {
   let MOS6502 = t.context.MOS6502;
   MOS6502.register.pc.set(0x0000);
   MOS6502.memory.main.data[0x0001] = 0xFF;
