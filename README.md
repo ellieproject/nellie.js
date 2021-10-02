@@ -20,8 +20,8 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 
 ### Opcodes & Address Modes
 
-Opcodes: 29/55
-Opcodes + Address Modes: 52/151
+Opcodes: 31/55
+Opcodes + Address Modes: 58/151
 
 |    |                          |
 |---:|--------------------------|
@@ -37,8 +37,8 @@ Opcodes + Address Modes: 52/151
 |   **AND** | ⚠️ |  ⚠️ | ✔️  | ✔️ | ❌  | ❌  | ⚠️  | ✔️  |
 | ✔️**BIT** |    |     | ✔️  |     |      |     |     | ✔️  |
 |   **CMP** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
-|   **CPX** |    |     | ⚠️  | ⚠️ |      |     |     | ⚠️  |
-|   **CPY** |    |     | ⚠️  | ⚠️ |      |     |     | ⚠️  |
+| ✔️**CPX** |    |     | ✔️  | ✔️ |      |     |     | ✔️  |
+| ✔️**CPY** |    |     | ✔️  | ✔️ |      |     |     | ✔️  |
 |   **EOR** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
 |   **ORA** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
 |   **SBC** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
