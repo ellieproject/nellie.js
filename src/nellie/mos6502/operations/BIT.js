@@ -13,7 +13,7 @@ function executeBIT(processor) {
   // A & B => B
   processor.register.b.and(processor.register.a);
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.b.test(0x0));
+  processor.register.p.bitSet('Z', processor.register.b.test(0x00));
   return true;
 } // executeBIT()
 

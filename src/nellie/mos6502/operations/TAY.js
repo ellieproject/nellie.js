@@ -9,7 +9,7 @@ function executeTAY(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.a.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.a.test(0x0));
+  processor.register.p.bitSet('Z', processor.register.a.test(0x00));
   // A => Y
   processor.register.y.load(processor.register.a);
   return true;

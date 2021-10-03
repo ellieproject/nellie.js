@@ -16,7 +16,7 @@ function executeLSR(processor) {
   // negative flag check
   processor.register.p.bitSet('N', b.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', b.test(0x0));
+  processor.register.p.bitSet('Z', b.test(0x00));
   return true;
 } // executeLSR()
 

@@ -11,7 +11,7 @@ function executeINX(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.x.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.x.test(0x0));
+  processor.register.p.bitSet('Z', processor.register.x.test(0x00));
   return true;
 } // executeINX()
 

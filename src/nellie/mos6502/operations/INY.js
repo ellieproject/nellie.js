@@ -11,7 +11,7 @@ function executeINY(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.y.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.y.test(0x0));
+  processor.register.p.bitSet('Z', processor.register.y.test(0x00));
   return true;
 } // executeINY()
 

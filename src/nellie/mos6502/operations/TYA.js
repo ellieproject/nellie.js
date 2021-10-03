@@ -9,7 +9,7 @@ function executeTYA(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.y.bit(7));
   // zero flag check
-  processor.register.p.bitSet('Z', processor.register.y.test(0x0));
+  processor.register.p.bitSet('Z', processor.register.y.test(0x00));
   // Y => A
   processor.register.a.load(processor.register.y);
   return true;
