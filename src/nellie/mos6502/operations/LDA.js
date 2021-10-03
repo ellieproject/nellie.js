@@ -10,7 +10,7 @@ function executeLDA(processor) {
   processor.register.p.bitSet('N', processor.register.b.bit(7));
   // zero flag check
   processor.register.p.bitSet('Z', processor.register.b.test(0x0));
-  // B => Y
+  // B => A
   processor.register.a.load(processor.register.b);
   return true;
 } // executeLDA()

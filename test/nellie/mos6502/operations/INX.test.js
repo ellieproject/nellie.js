@@ -20,8 +20,6 @@ test('execute() should increment X', (t) => {
   t.is(MOS6502.register.x.get(), 0x01);
 });
 
-test.todo('how do we deal with increment wraparound?');
-
 test('execute() should set N flag to 0', (t) => {
   const MOS6502 = t.context.MOS6502;
   MOS6502.register.p.bitSet('N', 1); // force to 1

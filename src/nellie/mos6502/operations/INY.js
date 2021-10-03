@@ -6,8 +6,8 @@ const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeINY(processor) {
-  // Y + 1 => Y // TODO calculate correctly
-  processor.register.y.set(processor.register.y.get() + 1);
+  // Y + 1 => Y
+  processor.register.y.inc();
   // negative flag check
   processor.register.p.bitSet('N', processor.register.y.bit(7));
   // zero flag check

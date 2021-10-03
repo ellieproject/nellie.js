@@ -6,8 +6,13 @@ const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
 function executeINC(processor) {
-  console.debug(this.name);
-  return false;
+  // B + 1 => B
+  processor.register.b.inc();
+  // negative flag check
+  processor.register.p.bitSet('N', processor.register.b.bit(7));
+  // zero flag check
+  processor.register.p.bitSet('Z', processor.register.b.test(0x0));
+  return true;
 } // executeINC()
 
 const INC = new Ellie.Processor.Operation(
