@@ -20,8 +20,8 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 
 ### Opcodes & Address Modes
 
-Opcodes: 35/55
-Opcodes + Address Modes: 75/151
+Opcodes: 37/55
+Opcodes + Address Modes: 83/151
 
 |    |                          |
 |---:|--------------------------|
@@ -54,7 +54,7 @@ Opcodes + Address Modes: 75/151
 | ✔️**STX** |     |    | ✔️ |      |     |     |     |  ✔️ | ✔️ |
 | ✔️**STY** |     |    | ✔️ |      |     |     |  ✔️ |     | ✔️ |
 
-#### Shift & Increment Register
+#### ✔️ Shift & Increment Register
 
 |           | ABX | ABS | ACC | IMP | ZPX | ZP |
 |----------:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -66,10 +66,10 @@ Opcodes + Address Modes: 75/151
 | ✔️**INX** |    |     |      | ✔️ |     |     |
 | ✔️**INY** |    |     |      | ✔️ |     |     |
 | ✔️**LSR** | ✔️ | ✔️  |  ✔️ |     |  ✔️ | ✔️ |
-|   **ROL** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
-|   **ROR** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
+| ✔️**ROL** | ✔️ | ✔️  |  ✔️ |     |  ✔️ | ✔️ |
+| ✔️**ROR** | ✔️ | ✔️  |  ✔️ |     |  ✔️ | ✔️ |
 
-#### Branch Control
+#### ✔️ Branch Control
 
 |           | REL |
 |----------:|:---:|
@@ -93,7 +93,7 @@ Opcodes + Address Modes: 75/151
 |   **RTI** |     |  ⚠️ |     |
 |   **RTS** |     |  ⚠️ |     |
 
-#### Flag Control
+#### ✔️ Flag Control
 
 |           | IMP |
 |----------:|:---:|
