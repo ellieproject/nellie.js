@@ -12,6 +12,7 @@ function executeTYA(processor) {
   processor.register.p.bitSet('Z', processor.register.y.test(0x00));
   // Y => A
   processor.register.a.load(processor.register.y);
+  processor.clock.tick(2);
   return true;
 } // executeTYA()
 

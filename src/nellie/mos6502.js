@@ -6,6 +6,9 @@ const Ellie = require('@ellieproject/ellie');
 
 const MOS6502 = new Ellie.Processor('6502');
 
+// Clocks
+MOS6502.clock = require('@ellieproject/nellie/mos6502/clock');
+
 // Opcodes
 MOS6502.MODES   = require('@ellieproject/nellie/mos6502/modes');
 MOS6502.OPCODES = require('@ellieproject/nellie/mos6502/operations');
