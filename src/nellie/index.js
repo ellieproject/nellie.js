@@ -1,4 +1,4 @@
-/* nellie.js
+/* nellie/index.js
  *
  */
 
