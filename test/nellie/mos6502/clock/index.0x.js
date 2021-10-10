@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/clock.0x.js
+/* test/nellie/mos6502/clock/index.0x.js
  *
  */
 

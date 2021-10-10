@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/DEY.test.js
+/* test/nellie/mos6502/operations/DEY/index.test.js
  *
  */
 

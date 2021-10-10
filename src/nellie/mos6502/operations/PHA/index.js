@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/PHA.js
+/* nellie/mos6502/operations/PHA/index.js
  *
  */
 

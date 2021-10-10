@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/LDA.test.js
+/* test/nellie/mos6502/operations/LDA/index.test.js
  *
  */
 

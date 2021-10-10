@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/PLP.test.js
+/* test/nellie/mos6502/operations/PLP/index.test.js
  *
  */
 

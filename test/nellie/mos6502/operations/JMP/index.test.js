@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/JMP.test.js
+/* test/nellie/mos6502/operations/JMP/index.test.js
  *
  */
 

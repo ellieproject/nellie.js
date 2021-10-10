@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/BVS.test.js
+/* test/nellie/mos6502/operations/BVS/index.test.js
  *
  */
 

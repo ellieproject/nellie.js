@@ -1,4 +1,4 @@
-/* nellie/mos6502/modes.js
+/* nellie/mos6502/modes/index.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/BEQ.js
+/* nellie/mos6502/operations/BEQ/index.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/AND.test.js
+/* test/nellie/mos6502/operations/AND/index.test.js
  *
  */
 

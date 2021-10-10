@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/CLD.js
+/* nellie/mos6502/operations/CLD/index.js
  *
  */
 

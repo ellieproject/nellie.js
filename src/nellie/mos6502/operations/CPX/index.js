@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/CPX.js
+/* nellie/mos6502/operations/CPX/index.js
  *
  */
 

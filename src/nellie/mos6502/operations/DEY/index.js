@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/DEY.js
+/* nellie/mos6502/operations/DEY/index.js
  *
  */
 

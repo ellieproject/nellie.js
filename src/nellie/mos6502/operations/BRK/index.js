@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/BRK.js
+/* nellie/mos6502/operations/BRK/index.js
  *
  */
 

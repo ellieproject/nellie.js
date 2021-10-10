@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/CLI.test.js
+/* test/nellie/mos6502/operations/CLI/index.test.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/TXA.test.js
+/* test/nellie/mos6502/operations/TXA/index.test.js
  *
  */
 

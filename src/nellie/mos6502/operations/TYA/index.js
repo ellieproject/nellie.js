@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/TYA.js
+/* nellie/mos6502/operations/TYA/index.js
  *
  */
 

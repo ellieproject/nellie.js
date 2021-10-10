@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/CLD.test.js
+/* test/nellie/mos6502/operations/CLD/index.test.js
  *
  */
 

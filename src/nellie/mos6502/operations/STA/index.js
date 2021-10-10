@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/STA.js
+/* nellie/mos6502/operations/STA/index.js
  *
  */
 

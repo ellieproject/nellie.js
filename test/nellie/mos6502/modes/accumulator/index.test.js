@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/modes/accumulator.test.js
+/* test/nellie/mos6502/modes/accumulator/index.test.js
  *
  */
 

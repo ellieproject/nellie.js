@@ -1,4 +1,4 @@
-/* nellie/mos6502/clock.js
+/* nellie/mos6502/clock/index.js
  *
  */
 

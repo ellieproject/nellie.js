@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/BEQ.test.js
+/* test/nellie/mos6502/operations/BEQ/index.test.js
  *
  */
 

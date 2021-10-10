@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/PHP.test.js
+/* test/nellie/mos6502/operations/PHP/index.test.js
  *
  */
 

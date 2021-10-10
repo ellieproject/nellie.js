@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/DEC.js
+/* nellie/mos6502/operations/DEC/index.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/SEI.js
+/* nellie/mos6502/operations/SEI/index.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/PLP.js
+/* nellie/mos6502/operations/PLP/index.js
  *
  */
 

@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/BCC.test.js
+/* test/nellie/mos6502/operations/BCC/index.test.js
  *
  */
 

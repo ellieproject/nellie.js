@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/TSX.test.js
+/* test/nellie/mos6502/operations/TSX/index.test.js
  *
  */
 

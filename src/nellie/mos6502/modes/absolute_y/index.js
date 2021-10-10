@@ -1,4 +1,4 @@
-/* nellie/mos6502/modes/absolute_y.js
+/* nellie/mos6502/modes/absolute_y/index.js
  *
  */
 

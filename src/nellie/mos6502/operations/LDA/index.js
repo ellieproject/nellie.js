@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/LDA.js
+/* nellie/mos6502/operations/LDA/index.js
  *
  */
 

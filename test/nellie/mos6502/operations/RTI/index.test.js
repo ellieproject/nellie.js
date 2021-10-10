@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/RTI.test.js
+/* test/nellie/mos6502/operations/RTI/index.test.js
  *
  */
 

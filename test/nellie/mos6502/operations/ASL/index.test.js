@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/ASL.test.js
+/* test/nellie/mos6502/operations/ASL/index.test.js
  *
  */
 

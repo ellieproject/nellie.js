@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/BMI.js
+/* nellie/mos6502/operations/BMI/index.js
  *
  */
 

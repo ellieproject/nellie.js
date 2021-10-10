@@ -1,4 +1,4 @@
-/* nellie/mos6502/operations/CLI.js
+/* nellie/mos6502/operations/CLI/index.js
  *
  */
 
