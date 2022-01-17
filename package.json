@@ -20,7 +20,7 @@
   },
   "ava": {
     "files": [
-      "test/**/*.test.js"
+      "test/**/*.js"
     ],
     "verbose": true
   },
