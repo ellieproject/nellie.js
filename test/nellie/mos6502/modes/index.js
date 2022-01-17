@@ -1,3 +1,3 @@
-/* test/nellie/mos6502/modes/index.test.js
+/* test/nellie/mos6502/modes/index.js
  *
  */

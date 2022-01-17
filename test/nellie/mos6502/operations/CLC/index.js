@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/CLC/index.test.js
+/* test/nellie/mos6502/operations/CLC/index.js
  *
  */
 
@@ -20,16 +20,16 @@ test('execute() should set C flag to 0', (t) => {
   t.is(MOS6502.register.p.bit('C'), 0);
 });
 
-test('run() IMPLIED mode should return this', (t) => {
+test('exec() IMPLIED mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.IMPLIED, MOS6502), OP);
+  t.is(OP.exec(OP.mode.IMPLIED, MOS6502), OP);
 });
 
-test('run() IMPLIED mode should set C flag to 0', (t) => {
+test('exec() IMPLIED mode should set C flag to 0', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.p.bitSet('C', 1); // force to 1
-  OP.run(OP.mode.IMPLIED, MOS6502);
+  OP.exec(OP.mode.IMPLIED, MOS6502);
   t.is(MOS6502.register.p.bit('C'), 0);
 });

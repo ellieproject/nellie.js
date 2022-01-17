@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/LDA/index.test.js
+/* test/nellie/mos6502/operations/LDA/index.js
  *
  */
 
@@ -54,59 +54,59 @@ test('execute() should set Z flag to 1', (t) => {
   t.is(MOS6502.register.p.bit('Z'), 1);
 });
 
-test('run() ABSOLUTE_X mode should return this', (t) => {
+test('exec() ABSOLUTE_X mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ABSOLUTE_X, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ABSOLUTE_X, MOS6502), OP);
 });
 
-test('run() ABSOLUTE_Y mode should return this', (t) => {
+test('exec() ABSOLUTE_Y mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ABSOLUTE_Y, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ABSOLUTE_Y, MOS6502), OP);
 });
 
-test('run() ABSOLUTE mode should return this', (t) => {
+test('exec() ABSOLUTE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ABSOLUTE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ABSOLUTE, MOS6502), OP);
 });
 
-test('run() IMMEDIATE mode should return this', (t) => {
+test('exec() IMMEDIATE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.IMMEDIATE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.IMMEDIATE, MOS6502), OP);
 });
 
-test('run() IMMEDIATE mode should load A from PC', (t) => {
+test('exec() IMMEDIATE mode should load A from PC', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
   MOS6502.memory.main.data[0x0001] = 0xFF;
-  OP.run(OP.mode.IMMEDIATE, MOS6502);
+  OP.exec(OP.mode.IMMEDIATE, MOS6502);
   t.is(MOS6502.register.a.get(), 0xFF);
 });
 
-test('run() INDIRECT_X mode should return this', (t) => {
+test('exec() INDIRECT_X mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.INDIRECT_X, MOS6502), OP);
+  t.is(OP.exec(OP.mode.INDIRECT_X, MOS6502), OP);
 });
 
-test('run() INDIRECT_Y mode should return this', (t) => {
+test('exec() INDIRECT_Y mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.INDIRECT_Y, MOS6502), OP);
+  t.is(OP.exec(OP.mode.INDIRECT_Y, MOS6502), OP);
 });
 
-test('run() ZERO_PAGE_X mode should return this', (t) => {
+test('exec() ZERO_PAGE_X mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ZERO_PAGE_X, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ZERO_PAGE_X, MOS6502), OP);
 });
 
-test('run() ZERO_PAGE mode should return this', (t) => {
+test('exec() ZERO_PAGE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ZERO_PAGE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ZERO_PAGE, MOS6502), OP);
 });

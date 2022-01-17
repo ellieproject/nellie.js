@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/modes/relative/index.test.js
+/* test/nellie/mos6502/modes/relative/index.js
  *
  */
 

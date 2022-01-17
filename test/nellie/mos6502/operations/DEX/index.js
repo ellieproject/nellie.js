@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/DEX/index.test.js
+/* test/nellie/mos6502/operations/DEX/index.js
  *
  */
 
@@ -52,16 +52,16 @@ test('execute() should set Z flag to 1', (t) => {
   t.is(MOS6502.register.p.bit('Z'), 1);
 });
 
-test('run() IMPLIED mode should return this', (t) => {
+test('exec() IMPLIED mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.IMPLIED, MOS6502), OP);
+  t.is(OP.exec(OP.mode.IMPLIED, MOS6502), OP);
 });
 
-test('run() IMPLIED mode should decrement Y', (t) => {
+test('exec() IMPLIED mode should decrement Y', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.x.set(0x01);
-  OP.run(OP.mode.IMPLIED, MOS6502);
+  OP.exec(OP.mode.IMPLIED, MOS6502);
   t.is(MOS6502.register.x.get(), 0x00);
 });

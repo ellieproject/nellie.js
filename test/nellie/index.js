@@ -1,3 +1,3 @@
-/* test/nellie/index.test.js
+/* test/nellie/index.js
  *
  */

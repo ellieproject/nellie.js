@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/BVC/index.test.js
+/* test/nellie/mos6502/operations/BVC/index.js
  *
  */
 
@@ -63,32 +63,32 @@ test('execute() should not alter PC when V is set', (t) => {
   t.is(MOS6502.register.pc.get(), 0x0010);
 });
 
-test('run() RELATIVE mode should return this', (t) => {
+test('exec() RELATIVE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.p.bitSet('V', 0);
   MOS6502.register.pc.set(0x0010);
   MOS6502.memory.main.data[0x0010] = OP.mode.RELATIVE;
   MOS6502.memory.main.data[0x0011] = 0x20;
-  t.is(OP.run(OP.mode.RELATIVE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.RELATIVE, MOS6502), OP);
 });
 
-test('run() RELATIVE mode should alter PC (clear)', (t) => {
+test('exec() RELATIVE mode should alter PC (clear)', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.p.bitSet('V', 0);
   MOS6502.register.pc.set(0x0010);
   MOS6502.memory.main.data[0x0011] = 0x20;
-  OP.run(OP.mode.RELATIVE, MOS6502);
+  OP.exec(OP.mode.RELATIVE, MOS6502);
   t.is(MOS6502.register.pc.get(), 0x0031); // incremented from mode
 });
 
-test('run() RELATIVE mode should alter PC (set)', (t) => {
+test('exec() RELATIVE mode should alter PC (set)', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.p.bitSet('V', 1);
   MOS6502.register.pc.set(0x0010);
   MOS6502.memory.main.data[0x0011] = 0x20;
-  OP.run(OP.mode.RELATIVE, MOS6502);
+  OP.exec(OP.mode.RELATIVE, MOS6502);
   t.is(MOS6502.register.pc.get(), 0x0011); // incremented from mode
 });

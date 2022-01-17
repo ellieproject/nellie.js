@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/BRK/index.test.js
+/* test/nellie/mos6502/operations/BRK/index.js
  *
  */
 

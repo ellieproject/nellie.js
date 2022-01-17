@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/PHA/index.test.js
+/* test/nellie/mos6502/operations/PHA/index.js
  *
  */
 

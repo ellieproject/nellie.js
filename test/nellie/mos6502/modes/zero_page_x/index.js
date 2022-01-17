@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/modes/zero_page_x/index.test.js
+/* test/nellie/mos6502/modes/zero_page_x/index.js
  *
  */
 

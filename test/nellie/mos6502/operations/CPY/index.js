@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/CPY/index.test.js
+/* test/nellie/mos6502/operations/CPY/index.js
  *
  */
 
@@ -67,13 +67,13 @@ test('execute() should set C flag to 1', (t) => {
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() ABSOLUTE mode should return this', (t) => {
+test('exec() ABSOLUTE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ABSOLUTE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ABSOLUTE, MOS6502), OP);
 });
 
-test('run() ABSOLUTE mode should set N=0, Z=0, C=0', (t) => {
+test('exec() ABSOLUTE mode should set N=0, Z=0, C=0', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -84,13 +84,13 @@ test('run() ABSOLUTE mode should set N=0, Z=0, C=0', (t) => {
   MOS6502.memory.main.data[0x0001] = 0x01;
   MOS6502.memory.main.data[0x0002] = 0x02;
   MOS6502.memory.main.data[0x0201] = 0xFF;
-  OP.run(OP.mode.ABSOLUTE, MOS6502);
+  OP.exec(OP.mode.ABSOLUTE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 0);
 });
 
-test('run() ABSOLUTE mode should set N=0, Z=0, C=1', (t) => {
+test('exec() ABSOLUTE mode should set N=0, Z=0, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -101,13 +101,13 @@ test('run() ABSOLUTE mode should set N=0, Z=0, C=1', (t) => {
   MOS6502.memory.main.data[0x0001] = 0x01;
   MOS6502.memory.main.data[0x0002] = 0x02;
   MOS6502.memory.main.data[0x0201] = 0x00;
-  OP.run(OP.mode.ABSOLUTE, MOS6502);
+  OP.exec(OP.mode.ABSOLUTE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() ABSOLUTE mode should set N=0, Z=1, C=1', (t) => {
+test('exec() ABSOLUTE mode should set N=0, Z=1, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -118,13 +118,13 @@ test('run() ABSOLUTE mode should set N=0, Z=1, C=1', (t) => {
   MOS6502.memory.main.data[0x0001] = 0x01;
   MOS6502.memory.main.data[0x0002] = 0x02;
   MOS6502.memory.main.data[0x0201] = 0x00;
-  OP.run(OP.mode.ABSOLUTE, MOS6502);
+  OP.exec(OP.mode.ABSOLUTE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 1);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() ABSOLUTE mode should set N=1, Z=0, C=0', (t) => {
+test('exec() ABSOLUTE mode should set N=1, Z=0, C=0', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -135,13 +135,13 @@ test('run() ABSOLUTE mode should set N=1, Z=0, C=0', (t) => {
   MOS6502.memory.main.data[0x0001] = 0x01;
   MOS6502.memory.main.data[0x0002] = 0x02;
   MOS6502.memory.main.data[0x0201] = 0xFF;
-  OP.run(OP.mode.ABSOLUTE, MOS6502);
+  OP.exec(OP.mode.ABSOLUTE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 1);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 0);
 });
 
-test('run() ABSOLUTE mode should set N=1, Z=0, C=1', (t) => {
+test('exec() ABSOLUTE mode should set N=1, Z=0, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -152,19 +152,19 @@ test('run() ABSOLUTE mode should set N=1, Z=0, C=1', (t) => {
   MOS6502.memory.main.data[0x0001] = 0x01;
   MOS6502.memory.main.data[0x0002] = 0x02;
   MOS6502.memory.main.data[0x0201] = 0x40;
-  OP.run(OP.mode.ABSOLUTE, MOS6502);
+  OP.exec(OP.mode.ABSOLUTE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 1);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() IMMEDIATE mode should return this', (t) => {
+test('exec() IMMEDIATE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.IMMEDIATE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.IMMEDIATE, MOS6502), OP);
 });
 
-test('run() IMMEDIATE mode should set N=0, Z=0, C=0', (t) => {
+test('exec() IMMEDIATE mode should set N=0, Z=0, C=0', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -173,13 +173,13 @@ test('run() IMMEDIATE mode should set N=0, Z=0, C=0', (t) => {
   MOS6502.register.p.bitSet('C', 1);
   MOS6502.register.y.set(0x40); // X < M
   MOS6502.memory.main.data[0x0001] = 0xFF;
-  OP.run(OP.mode.IMMEDIATE, MOS6502);
+  OP.exec(OP.mode.IMMEDIATE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 0);
 });
 
-test('run() IMMEDIATE mode should set N=0, Z=0, C=1', (t) => {
+test('exec() IMMEDIATE mode should set N=0, Z=0, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -188,13 +188,13 @@ test('run() IMMEDIATE mode should set N=0, Z=0, C=1', (t) => {
   MOS6502.register.p.bitSet('C', 0);
   MOS6502.register.y.set(0x01); // X < M
   MOS6502.memory.main.data[0x0001] = 0x00;
-  OP.run(OP.mode.IMMEDIATE, MOS6502);
+  OP.exec(OP.mode.IMMEDIATE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() IMMEDIATE mode should set N=0, Z=1, C=1', (t) => {
+test('exec() IMMEDIATE mode should set N=0, Z=1, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -203,13 +203,13 @@ test('run() IMMEDIATE mode should set N=0, Z=1, C=1', (t) => {
   MOS6502.register.p.bitSet('C', 0);
   MOS6502.register.y.set(0x00); // X < M
   MOS6502.memory.main.data[0x0001] = 0x00;
-  OP.run(OP.mode.IMMEDIATE, MOS6502);
+  OP.exec(OP.mode.IMMEDIATE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 1);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() IMMEDIATE mode should set N=1, Z=0, C=0', (t) => {
+test('exec() IMMEDIATE mode should set N=1, Z=0, C=0', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -218,13 +218,13 @@ test('run() IMMEDIATE mode should set N=1, Z=0, C=0', (t) => {
   MOS6502.register.p.bitSet('C', 1);
   MOS6502.register.y.set(0x80); // X < M
   MOS6502.memory.main.data[0x0001] = 0xFF;
-  OP.run(OP.mode.IMMEDIATE, MOS6502);
+  OP.exec(OP.mode.IMMEDIATE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 1);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 0);
 });
 
-test('run() IMMEDIATE mode should set N=1, Z=0, C=1', (t) => {
+test('exec() IMMEDIATE mode should set N=1, Z=0, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -233,19 +233,19 @@ test('run() IMMEDIATE mode should set N=1, Z=0, C=1', (t) => {
   MOS6502.register.p.bitSet('C', 0);
   MOS6502.register.y.set(0xFF); // X < M
   MOS6502.memory.main.data[0x0001] = 0x40;
-  OP.run(OP.mode.IMMEDIATE, MOS6502);
+  OP.exec(OP.mode.IMMEDIATE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 1);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() ZERO_PAGE mode should return this', (t) => {
+test('exec() ZERO_PAGE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ZERO_PAGE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ZERO_PAGE, MOS6502), OP);
 });
 
-test('run() ZERO_PAGE mode should set N=0, Z=0, C=0', (t) => {
+test('exec() ZERO_PAGE mode should set N=0, Z=0, C=0', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -255,13 +255,13 @@ test('run() ZERO_PAGE mode should set N=0, Z=0, C=0', (t) => {
   MOS6502.register.y.set(0x40); // X < M
   MOS6502.memory.main.data[0x0001] = 0xFF;
   MOS6502.memory.main.data[0x00FF] = 0xFF;
-  OP.run(OP.mode.ZERO_PAGE, MOS6502);
+  OP.exec(OP.mode.ZERO_PAGE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 0);
 });
 
-test('run() ZERO_PAGE mode should set N=0, Z=0, C=1', (t) => {
+test('exec() ZERO_PAGE mode should set N=0, Z=0, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -271,13 +271,13 @@ test('run() ZERO_PAGE mode should set N=0, Z=0, C=1', (t) => {
   MOS6502.register.y.set(0x01); // X < M
   MOS6502.memory.main.data[0x0001] = 0xFF;
   MOS6502.memory.main.data[0x00FF] = 0x00;
-  OP.run(OP.mode.ZERO_PAGE, MOS6502);
+  OP.exec(OP.mode.ZERO_PAGE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() ZERO_PAGE mode should set N=0, Z=1, C=1', (t) => {
+test('exec() ZERO_PAGE mode should set N=0, Z=1, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -287,13 +287,13 @@ test('run() ZERO_PAGE mode should set N=0, Z=1, C=1', (t) => {
   MOS6502.register.y.set(0x00); // X < M
   MOS6502.memory.main.data[0x0001] = 0xFF;
   MOS6502.memory.main.data[0x00FF] = 0x00;
-  OP.run(OP.mode.ZERO_PAGE, MOS6502);
+  OP.exec(OP.mode.ZERO_PAGE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 0);
   t.is(MOS6502.register.p.bit('Z'), 1);
   t.is(MOS6502.register.p.bit('C'), 1);
 });
 
-test('run() ZERO_PAGE mode should set N=1, Z=0, C=0', (t) => {
+test('exec() ZERO_PAGE mode should set N=1, Z=0, C=0', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -303,13 +303,13 @@ test('run() ZERO_PAGE mode should set N=1, Z=0, C=0', (t) => {
   MOS6502.register.y.set(0x80); // X < M
   MOS6502.memory.main.data[0x0001] = 0xFF;
   MOS6502.memory.main.data[0x00FF] = 0xFF;
-  OP.run(OP.mode.ZERO_PAGE, MOS6502);
+  OP.exec(OP.mode.ZERO_PAGE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 1);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 0);
 });
 
-test('run() ZERO_PAGE mode should set N=1, Z=0, C=1', (t) => {
+test('exec() ZERO_PAGE mode should set N=1, Z=0, C=1', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -319,7 +319,7 @@ test('run() ZERO_PAGE mode should set N=1, Z=0, C=1', (t) => {
   MOS6502.register.y.set(0xFF); // X < M
   MOS6502.memory.main.data[0x0001] = 0xFF;
   MOS6502.memory.main.data[0x00FF] = 0x40;
-  OP.run(OP.mode.ZERO_PAGE, MOS6502);
+  OP.exec(OP.mode.ZERO_PAGE, MOS6502);
   t.is(MOS6502.register.p.bit('N'), 1);
   t.is(MOS6502.register.p.bit('Z'), 0);
   t.is(MOS6502.register.p.bit('C'), 1);

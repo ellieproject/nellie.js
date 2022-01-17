@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/ORA/index.test.js
+/* test/nellie/mos6502/operations/ORA/index.js
  *
  */
 

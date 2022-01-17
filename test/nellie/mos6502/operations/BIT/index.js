@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/BIT/index.test.js
+/* test/nellie/mos6502/operations/BIT/index.js
  *
  */
 
@@ -82,7 +82,7 @@ test('execute() should clear Z from B', (t) => {
   t.is(MOS6502.register.p.bit('Z'), 0);
 });
 
-test('run() ABSOLUTE mode should return this', (t) => {
+test('exec() ABSOLUTE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP      = t.context.OP;
   const MODE    = OP.mode.ABSOLUTE;
@@ -92,10 +92,10 @@ test('run() ABSOLUTE mode should return this', (t) => {
   MOS6502.memory.main.data[0x0011] = 0x02;
   MOS6502.memory.main.data[0x0012] = 0x01;
   MOS6502.memory.main.data[0x0102] = 0xAA;
-  t.is(OP.run(MODE, MOS6502), OP);
+  t.is(OP.exec(MODE, MOS6502), OP);
 });
 
-test('run() ABSOLUTE mode should alter B', (t) => {
+test('exec() ABSOLUTE mode should alter B', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP      = t.context.OP;
   const MODE    = OP.mode.ABSOLUTE;
@@ -105,11 +105,11 @@ test('run() ABSOLUTE mode should alter B', (t) => {
   MOS6502.memory.main.data[0x0011] = 0x02;
   MOS6502.memory.main.data[0x0012] = 0x01;
   MOS6502.memory.main.data[0x0102] = 0xAA;
-  OP.run(MODE, MOS6502);
+  OP.exec(MODE, MOS6502);
   t.is(MOS6502.register.b.get(), 0xAA);
 });
 
-test('run() ZERO_PAGE mode should return this', (t) => {
+test('exec() ZERO_PAGE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP      = t.context.OP;
   const MODE    = OP.mode.ZERO_PAGE;
@@ -118,10 +118,10 @@ test('run() ZERO_PAGE mode should return this', (t) => {
   MOS6502.memory.main.data[0x0010] = MODE;
   MOS6502.memory.main.data[0x0011] = 0x02;
   MOS6502.memory.main.data[0x0002] = 0xAA;
-  t.is(OP.run(MODE, MOS6502), OP);
+  t.is(OP.exec(MODE, MOS6502), OP);
 });
 
-test('run() ZERO_PAGE mode should alter B', (t) => {
+test('exec() ZERO_PAGE mode should alter B', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP      = t.context.OP;
   const MODE    = OP.mode.ZERO_PAGE;
@@ -131,6 +131,6 @@ test('run() ZERO_PAGE mode should alter B', (t) => {
   MOS6502.memory.main.data[0x0011] = 0x02;
   MOS6502.memory.main.data[0x0012] = 0x01;
   MOS6502.memory.main.data[0x0102] = 0xAA;
-  OP.run(MODE, MOS6502);
+  OP.exec(MODE, MOS6502);
   t.is(MOS6502.register.b.get(), 0x0A);
 });

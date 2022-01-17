@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/operations/ROR/index.test.js
+/* test/nellie/mos6502/operations/ROR/index.js
  *
  */
 
@@ -80,13 +80,13 @@ test('execute() should set Z flag to 1', (t) => {
   t.is(MOS6502.register.p.bit('Z'), 1);
 });
 
-test('run() ABSOLUTE_X mode should return this', (t) => {
+test('exec() ABSOLUTE_X mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ABSOLUTE_X, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ABSOLUTE_X, MOS6502), OP);
 });
 
-test('run() ABSOLUTE_X mode should shift memory', (t) => {
+test('exec() ABSOLUTE_X mode should shift memory', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
@@ -94,71 +94,71 @@ test('run() ABSOLUTE_X mode should shift memory', (t) => {
   MOS6502.memory.main.data[0x0001] = 0x00;
   MOS6502.memory.main.data[0x0002] = 0x01;
   MOS6502.memory.main.data[0x01FF] = 0b10101010;
-  OP.run(OP.mode.ABSOLUTE_X, MOS6502);
+  OP.exec(OP.mode.ABSOLUTE_X, MOS6502);
   t.is(MOS6502.memory.main.data[0x01FF], 0b01010101);
 });
 
-test('run() ABSOLUTE mode should return this', (t) => {
+test('exec() ABSOLUTE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ABSOLUTE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ABSOLUTE, MOS6502), OP);
 });
 
-test('run() ABSOLUTE mode should shift memory', (t) => {
+test('exec() ABSOLUTE mode should shift memory', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
   MOS6502.memory.main.data[0x0001] = 0xFF;
   MOS6502.memory.main.data[0x0002] = 0x01;
   MOS6502.memory.main.data[0x01FF] = 0b10101010;
-  OP.run(OP.mode.ABSOLUTE, MOS6502);
+  OP.exec(OP.mode.ABSOLUTE, MOS6502);
   t.is(MOS6502.memory.main.data[0x01FF], 0b01010101);
 });
 
-test('run() ACCUMULATOR mode should return this', (t) => {
+test('exec() ACCUMULATOR mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ACCUMULATOR, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ACCUMULATOR, MOS6502), OP);
 });
 
-test('run() ACCUMULATOR mode should shift memory', (t) => {
+test('exec() ACCUMULATOR mode should shift memory', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
   MOS6502.register.a.set(0b10101010);
-  OP.run(OP.mode.ACCUMULATOR, MOS6502);
+  OP.exec(OP.mode.ACCUMULATOR, MOS6502);
   t.is(MOS6502.register.a.get(), 0b01010101);
 });
 
-test('run() ZERO_PAGE_X mode should return this', (t) => {
+test('exec() ZERO_PAGE_X mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ZERO_PAGE_X, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ZERO_PAGE_X, MOS6502), OP);
 });
 
-test('run() ZERO_PAGE_X mode should shift memory', (t) => {
+test('exec() ZERO_PAGE_X mode should shift memory', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
   MOS6502.register.x.set(0x0F);
   MOS6502.memory.main.data[0x0001] = 0xF0;
   MOS6502.memory.main.data[0x00FF] = 0b10101010;
-  OP.run(OP.mode.ZERO_PAGE_X, MOS6502);
+  OP.exec(OP.mode.ZERO_PAGE_X, MOS6502);
   t.is(MOS6502.memory.main.data[0x00FF], 0b01010101);
 });
 
-test('run() ZERO_PAGE mode should return this', (t) => {
+test('exec() ZERO_PAGE mode should return this', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
-  t.is(OP.run(OP.mode.ZERO_PAGE, MOS6502), OP);
+  t.is(OP.exec(OP.mode.ZERO_PAGE, MOS6502), OP);
 });
 
-test('run() ZERO_PAGE mode should shift memory', (t) => {
+test('exec() ZERO_PAGE mode should shift memory', (t) => {
   const MOS6502 = t.context.MOS6502;
   const OP = t.context.OP;
   MOS6502.register.pc.set(0x0000);
   MOS6502.memory.main.data[0x0001] = 0xFF;
   MOS6502.memory.main.data[0x00FF] = 0b10101010;
-  OP.run(OP.mode.ZERO_PAGE, MOS6502);
+  OP.exec(OP.mode.ZERO_PAGE, MOS6502);
   t.is(MOS6502.memory.main.data[0x00FF], 0b01010101);
 });

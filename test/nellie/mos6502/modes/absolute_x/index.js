@@ -1,4 +1,4 @@
-/* test/nellie/mos6502/modes/absolute_x/index.test.js
+/* test/nellie/mos6502/modes/absolute_x/index.js
  *
  */
 
@@ -6,51 +6,71 @@ const test = require('ava');
 
 test.beforeEach((t) => {
   t.context.MOS6502 = require('@ellieproject/nellie/mos6502');
-  t.context.MODE = require('@ellieproject/nellie/mos6502/modes/absolute_x');
+  t.context.MODE    = require('@ellieproject/nellie/mos6502/modes/absolute_x');
 });
 
 test('beforeExecute() should return true', (t) => {
   const MOS6502 = t.context.MOS6502;
-  t.is(t.context.MODE.beforeExecute(MOS6502), true);
+  const MODE    = t.context.MODE;
+  t.is(MODE.beforeExecute(MOS6502), true);
 });
 
 test('beforeExecute() should load the ALU from memory', (t) => {
-  let MOS6502 = t.context.MOS6502;
+  const MOS6502 = t.context.MOS6502;
+  const MODE    = t.context.MODE;
   MOS6502.register.pc.set(0x0000);
   MOS6502.register.b.set(0x00);
   MOS6502.register.x.set(0x0F);
-  MOS6502.memory.main.data[0x0001] = 0xF0;
-  MOS6502.memory.main.data[0x0002] = 0x01;
-  MOS6502.memory.main.data[0x01FF] = 0xAA; // 0x0100 + 0x00F0 + 0x000F
+  MOS6502.memory.main.set(0x0001, 0xF0);
+  MOS6502.memory.main.set(0x0002, 0x01);
+  MOS6502.memory.main.set(0x01FF, 0xAA); // 0x0100 + 0x00F0 + 0x000F
   // verify the numbers are different
-  t.is(MOS6502.register.b.bits, 0x00);
-  t.context.MODE.beforeExecute(MOS6502);
-  t.is(MOS6502.register.b.bits, 0xAA);
+  t.is(MOS6502.register.b.get(), 0x00);
+  MODE.beforeExecute(MOS6502);
+  t.is(MOS6502.register.b.get(), 0xAA);
 });
 
 test('beforeExecute() should increment the PC by two', (t) => {
-  let MOS6502 = t.context.MOS6502;
+  const MOS6502 = t.context.MOS6502;
+  const MODE    = t.context.MODE;
   MOS6502.register.pc.set(0x0000);
   // verify the numbers are different
-  t.is(MOS6502.register.pc.bits, 0x0000);
-  t.context.MODE.beforeExecute(MOS6502);
-  t.is(MOS6502.register.pc.bits, 0x0002);
+  t.is(MOS6502.register.pc.get(), 0x0000);
+  MODE.beforeExecute(MOS6502);
+  t.is(MOS6502.register.pc.get(), 0x0002);
 });
+
+test('beforeExecute() should increment the clock by two', (t) => {
+  const MOS6502 = t.context.MOS6502;
+  const MODE    = t.context.MODE;
+  MOS6502.register.pc.set(0x0000);
+  MOS6502.register.x.set(0x0F);
+  MOS6502.memory.main.set(0x0001, 0xF0);
+  MOS6502.memory.main.set(0x0002, 0x01);
+  MOS6502.clock.inc = 0;
+  // verify the numbers are different
+  MODE.beforeExecute(MOS6502);
+  t.is(MOS6502.clock.inc, 3);
+});
+
+test('beforeExecute() should increment the clock by three on page boundary', (t) => {
+  const MOS6502 = t.context.MOS6502;
+  const MODE    = t.context.MODE;
+  MOS6502.register.pc.set(0x0000);
+  MOS6502.register.x.set(0x80);
+  MOS6502.memory.main.set(0x0001, 0x80);
+  MOS6502.memory.main.set(0x0002, 0x01);
+  MOS6502.clock.inc = 0;
+  // verify the numbers are different
+  MODE.beforeExecute(MOS6502);
+  t.is(MOS6502.clock.inc, 4);
+});
+
+// since this uses absolute_shared.afterExecute with no callback,
+// there's nothing extra to test for now
 
 test('afterExecute() should return true', (t) => {
   const MOS6502 = t.context.MOS6502;
-  t.is(t.context.MODE.afterExecute(MOS6502), true);
-});
-
-test('afterExecute() should load memory from ALU', (t) => {
-  let MOS6502 = t.context.MOS6502;
-  MOS6502.register.pc.set(0x0000);
-  MOS6502.register.x.set(0x0F);
-  MOS6502.memory.main.data[0x0001] = 0xF0;
-  MOS6502.memory.main.data[0x0002] = 0x01;
-  MOS6502.memory.main.data[0x01FF] = 0x00; // 0x0100 + 0x00F0 + 0x000F
-  t.context.MODE.beforeExecute(MOS6502); // needed for setting this.addr
-  MOS6502.register.b.set(0xAA);
-  t.context.MODE.afterExecute(MOS6502);
-  t.is(MOS6502.memory.main.data[0x01FF], 0xAA);
+  const MODE    = t.context.MODE;
+  t.is(MODE.afterExecute(MOS6502), true);
 });
