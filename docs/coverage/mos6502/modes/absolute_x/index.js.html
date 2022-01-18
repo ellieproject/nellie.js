@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -87,75 +87,63 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">66x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">65x</span>
+<span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">66x</span>
+<span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* nellie/mos6502/modes/absolute_x/index.js
  *
  */
 &nbsp;
-const Ellie = require('@ellieproject/ellie');
+const Ellie         = require('@ellieproject/ellie');
+const MODE_ABSOLUTE = require('@ellieproject/nellie/mos6502/modes/absolute');
 &nbsp;
-function beforeExecuteAbsoluteX(processor) {
-  // step forward to read the next two (absolute) byte
-  let operand = processor.register.pc.inc();
-  this.addr   = processor.memory.main.data[ operand ];
-  operand     = processor.register.pc.inc();
-  this.addr  += processor.memory.main.data[ operand ] &lt;&lt; 8;
-  // add X to the address before lookup
-  this.addr  += processor.register.x.get();
-  // lookup the value at this.addr
-  let abs = processor.memory.main.data[ this.addr ];
-  processor.register.b.set(abs);
-  return true;
-} // beforeExecuteAbsoluteX()
+function* beforeExecuteAbsoluteXTick_callback(processor) {
+  // check the top byte
+  // if addr + x overflows to a new page,
+  // take the page boundary penalty
+  let page   = processor.register.ma.get() &gt;&gt; 8;
+  processor.register.ma.inc( processor.register.x.get() );
+  if (page !== (processor.register.ma.get() &gt;&gt; 8)) { // different page (high byte)
+    yield* processor.clock.tick(1);
+  } // if page
+} // beforeExecuteAbsoluteX_callbackTick()
 &nbsp;
-function afterExecuteAbsoluteX(processor) {
-  // store b into this.addr
-  processor.memory.main.data[ this.addr ] = processor.register.b.get();
-  return true;
-} // afterExecuteAbsoluteX()
+function* beforeExecuteAbsoluteXTick(processor) {
+  return MODE_ABSOLUTE.beforeExecute(processor, beforeExecuteAbsoluteXTick_callback);
+} // beforeExecuteAbsoluteXTick()
 &nbsp;
 var MODE_ABSOLUTE_X = new Ellie.Processor.Mode(
   'ABSOLUTE_X',
   'absolute x',
-  beforeExecuteAbsoluteX,
-  afterExecuteAbsoluteX
+  beforeExecuteAbsoluteXTick,
+  MODE_ABSOLUTE.afterExecuteTick.bind(MODE_ABSOLUTE_X)
 );
 &nbsp;
 module.exports = MODE_ABSOLUTE_X;
@@ -166,7 +154,7 @@ module.exports = MODE_ABSOLUTE_X;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Oct 09 2021 21:07:36 GMT-0500 (Central Daylight Time)
+                at Mon Jan 17 2022 23:58:24 GMT-0600 (Central Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
