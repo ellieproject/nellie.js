@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBEQ(processor) {
+function* executeBEQTick(processor) {
   // TODO: I really need an Ellie.ALU for arithmatic...
   let rel = processor.register.b.get();
   let page = processor.register.pc.bit(8); // even or odd page?
@@ -22,12 +22,12 @@ function executeBEQ(processor) {
     }
   }
   return true;
-} // executeBEQ()
+} // executeBEQTick()
 
 const BEQ = new Ellie.Processor.Operation(
   'BEQ',
   'Branch on Result Zero',
-  executeBEQ
+  executeBEQTick
 ); // BEQ
 
 BEQ.addMode(0xF0, MODES.RELATIVE);

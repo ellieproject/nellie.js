@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeTXS(processor) {
+function* executeTXSTick(processor) {
   console.debug(this.name);
   return false;
-} // executeTXS()
+} // executeTXSTick()
 
 const TXS = new Ellie.Processor.Operation(
   'TXS',
   'Transfer X to Stack Pointer',
-  executeTXS
+  executeTXSTick
 ); // TXS
 
 TXS.addMode(0x9A, MODES.IMPLIED);

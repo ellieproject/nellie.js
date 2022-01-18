@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executePHP(processor) {
+function* executePHPTick(processor) {
   console.debug(this.name);
   return false;
-} // executePHP()
+} // executePHPTick()
 
 const PHP = new Ellie.Processor.Operation(
   'PHP',
   'Push Processor Status on Stack',
-  executePHP
+  executePHPTick
 ); // PHP
 
 PHP.addMode(0x08, MODES.IMPLIED);

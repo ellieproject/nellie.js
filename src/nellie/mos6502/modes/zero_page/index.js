@@ -4,7 +4,7 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function beforeExecuteZeroPage(processor) {
+function* beforeExecuteZeroPageTick(processor) {
   // step forward to read the next (zero page) byte
   let operand = processor.register.pc.inc();
   this.addr   = processor.memory.main.data[ operand ];
@@ -12,19 +12,19 @@ function beforeExecuteZeroPage(processor) {
   let zp = processor.memory.main.data[ this.addr ];
   processor.register.b.set(zp);
   return true;
-} // beforeExecuteZeroPage()
+} // beforeExecuteZeroPageTick()
 
-function afterExecuteZeroPage(processor) {
+function* afterExecuteZeroPageTick(processor) {
   // store b into this.addr
   processor.memory.main.data[ this.addr ] = processor.register.b.get();
   return true;
-} // afterExecuteZeroPage()
+} // afterExecuteZeroPageTick()
 
 var MODE_ZERO_PAGE = new Ellie.Processor.Mode(
   'ZERO_PAGE',
   'zero page',
-  beforeExecuteZeroPage,
-  afterExecuteZeroPage
+  beforeExecuteZeroPageTick,
+  afterExecuteZeroPageTick
 );
 
 module.exports = MODE_ZERO_PAGE;

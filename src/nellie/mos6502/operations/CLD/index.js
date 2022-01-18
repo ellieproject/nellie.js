@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeCLD(processor) {
+function* executeCLDTick(processor) {
   processor.register.p.bitSet('D', 0);
   return true;
-} // executeCLD()
+} // executeCLDTick()
 
 const CLD = new Ellie.Processor.Operation(
   'CLD',
   'Clear Decimal Mode',
-  executeCLD
+  executeCLDTick
 ); // CLD
 
 CLD.addMode(0xD8, MODES.IMPLIED);

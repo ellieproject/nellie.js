@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeTAY(processor) {
+function* executeTAYTick(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.a.bit(7));
   // zero flag check
@@ -13,12 +13,12 @@ function executeTAY(processor) {
   // A => Y
   processor.register.y.load(processor.register.a);
   return true;
-} // executeTAY()
+} // executeTAYTick()
 
 const TAY = new Ellie.Processor.Operation(
   'TAY',
   'Transfer A to Y',
-  executeTAY
+  executeTAYTick
 ); // TAY
 
 TAY.addMode(0xA8, MODES.IMPLIED);

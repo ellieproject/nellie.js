@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeTAX(processor) {
+function* executeTAXTick(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.a.bit(7));
   // zero flag check
@@ -13,12 +13,12 @@ function executeTAX(processor) {
   // A => X
   processor.register.x.load(processor.register.a);
   return true;
-} // executeTAX()
+} // executeTAXTick()
 
 const TAX = new Ellie.Processor.Operation(
   'TAX',
   'Transfer A to X',
-  executeTAX
+  executeTAXTick
 ); // TAX
 
 TAX.addMode(0xAA, MODES.IMPLIED);

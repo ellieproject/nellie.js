@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeORA(processor) {
+function* executeORATick(processor) {
   console.debug(this.name);
   return false;
-} // executeORA()
+} // executeORATick()
 
 const ORA = new Ellie.Processor.Operation(
   'ORA',
   '"OR" Memory to A',
-  executeORA
+  executeORATick
 ); // ORA
 
 ORA.addMode(0x1D, MODES.ABSOLUTE_X);

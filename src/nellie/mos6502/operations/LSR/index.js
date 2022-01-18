@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeLSR(processor) {
+function* executeLSRTick(processor) {
   const b = processor.register.b;
   // buffer[0] => carry flag
   processor.register.p.bitSet('C', b.bit(0));
@@ -18,12 +18,12 @@ function executeLSR(processor) {
   // zero flag check
   processor.register.p.bitSet('Z', b.test(0x00));
   return true;
-} // executeLSR()
+} // executeLSRTick()
 
 const LSR = new Ellie.Processor.Operation(
   'LSR',
   'Shift Right One Bit',
-  executeLSR
+  executeLSRTick
 ); // LSR
 
 LSR.addMode(0x5E, MODES.ABSOLUTE_X);

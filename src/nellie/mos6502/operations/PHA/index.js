@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executePHA(processor) {
+function* executePHATick(processor) {
   console.debug(this.name);
   return false;
-} // executePHA()
+} // executePHATick()
 
 const PHA = new Ellie.Processor.Operation(
   'PHA',
   'Push A on Stack',
-  executePHA
+  executePHATick
 ); // PHA
 
 PHA.addMode(0x48, MODES.IMPLIED);

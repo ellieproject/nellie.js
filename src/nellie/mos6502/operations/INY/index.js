@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeINY(processor) {
+function* executeINYTick(processor) {
   // Y + 1 => Y
   processor.register.y.inc();
   // negative flag check
@@ -13,12 +13,12 @@ function executeINY(processor) {
   // zero flag check
   processor.register.p.bitSet('Z', processor.register.y.test(0x00));
   return true;
-} // executeINY()
+} // executeINYTick()
 
 const INY = new Ellie.Processor.Operation(
   'INY',
   'Increment Y',
-  executeINY
+  executeINYTick
 ); // INY
 
 INY.addMode(0xC8, MODES.IMPLIED);

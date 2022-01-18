@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeJSR(processor) {
+function* executeJSRTick(processor) {
   console.debug(this.name);
   return false;
-} // executeJSR()
+} // executeJSRTick()
 
 const JSR = new Ellie.Processor.Operation(
   'JSR',
   'Jump to Location Save Return Address',
-  executeJSR
+  executeJSRTick
 ); // JSR
 
 JSR.addMode(0x20, MODES.ABSOLUTE);

@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeAND(processor) {
+function* executeANDTick(processor) {
   // A & B => A
   processor.register.a.and(processor.register.b);
   // negative flag check
@@ -13,12 +13,12 @@ function executeAND(processor) {
   // zero flag check
   processor.register.p.bitSet('Z', processor.register.a.test(0x00));
   return true;
-} // executeAND()
+} // executeANDTick()
 
 const AND = new Ellie.Processor.Operation(
   'AND',
   '"AND" Memory with A',
-  executeAND
+  executeANDTick
 ); // AND
 
 AND.addMode(0x3D, MODES.ABSOLUTE_X);

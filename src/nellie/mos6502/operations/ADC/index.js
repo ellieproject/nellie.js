@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeADC(processor) {
+function* executeADCTick(processor) {
   console.debug(this.name);
   return false;
-} // executeADC()
+} // executeADCTick()
 
 const ADC = new Ellie.Processor.Operation(
   'ADC',
   '"ADD" Memory to A with Carry',
-  executeADC
+  executeADCTick
 ); // ADC
 
 ADC.addMode(0x7D, MODES.ABSOLUTE_X);

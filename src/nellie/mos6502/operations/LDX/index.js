@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeLDX(processor) {
+function* executeLDXTick(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.b.bit(7));
   // zero flag check
@@ -13,12 +13,12 @@ function executeLDX(processor) {
   // B => X
   processor.register.x.load(processor.register.b);
   return true;
-} // executeLDX()
+} // executeLDXTick()
 
 const LDX = new Ellie.Processor.Operation(
   'LDX',
   'Load X from Memory',
-  executeLDX
+  executeLDXTick
 ); // LDX
 
 LDX.addMode(0xBE, MODES.ABSOLUTE_Y);

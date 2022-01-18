@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBRK(processor) {
+function* executeBRKTick(processor) {
   console.debug(this.name);
   return false;
-} // executeBRK()
+} // executeBRKTick()
 
 const BRK = new Ellie.Processor.Operation(
   'BRK',
   'Force Break',
-  executeBRK
+  executeBRKTick
 ); // BRK
 
 BRK.addMode(0x00, MODES.IMMEDIATE);

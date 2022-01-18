@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeCPX(processor) {
+function* executeCPXTick(processor) {
   const sub = (processor.register.x.bits - processor.register.b.bits);
   const n   = (sub & 0x80) >> 7;
   processor.register.p.bitSet('N', n);
@@ -20,12 +20,12 @@ function executeCPX(processor) {
     processor.register.p.bitSet('C', 0);
   }
   return true;
-} // executeCPX()
+} // executeCPXTick()
 
 const CPX = new Ellie.Processor.Operation(
   'CPX',
   'Compare Memory with X',
-  executeCPX
+  executeCPXTick
 ); // CPX
 
 CPX.addMode(0xEC, MODES.ABSOLUTE);

@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeSBC(processor) {
+function* executeSBCTick(processor) {
   console.debug(this.name);
   return false;
-} // executeSBC()
+} // executeSBCTick()
 
 const SBC = new Ellie.Processor.Operation(
   'SBC',
   'Subtract with Carry',
-  executeSBC
+  executeSBCTick
 ); // SBC
 
 SBC.addMode(0xFD, MODES.ABSOLUTE_X);

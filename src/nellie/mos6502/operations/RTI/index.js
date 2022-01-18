@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeRTI(processor) {
+function* executeRTITick(processor) {
   console.debug(this.name);
   return false;
-} // executeRTI()
+} // executeRTITick()
 
 const RTI = new Ellie.Processor.Operation(
   'RTI',
   'Return from Interrupt',
-  executeRTI
+  executeRTITick
 ); // RTI
 
 RTI.addMode(0x40, MODES.IMPLIED);

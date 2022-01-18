@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeDEC(processor) {
+function* executeDECTick(processor) {
   // B - 1 => B
   processor.register.b.dec();
   // negative flag check
@@ -13,12 +13,12 @@ function executeDEC(processor) {
   // zero flag check
   processor.register.p.bitSet('Z', processor.register.b.test(0x00));
   return true;
-} // executeDEC()
+} // executeDECTick()
 
 const DEC = new Ellie.Processor.Operation(
   'DEC',
   'Decrement Memory',
-  executeDEC
+  executeDECTick
 ); // DEC
 
 DEC.addMode(0xDE, MODES.ABSOLUTE_X);

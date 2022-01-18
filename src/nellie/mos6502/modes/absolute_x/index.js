@@ -2,33 +2,29 @@
  *
  */
 
-const Ellie = require('@ellieproject/ellie');
+const Ellie         = require('@ellieproject/ellie');
+const MODE_ABSOLUTE = require('@ellieproject/nellie/mos6502/modes/absolute');
 
-function beforeExecuteAbsoluteX(processor) {
-  // step forward to read the next two (absolute) byte
-  let operand = processor.register.pc.inc();
-  this.addr   = processor.memory.main.data[ operand ];
-  operand     = processor.register.pc.inc();
-  this.addr  += processor.memory.main.data[ operand ] << 8;
-  // add X to the address before lookup
-  this.addr  += processor.register.x.get();
-  // lookup the value at this.addr
-  let abs = processor.memory.main.data[ this.addr ];
-  processor.register.b.set(abs);
-  return true;
-} // beforeExecuteAbsoluteX()
+function* beforeExecuteAbsoluteXTick_callback(processor) {
+  // check the top byte
+  // if addr + x overflows to a new page,
+  // take the page boundary penalty
+  let page   = processor.register.ma.get() >> 8;
+  processor.register.ma.inc( processor.register.x.get() );
+  if (page !== (processor.register.ma.get() >> 8)) { // different page (high byte)
+    yield* processor.clock.tick(1);
+  } // if page
+} // beforeExecuteAbsoluteX_callbackTick()
 
-function afterExecuteAbsoluteX(processor) {
-  // store b into this.addr
-  processor.memory.main.data[ this.addr ] = processor.register.b.get();
-  return true;
-} // afterExecuteAbsoluteX()
+function* beforeExecuteAbsoluteXTick(processor) {
+  return MODE_ABSOLUTE.beforeExecute(processor, beforeExecuteAbsoluteXTick_callback);
+} // beforeExecuteAbsoluteXTick()
 
 var MODE_ABSOLUTE_X = new Ellie.Processor.Mode(
   'ABSOLUTE_X',
   'absolute x',
-  beforeExecuteAbsoluteX,
-  afterExecuteAbsoluteX
+  beforeExecuteAbsoluteXTick,
+  MODE_ABSOLUTE.afterExecuteTick.bind(MODE_ABSOLUTE_X)
 );
 
 module.exports = MODE_ABSOLUTE_X;

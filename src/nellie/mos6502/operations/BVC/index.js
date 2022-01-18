@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBVC(processor) {
+function* executeBVCTick(processor) {
   // TODO: I really need an Ellie.ALU for arithmatic...
   let rel = processor.register.b.get();
   let page = processor.register.pc.bit(8); // even or odd page?
@@ -22,12 +22,12 @@ function executeBVC(processor) {
     }
   }
   return true;
-} // executeBVC()
+} // executeBVCTick()
 
 const BVC = new Ellie.Processor.Operation(
   'BVC',
   'Branch on Overflow Clear',
-  executeBVC
+  executeBVCTick
 ); // BVC
 
 BVC.addMode(0x50, MODES.RELATIVE);

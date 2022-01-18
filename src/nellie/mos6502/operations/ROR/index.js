@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeROR(processor) {
+function* executeRORTick(processor) {
   const b = processor.register.b;
   // buffer[0] => newC
   const newC = b.bit(0);
@@ -20,12 +20,12 @@ function executeROR(processor) {
   // zero flag check
   processor.register.p.bitSet('Z', b.test(0x00));
   return true;
-} // executeROR()
+} // executeRORTick()
 
 const ROR = new Ellie.Processor.Operation(
   'ROR',
   'Rotate Right',
-  executeROR
+  executeRORTick
 ); // ROR
 
 ROR.addMode(0x7E, MODES.ABSOLUTE_X);

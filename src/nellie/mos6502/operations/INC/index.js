@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeINC(processor) {
+function* executeINCTick(processor) {
   // B + 1 => B
   processor.register.b.inc();
   // negative flag check
@@ -13,12 +13,12 @@ function executeINC(processor) {
   // zero flag check
   processor.register.p.bitSet('Z', processor.register.b.test(0x00));
   return true;
-} // executeINC()
+} // executeINCTick()
 
 const INC = new Ellie.Processor.Operation(
   'INC',
   'Increment Memory',
-  executeINC
+  executeINCTick
 ); // INC
 
 INC.addMode(0xFE, MODES.ABSOLUTE_X);

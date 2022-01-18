@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeSEI(processor) {
+function* executeSEITick(processor) {
   processor.register.p.bitSet('I', 1);
   return true;
-} // executeSEI()
+} // executeSEITick()
 
 const SEI = new Ellie.Processor.Operation(
   'SEI',
   'Set Interrupt Disable Status',
-  executeSEI
+  executeSEITick
 ); // SEI
 
 SEI.addMode(0x78, MODES.IMPLIED);

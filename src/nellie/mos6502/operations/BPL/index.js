@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBPL(processor) {
+function* executeBPLTick(processor) {
   // TODO: I really need an Ellie.ALU for arithmatic...
   let rel = processor.register.b.get();
   let page = processor.register.pc.bit(8); // even or odd page?
@@ -22,12 +22,12 @@ function executeBPL(processor) {
     }
   }
   return true;
-} // executeBPL()
+} // executeBPLTick()
 
 const BPL = new Ellie.Processor.Operation(
   'BPL',
   'Branch on Result Plus',
-  executeBPL
+  executeBPLTick
 ); // BPL
 
 BPL.addMode(0x10, MODES.RELATIVE);

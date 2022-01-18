@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBCC(processor) {
+function* executeBCCTick(processor) {
   // TODO: I really need an Ellie.ALU for arithmatic...
   let rel = processor.register.b.get();
   let page = processor.register.pc.bit(8); // even or odd page?
@@ -22,12 +22,12 @@ function executeBCC(processor) {
     }
   }
   return true;
-} // executeBCC()
+} // executeBCCTick()
 
 const BCC = new Ellie.Processor.Operation(
   'BCC',
   'Branch on Carry Clear',
-  executeBCC
+  executeBCCTick
 ); // BCC
 
 BCC.addMode(0x90, MODES.RELATIVE);

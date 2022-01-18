@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeASL(processor) {
+function* executeASLTick(processor) {
   const b = processor.register.b;
   // buffer[7] => carry flag
   processor.register.p.bitSet('C', b.bit(7));
@@ -16,12 +16,12 @@ function executeASL(processor) {
   // zero flag check
   processor.register.p.bitSet('Z', b.test(0x00));
   return true;
-} // executeASL()
+} // executeASLTick()
 
 const ASL = new Ellie.Processor.Operation(
   'ASL',
   'Shift Left One Bit',
-  executeASL
+  executeASLTick
 ); // ASL
 
 ASL.addMode(0x1E, MODES.ABSOLUTE_X);

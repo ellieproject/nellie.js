@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeCPY(processor) {
+function* executeCPYTick(processor) {
   const sub = (processor.register.y.bits - processor.register.b.bits);
   const n   = (sub & 0x80) >> 7;
   processor.register.p.bitSet('N', n);
@@ -20,12 +20,12 @@ function executeCPY(processor) {
     processor.register.p.bitSet('C', 0);
   }
   return true;
-} // executeCPY()
+} // executeCPYTick()
 
 const CPY = new Ellie.Processor.Operation(
   'CPY',
   'Compare Memory with Y',
-  executeCPY
+  executeCPYTick
 ); // CPY
 
 CPY.addMode(0xCC, MODES.ABSOLUTE);

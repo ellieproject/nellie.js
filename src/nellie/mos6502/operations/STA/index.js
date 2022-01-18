@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeSTA(processor) {
+function* executeSTATick(processor) {
   console.debug(this.name);
   return false;
-} // executeSTA()
+} // executeSTATick()
 
 const STA = new Ellie.Processor.Operation(
   'STA',
   'Store A to Memory',
-  executeSTA
+  executeSTATick
 ); // STA
 
 STA.addMode(0x9D, MODES.ABSOLUTE_X);

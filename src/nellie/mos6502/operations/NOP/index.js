@@ -5,14 +5,14 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeNOP() { // processor unused
+function* executeNOPTick() { // processor unused
   return true;
-} // executeNOP()
+} // executeNOPTick()
 
 const NOP = new Ellie.Processor.Operation(
   'NOP',
   'No Operation',
-  executeNOP
+  executeNOPTick
 ); // NOP
 
 NOP.addMode(0xEA, MODES.IMPLIED);

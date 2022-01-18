@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeEOR(processor) {
+function* executeEORTick(processor) {
   console.debug(this.name);
   return false;
-} // executeEOR()
+} // executeEORTick()
 
 const EOR = new Ellie.Processor.Operation(
   'EOR',
   'Exclusive "OR"',
-  executeEOR
+  executeEORTick
 ); // EOR
 
 EOR.addMode(0x5D, MODES.ABSOLUTE_X);

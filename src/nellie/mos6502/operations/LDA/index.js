@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeLDA(processor) {
+function* executeLDATick(processor) {
   // negative flag check
   processor.register.p.bitSet('N', processor.register.b.bit(7));
   // zero flag check
@@ -13,12 +13,12 @@ function executeLDA(processor) {
   // B => A
   processor.register.a.load(processor.register.b);
   return true;
-} // executeLDA()
+} // executeLDATick()
 
 const LDA = new Ellie.Processor.Operation(
   'LDA',
   'Load from Memory',
-  executeLDA
+  executeLDATick
 ); // LDA
 
 LDA.addMode(0xBD, MODES.ABSOLUTE_X);

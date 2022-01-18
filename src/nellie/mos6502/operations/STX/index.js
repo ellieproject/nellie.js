@@ -5,17 +5,17 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeSTX(processor) {
+function* executeSTXTick(processor) {
   // no flag checks
   // X => B ( => Memory via addressing mode)
   processor.register.b.load(processor.register.x);
   return true;
-} // executeSTX()
+} // executeSTXTick()
 
 const STX = new Ellie.Processor.Operation(
   'STX',
   'Store X to Memory',
-  executeSTX
+  executeSTXTick
 ); // STX
 
 STX.addMode(0x8E, MODES.ABSOLUTE);

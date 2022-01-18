@@ -4,12 +4,12 @@
 
 const Ellie = require('@ellieproject/ellie');
 
-function beforeExecuteIndirectX(processor) {} // beforeExecuteIndirectX()
+function* beforeExecuteIndirectXTick(processor) {} // beforeExecuteIndirectXTick()
 
 var MODE_INDIRECT_X = new Ellie.Processor.Mode(
   'INDIRECT_X',
   'indirect (pre-x)',
-  beforeExecuteIndirectX
+  beforeExecuteIndirectXTick
 );
 
 module.exports = MODE_INDIRECT_X;

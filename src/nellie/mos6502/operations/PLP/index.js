@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executePLP(processor) {
+function* executePLPTick(processor) {
   console.debug(this.name);
   return false;
-} // executePLP()
+} // executePLPTick()
 
 const PLP = new Ellie.Processor.Operation(
   'PLP',
   'Pull Processor Status from Stack',
-  executePLP
+  executePLPTick
 ); // PLP
 
 PLP.addMode(0x28, MODES.IMPLIED);

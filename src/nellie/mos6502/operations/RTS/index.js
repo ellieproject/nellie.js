@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeRTS(processor) {
+function* executeRTSTick(processor) {
   console.debug(this.name);
   return false;
-} // executeRTS()
+} // executeRTSTick()
 
 const RTS = new Ellie.Processor.Operation(
   'RTS',
   'Return from Subroutine',
-  executeRTS
+  executeRTSTick
 ); // RTS
 
 RTS.addMode(0x60, MODES.IMPLIED);

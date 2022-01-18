@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executePLA(processor) {
+function* executePLATick(processor) {
   console.debug(this.name);
   return false;
-} // executePLA()
+} // executePLATick()
 
 const PLA = new Ellie.Processor.Operation(
   'PLA',
   'Pull A from Stack',
-  executePLA
+  executePLATick
 ); // PLA
 
 PLA.addMode(0x68, MODES.IMPLIED);

@@ -5,15 +5,15 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeCMP(processor) {
+function* executeCMPTick(processor) {
   console.debug(this.name);
   return false;
-} // executeCMP()
+} // executeCMPTick()
 
 const CMP = new Ellie.Processor.Operation(
   'CMP',
   'Compare Memory with A',
-  executeCMP
+  executeCMPTick
 ); // CMP
 
 CMP.addMode(0xDD, MODES.ABSOLUTE_X);

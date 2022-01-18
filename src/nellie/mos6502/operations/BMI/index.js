@@ -5,7 +5,7 @@
 const MODES = require('@ellieproject/nellie/mos6502/modes');
 const Ellie = require('@ellieproject/ellie');
 
-function executeBMI(processor) {
+function* executeBMITick(processor) {
   // TODO: I really need an Ellie.ALU for arithmatic...
   let rel = processor.register.b.get();
   let page = processor.register.pc.bit(8); // even or odd page?
@@ -22,12 +22,12 @@ function executeBMI(processor) {
     }
   }
   return true;
-} // executeBMI()
+} // executeBMITick()
 
 const BMI = new Ellie.Processor.Operation(
   'BMI',
   'Branch on Result Minus',
-  executeBMI
+  executeBMITick
 ); // BMI
 
 BMI.addMode(0x30, MODES.RELATIVE);
