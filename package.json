@@ -4,8 +4,8 @@
   "description": "An NES Emulation demo written using the ellie.js library",
   "main": "src/nellie/index.js",
   "exports": {
-    ".": "./src/nellie/index.js",
-    "./*": "./src/nellie/*/index.js",
+    ".": "./src/nellie.js",
+    "./*": "./src/nellie/*.js",
     "./package.json": "./package.json"
   },
   "scripts": {

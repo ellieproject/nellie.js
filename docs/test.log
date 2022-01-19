@@ -1,701 +1,724 @@
-  × No tests found in test\nellie\index.js, make sure to import "ava" at the top of your test file
-  × No tests found in test\nellie\mos6502\index.js, make sure to import "ava" at the top of your test file
-  × No tests found in test\nellie\mos6502\modes\index.js, make sure to import "ava" at the top of your test file
-  × No tests found in test\nellie\mos6502\operations\index.js, make sure to import "ava" at the top of your test file
-  √ mos6502 » modes » absolute_y » index » beforeExecute() should return true
-  √ mos6502 » modes » absolute_y » index » beforeExecute() should load the ALU from memory
-  √ mos6502 » modes » absolute_y » index » beforeExecute() should increment the PC by two
-  √ mos6502 » modes » accumulator » index » beforeExecute() should return true
-  √ mos6502 » modes » accumulator » index » beforeExecute() should load the accumulator into the ALU
-  √ mos6502 » modes » accumulator » index » afterExecute() should return true
-  √ mos6502 » modes » accumulator » index » afterExecute() should load the ALU into the accumulator
-  √ mos6502 » modes » absolute » index » beforeExecute() should return true
-  √ mos6502 » modes » absolute » index » beforeExecute() should load a pointer into register ma
-  √ mos6502 » modes » absolute » index » beforeExecute() should load register from the memory address pointer
-  √ mos6502 » modes » absolute » index » beforeExecute() should increment the PC by two
-  √ mos6502 » modes » absolute » index » afterExecute() should return true
-  √ mos6502 » modes » absolute_x » index » beforeExecute() should return true
-  √ mos6502 » modes » absolute_x » index » beforeExecute() should load the ALU from memory
-  √ mos6502 » modes » absolute_x » index » beforeExecute() should increment the PC by two
-  √ mos6502 » modes » absolute_x » index » beforeExecute() should increment the clock by two
-  √ mos6502 » modes » absolute_x » index » beforeExecute() should increment the clock by three on page boundary
-  √ mos6502 » modes » absolute_x » index » afterExecute() should return true
-  √ mos6502 » modes » implied » index » beforeExecute() should return true
-  √ mos6502 » modes » implied » index » afterExecute() should return true
-  × mos6502 » modes » indirect » index » beforeExecute() should return true 
-  × mos6502 » modes » indirect » index » beforeExecute() should prime register.b Test failed via `t.fail()`
-  √ mos6502 » modes » indirect » index » afterExecute() should return true
-  × mos6502 » modes » indirect » index » afterExecute() should prime register.b Test failed via `t.fail()`
-  √ mos6502 » modes » immediate » index » beforeExecute() should return true
-  √ mos6502 » modes » immediate » index » beforeExecute() should load next byte of program counter into ALU
-  √ mos6502 » modes » immediate » index » beforeExecute() should increment the PC
-  √ mos6502 » modes » immediate » index » afterExecute() should return true
-  × mos6502 » modes » indirect_x » index » beforeExecute() should return true 
-  × mos6502 » modes » indirect_x » index » beforeExecute() should prime register.b Test failed via `t.fail()`
-  √ mos6502 » modes » indirect_x » index » afterExecute() should return true
-  × mos6502 » modes » indirect_x » index » afterExecute() should prime register.b Test failed via `t.fail()`
-  × mos6502 » modes » indirect_y » index » beforeExecute() should return true 
-  × mos6502 » modes » indirect_y » index » beforeExecute() should prime register.b Test failed via `t.fail()`
-  √ mos6502 » modes » indirect_y » index » afterExecute() should return true
-  × mos6502 » modes » indirect_y » index » afterExecute() should prime register.b Test failed via `t.fail()`
-  √ mos6502 » modes » relative » index » beforeExecute() should return true
-  √ mos6502 » modes » relative » index » beforeExecute() should load next byte of program counter into ALU
-  √ mos6502 » modes » relative » index » beforeExecute() should increment the PC
-  √ mos6502 » modes » relative » index » afterExecute() should return true
-  √ mos6502 » modes » zero_page_x » index » beforeExecute() should return true
-  √ mos6502 » modes » zero_page_x » index » beforeExecute() should load the ALU from memory
-  √ mos6502 » modes » zero_page_x » index » beforeExecute() should increment the PC
-  √ mos6502 » modes » zero_page_x » index » afterExecute() should return true
-  √ mos6502 » modes » zero_page_x » index » afterExecute() should load memory from ALU
-  √ mos6502 » modes » zero_page » index » beforeExecute() should return true
-  √ mos6502 » modes » zero_page » index » beforeExecute() should load the zero page operand into ALU
-  √ mos6502 » modes » zero_page » index » beforeExecute() should increment the PC
-  √ mos6502 » modes » zero_page » index » afterExecute() should return true
-  √ mos6502 » modes » zero_page » index » afterExecute() should load zero page memory from ALU
-  √ mos6502 » modes » zero_page_y » index » beforeExecute() should return true
-  √ mos6502 » modes » zero_page_y » index » beforeExecute() should load the ALU from memory
-  √ mos6502 » modes » zero_page_y » index » beforeExecute() should increment the PC
-  √ mos6502 » modes » zero_page_y » index » afterExecute() should return true
-  √ mos6502 » modes » zero_page_y » index » afterExecute() should load memory from ALU
-  × mos6502 » operations » ADC » index » execute() should return true 
-  √ mos6502 » operations » AND » index » execute() should return true
-  √ mos6502 » operations » AND » index » execute() should alter accumulator
-  √ mos6502 » operations » AND » index » execute() should set N from A
-  √ mos6502 » operations » AND » index » execute() should clear N from A
-  √ mos6502 » operations » AND » index » execute() should set Z from A
-  √ mos6502 » operations » AND » index » execute() should clear Z from A
-  × mos6502 » operations » AND » index » exec() ABSOLUTE_X mode should return this Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() ABSOLUTE_X mode should alter accumulator Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() ABSOLUTE_Y mode should return this Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() ABSOLUTE_Y mode should alter accumulator Test finished without running any assertions
-  √ mos6502 » operations » AND » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » AND » index » exec() ABSOLUTE mode should alter accumulator
-  √ mos6502 » operations » AND » index » exec() IMMEDIATE mode should return this
-  √ mos6502 » operations » AND » index » exec() IMMEDIATE mode should alter accumulator
-  × mos6502 » operations » AND » index » exec() INDIRECT_X mode should return this Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() INDIRECT_X mode should alter accumulator Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() INDIRECT_Y mode should return this Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() INDIRECT_Y mode should alter accumulator Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() ZERO_PAGE_X mode should return this Test finished without running any assertions
-  × mos6502 » operations » AND » index » exec() ZERO_PAGE_X mode should alter accumulator Test finished without running any assertions
-  √ mos6502 » operations » AND » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » AND » index » exec() ZERO_PAGE mode should alter accumulator
-  √ mos6502 » operations » BCS » index » execute() should return true
-  √ mos6502 » operations » BCS » index » execute() should alter PC when C is set (add)
-  √ mos6502 » operations » BCS » index » execute() should alter PC when C is set (add page)
-  √ mos6502 » operations » BCS » index » execute() should alter PC when C is set (sub)
-  √ mos6502 » operations » BCS » index » execute() should alter PC when C is set (sub page)
-  √ mos6502 » operations » BCS » index » execute() should not alter PC when C is clear
-  √ mos6502 » operations » BCS » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BCS » index » exec() RELATIVE mode should alter PC (set)
-  √ mos6502 » operations » BCS » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » ASL » index » execute() should return true
-  √ mos6502 » operations » ASL » index » execute() should shift B left
-  √ mos6502 » operations » ASL » index » execute() should set N flag to 0
-  √ mos6502 » operations » ASL » index » execute() should set N flag to 1
-  √ mos6502 » operations » ASL » index » execute() should set Z flag to 0
-  √ mos6502 » operations » ASL » index » execute() should set Z flag to 1
-  √ mos6502 » operations » ASL » index » execute() should set C flag to 0
-  √ mos6502 » operations » ASL » index » execute() should set C flag to 1
-  √ mos6502 » operations » ASL » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » ASL » index » exec() ABSOLUTE_X mode should shift memory
-  √ mos6502 » operations » ASL » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » ASL » index » exec() ABSOLUTE mode should shift memory
-  √ mos6502 » operations » ASL » index » exec() ACCUMULATOR mode should return this
-  √ mos6502 » operations » ASL » index » exec() ACCUMULATOR mode should shift memory
-  √ mos6502 » operations » ASL » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » ASL » index » exec() ZERO_PAGE_X mode should shift memory
-  √ mos6502 » operations » ASL » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » ASL » index » exec() ZERO_PAGE mode should shift memory
-  √ mos6502 » operations » BEQ » index » execute() should return true
-  √ mos6502 » operations » BEQ » index » execute() should alter PC when Z is set (add)
-  √ mos6502 » operations » BEQ » index » execute() should alter PC when Z is set (add page)
-  √ mos6502 » operations » BEQ » index » execute() should alter PC when Z is set (sub)
-  √ mos6502 » operations » BEQ » index » execute() should alter PC when Z is set (sub page)
-  √ mos6502 » operations » BEQ » index » execute() should not alter PC when Z is clear
-  √ mos6502 » operations » BEQ » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BEQ » index » exec() RELATIVE mode should alter PC (set)
-  √ mos6502 » operations » BEQ » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » BCC » index » execute() should return true
-  √ mos6502 » operations » BCC » index » execute() should alter PC when C is clear (add)
-  √ mos6502 » operations » BCC » index » execute() should alter PC when C is clear (add page)
-  √ mos6502 » operations » BCC » index » execute() should alter PC when C is clear (sub)
-  √ mos6502 » operations » BCC » index » execute() should alter PC when C is clear (sub page)
-  √ mos6502 » operations » BCC » index » execute() should not alter PC when C is set
-  √ mos6502 » operations » BCC » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BCC » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » BCC » index » exec() RELATIVE mode should alter PC (set)
-  √ mos6502 » operations » BIT » index » execute() should return true
-  √ mos6502 » operations » BIT » index » execute() should alter B
-  √ mos6502 » operations » BIT » index » execute() should set N from B
-  √ mos6502 » operations » BIT » index » execute() should clear N from B
-  √ mos6502 » operations » BIT » index » execute() should set V from B
-  √ mos6502 » operations » BIT » index » execute() should clear V from B
-  √ mos6502 » operations » BIT » index » execute() should set Z from B
-  √ mos6502 » operations » BIT » index » execute() should clear Z from B
-  √ mos6502 » operations » BIT » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » BIT » index » exec() ABSOLUTE mode should alter B
-  √ mos6502 » operations » BIT » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » BIT » index » exec() ZERO_PAGE mode should alter B
-  √ mos6502 » operations » BMI » index » execute() should return true
-  √ mos6502 » operations » BMI » index » execute() should alter PC when N is set (add)
-  √ mos6502 » operations » BMI » index » execute() should alter PC when N is set (add page)
-  √ mos6502 » operations » BMI » index » execute() should alter PC when N is set (sub)
-  √ mos6502 » operations » BMI » index » execute() should alter PC when N is set (sub page)
-  √ mos6502 » operations » BMI » index » execute() should not alter PC when N is clear
-  √ mos6502 » operations » BMI » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BMI » index » exec() RELATIVE mode should alter PC (set)
-  √ mos6502 » operations » BMI » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » BPL » index » execute() should return true
-  √ mos6502 » operations » BPL » index » execute() should alter PC when N is clear (add)
-  √ mos6502 » operations » BPL » index » execute() should alter PC when N is clear (add page)
-  √ mos6502 » operations » BPL » index » execute() should alter PC when N is clear (sub)
-  √ mos6502 » operations » BPL » index » execute() should alter PC when N is clear (sub page)
-  √ mos6502 » operations » BPL » index » execute() should not alter PC when N is set
-  √ mos6502 » operations » BPL » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BPL » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » BPL » index » exec() RELATIVE mode should alter PC (set)
-  √ mos6502 » operations » BNE » index » execute() should return true
-  √ mos6502 » operations » BNE » index » execute() should alter PC when Z is clear (add)
-  √ mos6502 » operations » BNE » index » execute() should alter PC when Z is clear (add page)
-  √ mos6502 » operations » BNE » index » execute() should alter PC when Z is clear (sub)
-  √ mos6502 » operations » BNE » index » execute() should alter PC when Z is clear (sub page)
-  √ mos6502 » operations » BNE » index » execute() should not alter PC when Z is set
-  √ mos6502 » operations » BNE » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BNE » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » BNE » index » exec() RELATIVE mode should alter PC (set)
-  × mos6502 » operations » BRK » index » execute() should return true 
-  √ mos6502 » operations » BVS » index » execute() should return true
-  √ mos6502 » operations » BVS » index » execute() should alter PC when V is set (add)
-  √ mos6502 » operations » BVS » index » execute() should alter PC when V is set (add page)
-  √ mos6502 » operations » BVS » index » execute() should alter PC when V is set (sub)
-  √ mos6502 » operations » BVS » index » execute() should alter PC when V is set (sub page)
-  √ mos6502 » operations » BVS » index » execute() should not alter PC when V is clear
-  √ mos6502 » operations » BVS » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BVS » index » exec() RELATIVE mode should alter PC (set)
-  √ mos6502 » operations » BVS » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » CLC » index » execute() should return true
-  √ mos6502 » operations » CLC » index » execute() should set C flag to 0
-  √ mos6502 » operations » CLC » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » CLC » index » exec() IMPLIED mode should set C flag to 0
-  √ mos6502 » operations » BVC » index » execute() should return true
-  √ mos6502 » operations » BVC » index » execute() should alter PC when V is clear (add)
-  √ mos6502 » operations » BVC » index » execute() should alter PC when V is clear (add page)
-  √ mos6502 » operations » BVC » index » execute() should alter PC when V is clear (sub)
-  √ mos6502 » operations » BVC » index » execute() should alter PC when V is clear (sub page)
-  √ mos6502 » operations » BVC » index » execute() should not alter PC when V is set
-  √ mos6502 » operations » BVC » index » exec() RELATIVE mode should return this
-  √ mos6502 » operations » BVC » index » exec() RELATIVE mode should alter PC (clear)
-  √ mos6502 » operations » BVC » index » exec() RELATIVE mode should alter PC (set)
-  √ mos6502 » operations » CLD » index » execute() should return true
-  √ mos6502 » operations » CLD » index » execute() should set D flag to 0
-  √ mos6502 » operations » CLD » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » CLD » index » exec() IMPLIED mode should set D flag to 0
-  √ mos6502 » operations » CLI » index » execute() should return true
-  √ mos6502 » operations » CLI » index » execute() should set I flag to 0
-  √ mos6502 » operations » CLI » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » CLI » index » exec() IMPLIED mode should set I flag to 0
-  × mos6502 » operations » CMP » index » execute() should return true 
-  √ mos6502 » operations » CLV » index » execute() should return true
-  √ mos6502 » operations » CLV » index » execute() should set V flag to 0
-  √ mos6502 » operations » CLV » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » CLV » index » exec() IMPLIED mode should set V flag to 1
-  √ mos6502 » operations » CPX » index » execute() should return true
-  √ mos6502 » operations » CPX » index » execute() should set N flag to 0
-  √ mos6502 » operations » CPX » index » execute() should set N flag to 1
-  √ mos6502 » operations » CPX » index » execute() should set Z flag to 0
-  √ mos6502 » operations » CPX » index » execute() should set Z flag to 1
-  √ mos6502 » operations » CPX » index » execute() should set C flag to 0
-  √ mos6502 » operations » CPX » index » execute() should set C flag to 1
-  √ mos6502 » operations » CPX » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » CPX » index » exec() ABSOLUTE mode should set N=0, Z=0, C=0
-  √ mos6502 » operations » CPX » index » exec() ABSOLUTE mode should set N=0, Z=0, C=1
-  √ mos6502 » operations » CPX » index » exec() ABSOLUTE mode should set N=0, Z=1, C=1
-  √ mos6502 » operations » CPX » index » exec() ABSOLUTE mode should set N=1, Z=0, C=0
-  √ mos6502 » operations » CPX » index » exec() ABSOLUTE mode should set N=1, Z=0, C=1
-  √ mos6502 » operations » CPX » index » exec() IMMEDIATE mode should return this
-  √ mos6502 » operations » CPX » index » exec() IMMEDIATE mode should set N=0, Z=0, C=0
-  √ mos6502 » operations » CPX » index » exec() IMMEDIATE mode should set N=0, Z=0, C=1
-  √ mos6502 » operations » CPX » index » exec() IMMEDIATE mode should set N=0, Z=1, C=1
-  √ mos6502 » operations » CPX » index » exec() IMMEDIATE mode should set N=1, Z=0, C=0
-  √ mos6502 » operations » CPX » index » exec() IMMEDIATE mode should set N=1, Z=0, C=1
-  √ mos6502 » operations » CPX » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » CPX » index » exec() ZERO_PAGE mode should set N=0, Z=0, C=0
-  √ mos6502 » operations » CPX » index » exec() ZERO_PAGE mode should set N=0, Z=0, C=1
-  √ mos6502 » operations » CPX » index » exec() ZERO_PAGE mode should set N=0, Z=1, C=1
-  √ mos6502 » operations » CPX » index » exec() ZERO_PAGE mode should set N=1, Z=0, C=0
-  √ mos6502 » operations » CPX » index » exec() ZERO_PAGE mode should set N=1, Z=0, C=1
-  √ mos6502 » operations » DEC » index » execute() should return true
-  √ mos6502 » operations » DEC » index » execute() should decrement B
-  √ mos6502 » operations » DEC » index » execute() should set N flag to 0
-  √ mos6502 » operations » DEC » index » execute() should set N flag to 1
-  √ mos6502 » operations » DEC » index » execute() should set Z flag to 0
-  √ mos6502 » operations » DEC » index » execute() should set Z flag to 1
-  √ mos6502 » operations » DEC » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » DEC » index » exec() ABSOLUTE_X mode should decrement memory
-  √ mos6502 » operations » DEC » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » DEC » index » exec() ABSOLUTE mode should decrement memory
-  √ mos6502 » operations » DEC » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » DEC » index » exec() ZERO_PAGE_X mode should decrement memory
-  √ mos6502 » operations » DEC » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » DEC » index » exec() ZERO_PAGE mode should decrement memory
-  √ mos6502 » operations » CPY » index » execute() should return true
-  √ mos6502 » operations » CPY » index » execute() should set N flag to 0
-  √ mos6502 » operations » CPY » index » execute() should set N flag to 1
-  √ mos6502 » operations » CPY » index » execute() should set Z flag to 0
-  √ mos6502 » operations » CPY » index » execute() should set Z flag to 1
-  √ mos6502 » operations » CPY » index » execute() should set C flag to 0
-  √ mos6502 » operations » CPY » index » execute() should set C flag to 1
-  √ mos6502 » operations » CPY » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » CPY » index » exec() ABSOLUTE mode should set N=0, Z=0, C=0
-  √ mos6502 » operations » CPY » index » exec() ABSOLUTE mode should set N=0, Z=0, C=1
-  √ mos6502 » operations » CPY » index » exec() ABSOLUTE mode should set N=0, Z=1, C=1
-  √ mos6502 » operations » CPY » index » exec() ABSOLUTE mode should set N=1, Z=0, C=0
-  √ mos6502 » operations » CPY » index » exec() ABSOLUTE mode should set N=1, Z=0, C=1
-  √ mos6502 » operations » CPY » index » exec() IMMEDIATE mode should return this
-  √ mos6502 » operations » CPY » index » exec() IMMEDIATE mode should set N=0, Z=0, C=0
-  √ mos6502 » operations » CPY » index » exec() IMMEDIATE mode should set N=0, Z=0, C=1
-  √ mos6502 » operations » CPY » index » exec() IMMEDIATE mode should set N=0, Z=1, C=1
-  √ mos6502 » operations » CPY » index » exec() IMMEDIATE mode should set N=1, Z=0, C=0
-  √ mos6502 » operations » CPY » index » exec() IMMEDIATE mode should set N=1, Z=0, C=1
-  √ mos6502 » operations » CPY » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » CPY » index » exec() ZERO_PAGE mode should set N=0, Z=0, C=0
-  √ mos6502 » operations » CPY » index » exec() ZERO_PAGE mode should set N=0, Z=0, C=1
-  √ mos6502 » operations » CPY » index » exec() ZERO_PAGE mode should set N=0, Z=1, C=1
-  √ mos6502 » operations » CPY » index » exec() ZERO_PAGE mode should set N=1, Z=0, C=0
-  √ mos6502 » operations » CPY » index » exec() ZERO_PAGE mode should set N=1, Z=0, C=1
-  √ mos6502 » operations » DEX » index » execute() should return true
-  √ mos6502 » operations » DEX » index » execute() should decrement Y
-  √ mos6502 » operations » DEX » index » execute() should set N flag to 0
-  √ mos6502 » operations » DEX » index » execute() should set N flag to 1
-  √ mos6502 » operations » DEX » index » execute() should set Z flag to 0
-  √ mos6502 » operations » DEX » index » execute() should set Z flag to 1
-  √ mos6502 » operations » DEX » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » DEX » index » exec() IMPLIED mode should decrement Y
-  × mos6502 » operations » EOR » index » execute() should return true 
-  √ mos6502 » operations » DEY » index » execute() should return true
-  √ mos6502 » operations » DEY » index » execute() should decrement Y
-  √ mos6502 » operations » DEY » index » execute() should set N flag to 0
-  √ mos6502 » operations » DEY » index » execute() should set N flag to 1
-  √ mos6502 » operations » DEY » index » execute() should set Z flag to 0
-  √ mos6502 » operations » DEY » index » execute() should set Z flag to 1
-  √ mos6502 » operations » DEY » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » DEY » index » exec() IMPLIED mode should decrement Y
-  √ mos6502 » operations » INC » index » execute() should return true
-  √ mos6502 » operations » INC » index » execute() should increment B
-  √ mos6502 » operations » INC » index » execute() should set N flag to 0
-  √ mos6502 » operations » INC » index » execute() should set N flag to 1
-  √ mos6502 » operations » INC » index » execute() should set Z flag to 0
-  √ mos6502 » operations » INC » index » execute() should set Z flag to 1
-  √ mos6502 » operations » INC » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » INC » index » exec() ABSOLUTE_X mode should increment memory
-  √ mos6502 » operations » INC » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » INC » index » exec() ABSOLUTE mode should increment memory
-  √ mos6502 » operations » INC » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » INC » index » exec() ZERO_PAGE_X mode should increment memory
-  √ mos6502 » operations » INC » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » INC » index » exec() ZERO_PAGE mode should increment memory
-  √ mos6502 » operations » INX » index » execute() should return true
-  √ mos6502 » operations » INX » index » execute() should increment X
-  √ mos6502 » operations » INX » index » execute() should set N flag to 0
-  √ mos6502 » operations » INX » index » execute() should set N flag to 1
-  √ mos6502 » operations » INX » index » execute() should set Z flag to 0
-  √ mos6502 » operations » INX » index » execute() should set Z flag to 1
-  √ mos6502 » operations » INX » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » INX » index » exec() IMPLIED mode should increment X
-  × mos6502 » operations » JMP » index » execute() should return true 
-  √ mos6502 » operations » INY » index » execute() should return true
-  √ mos6502 » operations » INY » index » execute() should increment Y
-  √ mos6502 » operations » INY » index » execute() should set N flag to 0
-  √ mos6502 » operations » INY » index » execute() should set N flag to 1
-  √ mos6502 » operations » INY » index » execute() should set Z flag to 0
-  √ mos6502 » operations » INY » index » execute() should set Z flag to 1
-  √ mos6502 » operations » INY » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » INY » index » exec() IMPLIED mode should increment Y
-  × mos6502 » operations » JSR » index » execute() should return true 
-  √ mos6502 » operations » LDA » index » execute() should return true
-  √ mos6502 » operations » LDA » index » execute() should set A from B
-  √ mos6502 » operations » LDA » index » execute() should set N flag to 0
-  √ mos6502 » operations » LDA » index » execute() should set N flag to 1
-  √ mos6502 » operations » LDA » index » execute() should set Z flag to 0
-  √ mos6502 » operations » LDA » index » execute() should set Z flag to 1
-  √ mos6502 » operations » LDA » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » LDA » index » exec() ABSOLUTE_Y mode should return this
-  √ mos6502 » operations » LDA » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » LDA » index » exec() IMMEDIATE mode should return this
-  √ mos6502 » operations » LDA » index » exec() IMMEDIATE mode should load A from PC
-  × mos6502 » operations » LDA » index » exec() INDIRECT_X mode should return this Error thrown in test
-  × mos6502 » operations » LDA » index » exec() INDIRECT_Y mode should return this Error thrown in test
-  √ mos6502 » operations » LDA » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » LDA » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » LDX » index » execute() should return true
-  √ mos6502 » operations » LDX » index » execute() should load X
-  √ mos6502 » operations » LDX » index » execute() should set N flag to 0
-  √ mos6502 » operations » LDX » index » execute() should set N flag to 1
-  √ mos6502 » operations » LDX » index » execute() should set Z flag to 0
-  √ mos6502 » operations » LDX » index » execute() should set Z flag to 1
-  √ mos6502 » operations » LDX » index » exec() ABSOLUTE_Y mode should return this
-  √ mos6502 » operations » LDX » index » exec() ABSOLUTE_Y mode should load X from PC
-  √ mos6502 » operations » LDX » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » LDX » index » exec() ABSOLUTE mode should load X from PC
-  √ mos6502 » operations » LDX » index » exec() IMMEDIATE mode should return this
-  √ mos6502 » operations » LDX » index » exec() IMMEDIATE mode should load X from PC
-  √ mos6502 » operations » LDX » index » exec() ZERO_PAGE_Y mode should return this
-  √ mos6502 » operations » LDX » index » exec() ZERO_PAGE_Y mode should load X from PC
-  √ mos6502 » operations » LDX » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » LDX » index » exec() ZERO_PAGE mode should load X from PC
-  √ mos6502 » operations » LDY » index » execute() should return true
-  √ mos6502 » operations » LDY » index » execute() should load Y
-  √ mos6502 » operations » LDY » index » execute() should set N flag to 0
-  √ mos6502 » operations » LDY » index » execute() should set N flag to 1
-  √ mos6502 » operations » LDY » index » execute() should set Z flag to 0
-  √ mos6502 » operations » LDY » index » execute() should set Z flag to 1
-  √ mos6502 » operations » LDY » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » LDY » index » exec() ABSOLUTE_X mode should load Y from PC
-  √ mos6502 » operations » LDY » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » LDY » index » exec() ABSOLUTE mode should load Y from PC
-  √ mos6502 » operations » LDY » index » exec() IMMEDIATE mode should return this
-  √ mos6502 » operations » LDY » index » exec() IMMEDIATE mode should load Y from PC
-  √ mos6502 » operations » LDY » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » LDY » index » exec() ZERO_PAGE_X mode should load Y from PC
-  √ mos6502 » operations » LDY » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » LDY » index » exec() ZERO_PAGE mode should load Y from PC
-  √ mos6502 » operations » LSR » index » execute() should return true
-  √ mos6502 » operations » LSR » index » execute() should shift B right (no carry)
-  √ mos6502 » operations » LSR » index » execute() should shift B right (carry)
-  √ mos6502 » operations » LSR » index » execute() should set C flag to 0
-  √ mos6502 » operations » LSR » index » execute() should set C flag to 1
-  √ mos6502 » operations » LSR » index » execute() should set N flag to 0
-  √ mos6502 » operations » LSR » index » execute() should never set N flag to 1
-  √ mos6502 » operations » LSR » index » execute() should set Z flag to 0
-  √ mos6502 » operations » LSR » index » execute() should set Z flag to 1
-  √ mos6502 » operations » LSR » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » LSR » index » exec() ABSOLUTE_X mode should shift memory
-  √ mos6502 » operations » LSR » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » LSR » index » exec() ABSOLUTE mode should shift memory
-  √ mos6502 » operations » LSR » index » exec() ACCUMULATOR mode should return this
-  √ mos6502 » operations » LSR » index » exec() ACCUMULATOR mode should shift memory
-  √ mos6502 » operations » LSR » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » LSR » index » exec() ZERO_PAGE_X mode should shift memory
-  √ mos6502 » operations » LSR » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » LSR » index » exec() ZERO_PAGE mode should shift memory
-  √ mos6502 » operations » NOP » index » execute() should return true
-  √ mos6502 » operations » NOP » index » exec() IMPLIED mode should return this
-  × mos6502 » operations » PHA » index » execute() should return true 
-  × mos6502 » operations » ORA » index » execute() should return true 
-  × mos6502 » operations » PLA » index » execute() should return true 
-  × mos6502 » operations » PHP » index » execute() should return true 
-  × mos6502 » operations » PLP » index » execute() should return true 
-  √ mos6502 » operations » ROL » index » execute() should return true
-  √ mos6502 » operations » ROL » index » execute() should rotate B left (no carry)
-  √ mos6502 » operations » ROL » index » execute() should rotate B left (carry)
-  √ mos6502 » operations » ROL » index » execute() should set C flag to 0
-  √ mos6502 » operations » ROL » index » execute() should set C flag to 1
-  √ mos6502 » operations » ROL » index » execute() should set N flag to 0
-  √ mos6502 » operations » ROL » index » execute() should set N flag to 1
-  √ mos6502 » operations » ROL » index » execute() should set Z flag to 0
-  √ mos6502 » operations » ROL » index » execute() should set Z flag to 1
-  √ mos6502 » operations » ROL » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » ROL » index » exec() ABSOLUTE_X mode should shift memory
-  √ mos6502 » operations » ROL » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » ROL » index » exec() ABSOLUTE mode should shift memory
-  √ mos6502 » operations » ROL » index » exec() ACCUMULATOR mode should return this
-  √ mos6502 » operations » ROL » index » exec() ACCUMULATOR mode should shift memory
-  √ mos6502 » operations » ROL » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » ROL » index » exec() ZERO_PAGE_X mode should shift memory
-  √ mos6502 » operations » ROL » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » ROL » index » exec() ZERO_PAGE mode should shift memory
-  √ mos6502 » operations » ROR » index » execute() should return true
-  √ mos6502 » operations » ROR » index » execute() should rotate B right (no carry)
-  √ mos6502 » operations » ROR » index » execute() should rotate B right (carry)
-  √ mos6502 » operations » ROR » index » execute() should set C flag to 0
-  √ mos6502 » operations » ROR » index » execute() should set C flag to 1
-  √ mos6502 » operations » ROR » index » execute() should set N flag to 0
-  √ mos6502 » operations » ROR » index » execute() should set N flag to 1
-  √ mos6502 » operations » ROR » index » execute() should set Z flag to 0
-  √ mos6502 » operations » ROR » index » execute() should set Z flag to 1
-  √ mos6502 » operations » ROR » index » exec() ABSOLUTE_X mode should return this
-  √ mos6502 » operations » ROR » index » exec() ABSOLUTE_X mode should shift memory
-  √ mos6502 » operations » ROR » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » ROR » index » exec() ABSOLUTE mode should shift memory
-  √ mos6502 » operations » ROR » index » exec() ACCUMULATOR mode should return this
-  √ mos6502 » operations » ROR » index » exec() ACCUMULATOR mode should shift memory
-  √ mos6502 » operations » ROR » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » ROR » index » exec() ZERO_PAGE_X mode should shift memory
-  √ mos6502 » operations » ROR » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » ROR » index » exec() ZERO_PAGE mode should shift memory
-  × mos6502 » operations » RTS » index » execute() should return true 
-  × mos6502 » operations » RTI » index » execute() should return true 
-  × mos6502 » operations » SBC » index » execute() should return true 
-  √ mos6502 » operations » SEC » index » execute() should return true
-  √ mos6502 » operations » SEC » index » execute() should set C flag to 1
-  √ mos6502 » operations » SEC » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » SEI » index » execute() should return true
-  √ mos6502 » operations » SEI » index » execute() should set I flag to 1
-  √ mos6502 » operations » SEI » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » SED » index » execute() should return true
-  √ mos6502 » operations » SED » index » execute() should set D flag to 1
-  √ mos6502 » operations » SED » index » exec() IMPLIED mode should return this
-  × mos6502 » operations » STA » index » execute() should return true 
-  √ mos6502 » operations » STX » index » execute() should return true
-  √ mos6502 » operations » STX » index » execute() should store X
-  √ mos6502 » operations » STX » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » STX » index » exec() ABSOLUTE mode should store X to Memory
-  √ mos6502 » operations » STX » index » exec() ZERO_PAGE_Y mode should return this
-  √ mos6502 » operations » STX » index » exec() ZERO_PAGE_Y mode should store X to Memory
-  √ mos6502 » operations » STX » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » STX » index » exec() ZERO_PAGE mode should load X from PC
-  √ mos6502 » operations » STY » index » execute() should return true
-  √ mos6502 » operations » STY » index » exec() ABSOLUTE mode should return this
-  √ mos6502 » operations » STY » index » exec() ABSOLUTE mode should store X to Memory
-  √ mos6502 » operations » STY » index » exec() ZERO_PAGE_X mode should return this
-  √ mos6502 » operations » STY » index » exec() ZERO_PAGE_X mode should store X to Memory
-  √ mos6502 » operations » STY » index » exec() ZERO_PAGE mode should return this
-  √ mos6502 » operations » STY » index » exec() ZERO_PAGE mode should load X from PC
-  √ mos6502 » operations » TAX » index » execute() should return true
-  √ mos6502 » operations » TAX » index » execute() should set X from A
-  √ mos6502 » operations » TAX » index » execute() should set N flag to 0
-  √ mos6502 » operations » TAX » index » execute() should set N flag to 1
-  √ mos6502 » operations » TAX » index » execute() should set Z flag to 0
-  √ mos6502 » operations » TAX » index » execute() should set Z flag to 1
-  √ mos6502 » operations » TAX » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » TAY » index » execute() should return true
-  √ mos6502 » operations » TAY » index » execute() should set Y from A
-  √ mos6502 » operations » TAY » index » execute() should set N flag to 0
-  √ mos6502 » operations » TAY » index » execute() should set N flag to 1
-  √ mos6502 » operations » TAY » index » execute() should set Z flag to 0
-  √ mos6502 » operations » TAY » index » execute() should set Z flag to 1
-  √ mos6502 » operations » TAY » index » exec() IMPLIED mode should return this
-  √ mos6502 » operations » TXA » index » execute() should return true
-  × mos6502 » operations » TSX » index » execute() should return true 
-  √ mos6502 » operations » TXA » index » execute() should set A from X
-  √ mos6502 » operations » TXA » index » execute() should set N flag to 0
-  √ mos6502 » operations » TXA » index » execute() should set N flag to 1
-  √ mos6502 » operations » TXA » index » execute() should set Z flag to 0
-  √ mos6502 » operations » TXA » index » execute() should set Z flag to 1
-  √ mos6502 » operations » TXA » index » exec() IMPLIED mode should return this
-  × mos6502 » operations » TXS » index » execute() should return true 
-  √ mos6502 » operations » TYA » index » execute() should return true
-  √ mos6502 » operations » TYA » index » execute() should set A from Y
-  √ mos6502 » operations » TYA » index » execute() should set N flag to 0
-  √ mos6502 » operations » TYA » index » execute() should set N flag to 1
-  √ mos6502 » operations » TYA » index » execute() should set Z flag to 0
-  √ mos6502 » operations » TYA » index » execute() should set Z flag to 1
-  √ mos6502 » operations » TYA » index » exec() IMPLIED mode should return this
+  × No tests found in test\nellie.test.js, make sure to import "ava" at the top of your test file
+  × No tests found in test\nellie\mos6502.test.js, make sure to import "ava" at the top of your test file
+  × No tests found in test\nellie\mos6502\operations.test.js, make sure to import "ava" at the top of your test file
+  × No tests found in test\nellie\mos6502\modes.test.js, make sure to import "ava" at the top of your test file
+  √ nellie » mos6502 » modes » zero_page » beforeExecute() should return true
+  √ nellie » mos6502 » modes » zero_page » beforeExecute() should load the zero page operand into ALU
+  √ nellie » mos6502 » modes » zero_page » beforeExecute() should increment the PC
+  √ nellie » mos6502 » modes » zero_page » afterExecute() should return true
+  √ nellie » mos6502 » modes » zero_page » afterExecute() should load zero page memory from ALU
+  √ nellie » mos6502 » modes » zero_page_y » beforeExecute() should return true
+  √ nellie » mos6502 » modes » zero_page_y » beforeExecute() should load the ALU from memory
+  √ nellie » mos6502 » modes » zero_page_y » beforeExecute() should increment the PC
+  √ nellie » mos6502 » modes » zero_page_y » afterExecute() should return true
+  √ nellie » mos6502 » modes » zero_page_y » afterExecute() should load memory from ALU
+  √ nellie » mos6502 » modes » zero_page_x » beforeExecute() should return true
+  √ nellie » mos6502 » modes » zero_page_x » beforeExecute() should load the ALU from memory
+  √ nellie » mos6502 » modes » zero_page_x » beforeExecute() should increment the PC
+  √ nellie » mos6502 » modes » zero_page_x » afterExecute() should return true
+  √ nellie » mos6502 » modes » zero_page_x » afterExecute() should load memory from ALU
+  √ nellie » mos6502 » modes » relative » beforeExecute() should return true
+  √ nellie » mos6502 » modes » relative » beforeExecute() should load next byte of program counter into ALU
+  √ nellie » mos6502 » modes » relative » beforeExecute() should increment the PC
+  √ nellie » mos6502 » modes » relative » afterExecute() should return true
+  √ nellie » mos6502 » modes » implied » beforeExecute() should return true
+  √ nellie » mos6502 » modes » implied » afterExecute() should return true
+  × nellie » mos6502 » modes » indirect » beforeExecute() should return true 
+  × nellie » mos6502 » modes » indirect » beforeExecute() should prime register.b Test failed via `t.fail()`
+  √ nellie » mos6502 » modes » indirect » afterExecute() should return true
+  × nellie » mos6502 » modes » indirect » afterExecute() should prime register.b Test failed via `t.fail()`
+  × nellie » mos6502 » modes » indirect_x » beforeExecute() should return true 
+  × nellie » mos6502 » modes » indirect_x » beforeExecute() should prime register.b Test failed via `t.fail()`
+  √ nellie » mos6502 » modes » indirect_x » afterExecute() should return true
+  × nellie » mos6502 » modes » indirect_x » afterExecute() should prime register.b Test failed via `t.fail()`
+  × nellie » mos6502 » modes » indirect_y » beforeExecute() should return true 
+  × nellie » mos6502 » modes » indirect_y » beforeExecute() should prime register.b Test failed via `t.fail()`
+  √ nellie » mos6502 » modes » indirect_y » afterExecute() should return true
+  × nellie » mos6502 » modes » indirect_y » afterExecute() should prime register.b Test failed via `t.fail()`
+  √ nellie » mos6502 » modes » accumulator » beforeExecute() should return true
+  √ nellie » mos6502 » modes » accumulator » beforeExecute() should load the accumulator into the ALU
+  √ nellie » mos6502 » modes » accumulator » afterExecute() should return true
+  √ nellie » mos6502 » modes » accumulator » afterExecute() should load the ALU into the accumulator
+  √ nellie » mos6502 » modes » immediate » beforeExecute() should return true
+  √ nellie » mos6502 » modes » immediate » beforeExecute() should load next byte of program counter into ALU
+  √ nellie » mos6502 » modes » immediate » beforeExecute() should increment the PC
+  √ nellie » mos6502 » modes » immediate » afterExecute() should return true
+  √ nellie » mos6502 » modes » absolute_x » beforeExecute() should return true
+  √ nellie » mos6502 » modes » absolute_x » beforeExecute() should load the ALU from memory
+  √ nellie » mos6502 » modes » absolute_x » beforeExecute() should increment the PC by two
+  × nellie » mos6502 » modes » absolute_x » beforeExecute() should increment the clock by two 
+  × nellie » mos6502 » modes » absolute_x » beforeExecute() should increment the clock by three on page boundary 
+  √ nellie » mos6502 » modes » absolute_x » afterExecute() should return true
+  √ nellie » mos6502 » modes » absolute_y » beforeExecute() should return true
+  √ nellie » mos6502 » modes » absolute_y » beforeExecute() should load the ALU from memory
+  √ nellie » mos6502 » modes » absolute_y » beforeExecute() should increment the PC by two
+  √ nellie » mos6502 » operations » TYA » execute() should return true
+  √ nellie » mos6502 » operations » TYA » execute() should set A from Y
+  √ nellie » mos6502 » operations » TYA » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » TYA » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » TYA » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » TYA » execute() should set Z flag to 1
+  √ nellie » mos6502 » modes » absolute » beforeExecute() should return true
+  √ nellie » mos6502 » modes » absolute » beforeExecute() should load a pointer into register ma
+  √ nellie » mos6502 » modes » absolute » beforeExecute() should load register from the memory address pointer
+  √ nellie » mos6502 » modes » absolute » beforeExecute() should increment the PC by two
+  √ nellie » mos6502 » modes » absolute » afterExecute() should return true
+  √ nellie » mos6502 » operations » AND » execute() should return true
+  √ nellie » mos6502 » operations » AND » execute() should alter accumulator
+  √ nellie » mos6502 » operations » AND » execute() should set N from A
+  √ nellie » mos6502 » operations » AND » execute() should clear N from A
+  √ nellie » mos6502 » operations » AND » execute() should set Z from A
+  √ nellie » mos6502 » operations » AND » execute() should clear Z from A
+  × nellie » mos6502 » operations » AND » exec() INDIRECT_X mode should return this Test finished without running any assertions
+  × nellie » mos6502 » operations » AND » exec() INDIRECT_X mode should alter accumulator Test finished without running any assertions
+  × nellie » mos6502 » operations » AND » exec() INDIRECT_Y mode should return this Test finished without running any assertions
+  × nellie » mos6502 » operations » AND » exec() INDIRECT_Y mode should alter accumulator Test finished without running any assertions
+  × nellie » mos6502 » operations » TXS » execute() should return true 
+  √ nellie » mos6502 » operations » TXA » execute() should return true
+  √ nellie » mos6502 » operations » TXA » execute() should set A from X
+  √ nellie » mos6502 » operations » TXA » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » TXA » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » TXA » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » TXA » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » TXA » exec() IMPLIED mode should return this
+  × nellie » mos6502 » operations » TSX » execute() should return true 
+  √ nellie » mos6502 » operations » TAX » execute() should return true
+  √ nellie » mos6502 » operations » TAX » execute() should set X from A
+  √ nellie » mos6502 » operations » TAX » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » TAX » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » TAX » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » TAX » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » TAX » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » TAY » execute() should return true
+  √ nellie » mos6502 » operations » TAY » execute() should set Y from A
+  √ nellie » mos6502 » operations » TAY » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » TAY » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » TAY » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » TAY » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » TAY » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » STX » execute() should return true
+  √ nellie » mos6502 » operations » STX » execute() should store X
+  √ nellie » mos6502 » operations » STX » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » STX » exec() ABSOLUTE mode should store X to Memory
+  √ nellie » mos6502 » operations » STX » exec() ZERO_PAGE_Y mode should return this
+  √ nellie » mos6502 » operations » STX » exec() ZERO_PAGE_Y mode should store X to Memory
+  √ nellie » mos6502 » operations » STX » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » STX » exec() ZERO_PAGE mode should load X from PC
+  × nellie » mos6502 » operations » STA » execute() should return true 
+  √ nellie » mos6502 » operations » SEI » execute() should return true
+  √ nellie » mos6502 » operations » SEI » execute() should set I flag to 1
+  √ nellie » mos6502 » operations » SEI » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » STY » execute() should return true
+  √ nellie » mos6502 » operations » STY » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » STY » exec() ABSOLUTE mode should store X to Memory
+  √ nellie » mos6502 » operations » STY » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » STY » exec() ZERO_PAGE_X mode should store X to Memory
+  √ nellie » mos6502 » operations » STY » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » STY » exec() ZERO_PAGE mode should load X from PC
+  √ nellie » mos6502 » operations » SED » execute() should return true
+  √ nellie » mos6502 » operations » SED » execute() should set D flag to 1
+  √ nellie » mos6502 » operations » SED » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » SEC » execute() should return true
+  √ nellie » mos6502 » operations » SEC » execute() should set C flag to 1
+  √ nellie » mos6502 » operations » SEC » exec() IMPLIED mode should return this
+  × nellie » mos6502 » operations » SBC » execute() should return true 
+  × nellie » mos6502 » operations » RTS » execute() should return true 
+  √ nellie » mos6502 » operations » ROR » execute() should return true
+  √ nellie » mos6502 » operations » ROR » execute() should rotate B right (no carry)
+  √ nellie » mos6502 » operations » ROR » execute() should rotate B right (carry)
+  √ nellie » mos6502 » operations » ROR » execute() should set C flag to 0
+  √ nellie » mos6502 » operations » ROR » execute() should set C flag to 1
+  √ nellie » mos6502 » operations » ROR » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » ROR » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » ROR » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » ROR » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » ROR » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » ROR » exec() ABSOLUTE_X mode should shift memory
+  √ nellie » mos6502 » operations » ROR » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » ROR » exec() ABSOLUTE mode should shift memory
+  √ nellie » mos6502 » operations » ROR » exec() ACCUMULATOR mode should return this
+  √ nellie » mos6502 » operations » ROR » exec() ACCUMULATOR mode should shift memory
+  √ nellie » mos6502 » operations » ROR » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » ROR » exec() ZERO_PAGE_X mode should shift memory
+  √ nellie » mos6502 » operations » ROR » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » ROR » exec() ZERO_PAGE mode should shift memory
+  × nellie » mos6502 » operations » RTI » execute() should return true 
+  √ nellie » mos6502 » operations » ROL » execute() should return true
+  √ nellie » mos6502 » operations » ROL » execute() should rotate B left (no carry)
+  √ nellie » mos6502 » operations » ROL » execute() should rotate B left (carry)
+  √ nellie » mos6502 » operations » ROL » execute() should set C flag to 0
+  √ nellie » mos6502 » operations » ROL » execute() should set C flag to 1
+  √ nellie » mos6502 » operations » ROL » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » ROL » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » ROL » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » ROL » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » ROL » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » ROL » exec() ABSOLUTE_X mode should shift memory
+  √ nellie » mos6502 » operations » ROL » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » ROL » exec() ABSOLUTE mode should shift memory
+  √ nellie » mos6502 » operations » ROL » exec() ACCUMULATOR mode should return this
+  √ nellie » mos6502 » operations » ROL » exec() ACCUMULATOR mode should shift memory
+  √ nellie » mos6502 » operations » ROL » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » ROL » exec() ZERO_PAGE_X mode should shift memory
+  √ nellie » mos6502 » operations » ROL » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » ROL » exec() ZERO_PAGE mode should shift memory
+  × nellie » mos6502 » operations » PLP » execute() should return true 
+  × nellie » mos6502 » operations » PLA » execute() should return true 
+  × nellie » mos6502 » operations » PHP » execute() should return true 
+  √ nellie » mos6502 » operations » NOP » execute() should return true
+  √ nellie » mos6502 » operations » NOP » exec() IMPLIED mode should return this
+  × nellie » mos6502 » operations » PHA » execute() should return true 
+  × nellie » mos6502 » operations » ORA » execute() should return true 
+  √ nellie » mos6502 » operations » LSR » execute() should return true
+  √ nellie » mos6502 » operations » LSR » execute() should shift B right (no carry)
+  √ nellie » mos6502 » operations » LSR » execute() should shift B right (carry)
+  √ nellie » mos6502 » operations » LSR » execute() should set C flag to 0
+  √ nellie » mos6502 » operations » LSR » execute() should set C flag to 1
+  √ nellie » mos6502 » operations » LSR » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » LSR » execute() should never set N flag to 1
+  √ nellie » mos6502 » operations » LSR » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » LSR » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » LSR » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » LSR » exec() ABSOLUTE_X mode should shift memory
+  √ nellie » mos6502 » operations » LSR » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » LSR » exec() ABSOLUTE mode should shift memory
+  √ nellie » mos6502 » operations » LSR » exec() ACCUMULATOR mode should return this
+  √ nellie » mos6502 » operations » LSR » exec() ACCUMULATOR mode should shift memory
+  √ nellie » mos6502 » operations » LSR » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » LSR » exec() ZERO_PAGE_X mode should shift memory
+  √ nellie » mos6502 » operations » LSR » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » LSR » exec() ZERO_PAGE mode should shift memory
+  √ nellie » mos6502 » operations » LDY » execute() should return true
+  √ nellie » mos6502 » operations » LDY » execute() should load Y
+  √ nellie » mos6502 » operations » LDY » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » LDY » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » LDY » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » LDY » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » LDY » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » LDY » exec() ABSOLUTE_X mode should load Y from PC
+  √ nellie » mos6502 » operations » LDY » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » LDY » exec() ABSOLUTE mode should load Y from PC
+  √ nellie » mos6502 » operations » LDY » exec() IMMEDIATE mode should return this
+  √ nellie » mos6502 » operations » LDY » exec() IMMEDIATE mode should load Y from PC
+  √ nellie » mos6502 » operations » LDY » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » LDY » exec() ZERO_PAGE_X mode should load Y from PC
+  √ nellie » mos6502 » operations » LDY » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » LDY » exec() ZERO_PAGE mode should load Y from PC
+  √ nellie » mos6502 » operations » LDA » execute() should return true
+  √ nellie » mos6502 » operations » LDA » execute() should set A from B
+  √ nellie » mos6502 » operations » LDA » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » LDA » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » LDA » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » LDA » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » LDA » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » LDA » exec() ABSOLUTE_Y mode should return this
+  √ nellie » mos6502 » operations » LDA » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » LDA » exec() IMMEDIATE mode should return this
+  √ nellie » mos6502 » operations » LDA » exec() IMMEDIATE mode should load A from PC
+  × nellie » mos6502 » operations » LDA » exec() INDIRECT_X mode should return this Error thrown in test
+  × nellie » mos6502 » operations » LDA » exec() INDIRECT_Y mode should return this Error thrown in test
+  √ nellie » mos6502 » operations » LDA » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » LDA » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » LDX » execute() should return true
+  √ nellie » mos6502 » operations » LDX » execute() should load X
+  √ nellie » mos6502 » operations » LDX » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » LDX » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » LDX » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » LDX » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » LDX » exec() ABSOLUTE_Y mode should return this
+  √ nellie » mos6502 » operations » LDX » exec() ABSOLUTE_Y mode should load X from PC
+  √ nellie » mos6502 » operations » LDX » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » LDX » exec() ABSOLUTE mode should load X from PC
+  √ nellie » mos6502 » operations » LDX » exec() IMMEDIATE mode should return this
+  √ nellie » mos6502 » operations » LDX » exec() IMMEDIATE mode should load X from PC
+  √ nellie » mos6502 » operations » LDX » exec() ZERO_PAGE_Y mode should return this
+  √ nellie » mos6502 » operations » LDX » exec() ZERO_PAGE_Y mode should load X from PC
+  √ nellie » mos6502 » operations » LDX » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » LDX » exec() ZERO_PAGE mode should load X from PC
+  × nellie » mos6502 » operations » JSR » execute() should return true 
+  √ nellie » mos6502 » operations » INX » execute() should return true
+  √ nellie » mos6502 » operations » INX » execute() should increment X
+  √ nellie » mos6502 » operations » INX » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » INX » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » INX » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » INX » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » INX » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » INX » exec() IMPLIED mode should increment X
+  × nellie » mos6502 » operations » JMP » execute() should return true 
+  √ nellie » mos6502 » operations » INY » execute() should return true
+  √ nellie » mos6502 » operations » INY » execute() should increment Y
+  √ nellie » mos6502 » operations » INY » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » INY » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » INY » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » INY » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » INY » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » INY » exec() IMPLIED mode should increment Y
+  × nellie » mos6502 » operations » EOR » execute() should return true 
+  √ nellie » mos6502 » operations » INC » execute() should return true
+  √ nellie » mos6502 » operations » INC » execute() should increment B
+  √ nellie » mos6502 » operations » INC » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » INC » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » INC » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » INC » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » INC » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » INC » exec() ABSOLUTE_X mode should increment memory
+  √ nellie » mos6502 » operations » INC » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » INC » exec() ABSOLUTE mode should increment memory
+  √ nellie » mos6502 » operations » INC » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » INC » exec() ZERO_PAGE_X mode should increment memory
+  √ nellie » mos6502 » operations » INC » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » INC » exec() ZERO_PAGE mode should increment memory
+  √ nellie » mos6502 » operations » DEY » execute() should return true
+  √ nellie » mos6502 » operations » DEY » execute() should decrement Y
+  √ nellie » mos6502 » operations » DEY » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » DEY » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » DEY » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » DEY » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » DEY » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » DEY » exec() IMPLIED mode should decrement Y
+  √ nellie » mos6502 » operations » DEX » execute() should return true
+  √ nellie » mos6502 » operations » DEX » execute() should decrement Y
+  √ nellie » mos6502 » operations » DEX » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » DEX » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » DEX » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » DEX » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » DEX » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » DEX » exec() IMPLIED mode should decrement Y
+  √ nellie » mos6502 » operations » CPY » execute() should return true
+  √ nellie » mos6502 » operations » CPY » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » CPY » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » CPY » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » CPY » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » CPY » execute() should set C flag to 0
+  √ nellie » mos6502 » operations » CPY » execute() should set C flag to 1
+  √ nellie » mos6502 » operations » CPY » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » CPY » exec() ABSOLUTE mode should set N=0, Z=0, C=0
+  √ nellie » mos6502 » operations » CPY » exec() ABSOLUTE mode should set N=0, Z=0, C=1
+  √ nellie » mos6502 » operations » CPY » exec() ABSOLUTE mode should set N=0, Z=1, C=1
+  √ nellie » mos6502 » operations » CPY » exec() ABSOLUTE mode should set N=1, Z=0, C=0
+  √ nellie » mos6502 » operations » CPY » exec() ABSOLUTE mode should set N=1, Z=0, C=1
+  √ nellie » mos6502 » operations » CPY » exec() IMMEDIATE mode should return this
+  √ nellie » mos6502 » operations » CPY » exec() IMMEDIATE mode should set N=0, Z=0, C=0
+  √ nellie » mos6502 » operations » CPY » exec() IMMEDIATE mode should set N=0, Z=0, C=1
+  √ nellie » mos6502 » operations » CPY » exec() IMMEDIATE mode should set N=0, Z=1, C=1
+  √ nellie » mos6502 » operations » CPY » exec() IMMEDIATE mode should set N=1, Z=0, C=0
+  √ nellie » mos6502 » operations » CPY » exec() IMMEDIATE mode should set N=1, Z=0, C=1
+  √ nellie » mos6502 » operations » CPY » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » CPY » exec() ZERO_PAGE mode should set N=0, Z=0, C=0
+  √ nellie » mos6502 » operations » CPY » exec() ZERO_PAGE mode should set N=0, Z=0, C=1
+  √ nellie » mos6502 » operations » CPY » exec() ZERO_PAGE mode should set N=0, Z=1, C=1
+  √ nellie » mos6502 » operations » CPY » exec() ZERO_PAGE mode should set N=1, Z=0, C=0
+  √ nellie » mos6502 » operations » CPY » exec() ZERO_PAGE mode should set N=1, Z=0, C=1
+  √ nellie » mos6502 » operations » DEC » execute() should return true
+  √ nellie » mos6502 » operations » DEC » execute() should decrement B
+  √ nellie » mos6502 » operations » DEC » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » DEC » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » DEC » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » DEC » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » DEC » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » DEC » exec() ABSOLUTE_X mode should decrement memory
+  √ nellie » mos6502 » operations » DEC » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » DEC » exec() ABSOLUTE mode should decrement memory
+  √ nellie » mos6502 » operations » DEC » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » DEC » exec() ZERO_PAGE_X mode should decrement memory
+  √ nellie » mos6502 » operations » DEC » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » DEC » exec() ZERO_PAGE mode should decrement memory
+  √ nellie » mos6502 » operations » CPX » execute() should return true
+  √ nellie » mos6502 » operations » CPX » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » CPX » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » CPX » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » CPX » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » CPX » execute() should set C flag to 0
+  √ nellie » mos6502 » operations » CPX » execute() should set C flag to 1
+  √ nellie » mos6502 » operations » CPX » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » CPX » exec() ABSOLUTE mode should set N=0, Z=0, C=0
+  √ nellie » mos6502 » operations » CPX » exec() ABSOLUTE mode should set N=0, Z=0, C=1
+  √ nellie » mos6502 » operations » CPX » exec() ABSOLUTE mode should set N=0, Z=1, C=1
+  √ nellie » mos6502 » operations » CPX » exec() ABSOLUTE mode should set N=1, Z=0, C=0
+  √ nellie » mos6502 » operations » CPX » exec() ABSOLUTE mode should set N=1, Z=0, C=1
+  √ nellie » mos6502 » operations » CPX » exec() IMMEDIATE mode should return this
+  √ nellie » mos6502 » operations » CPX » exec() IMMEDIATE mode should set N=0, Z=0, C=0
+  √ nellie » mos6502 » operations » CPX » exec() IMMEDIATE mode should set N=0, Z=0, C=1
+  √ nellie » mos6502 » operations » CPX » exec() IMMEDIATE mode should set N=0, Z=1, C=1
+  √ nellie » mos6502 » operations » CPX » exec() IMMEDIATE mode should set N=1, Z=0, C=0
+  √ nellie » mos6502 » operations » CPX » exec() IMMEDIATE mode should set N=1, Z=0, C=1
+  √ nellie » mos6502 » operations » CPX » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » CPX » exec() ZERO_PAGE mode should set N=0, Z=0, C=0
+  √ nellie » mos6502 » operations » CPX » exec() ZERO_PAGE mode should set N=0, Z=0, C=1
+  √ nellie » mos6502 » operations » CPX » exec() ZERO_PAGE mode should set N=0, Z=1, C=1
+  √ nellie » mos6502 » operations » CPX » exec() ZERO_PAGE mode should set N=1, Z=0, C=0
+  √ nellie » mos6502 » operations » CPX » exec() ZERO_PAGE mode should set N=1, Z=0, C=1
+  × nellie » mos6502 » operations » CMP » execute() should return true 
+  √ nellie » mos6502 » operations » CLV » execute() should return true
+  √ nellie » mos6502 » operations » CLV » execute() should set V flag to 0
+  √ nellie » mos6502 » operations » CLV » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » CLV » exec() IMPLIED mode should set V flag to 1
+  √ nellie » mos6502 » operations » CLD » execute() should return true
+  √ nellie » mos6502 » operations » CLD » execute() should set D flag to 0
+  √ nellie » mos6502 » operations » CLD » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » CLD » exec() IMPLIED mode should set D flag to 0
+  √ nellie » mos6502 » operations » CLI » execute() should return true
+  √ nellie » mos6502 » operations » CLI » execute() should set I flag to 0
+  √ nellie » mos6502 » operations » CLI » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » CLI » exec() IMPLIED mode should set I flag to 0
+  √ nellie » mos6502 » operations » CLC » execute() should return true
+  √ nellie » mos6502 » operations » CLC » execute() should set C flag to 0
+  √ nellie » mos6502 » operations » CLC » exec() IMPLIED mode should return this
+  √ nellie » mos6502 » operations » CLC » exec() IMPLIED mode should set C flag to 0
+  √ nellie » mos6502 » operations » BVC » execute() should return true
+  √ nellie » mos6502 » operations » BVC » execute() should alter PC when V is clear (add)
+  √ nellie » mos6502 » operations » BVC » execute() should alter PC when V is clear (add page)
+  √ nellie » mos6502 » operations » BVC » execute() should alter PC when V is clear (sub)
+  √ nellie » mos6502 » operations » BVC » execute() should alter PC when V is clear (sub page)
+  √ nellie » mos6502 » operations » BVC » execute() should not alter PC when V is set
+  √ nellie » mos6502 » operations » BVC » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BVC » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BVC » exec() RELATIVE mode should alter PC (set)
+  √ nellie » mos6502 » operations » BVS » execute() should return true
+  √ nellie » mos6502 » operations » BVS » execute() should alter PC when V is set (add)
+  √ nellie » mos6502 » operations » BVS » execute() should alter PC when V is set (add page)
+  √ nellie » mos6502 » operations » BVS » execute() should alter PC when V is set (sub)
+  √ nellie » mos6502 » operations » BVS » execute() should alter PC when V is set (sub page)
+  √ nellie » mos6502 » operations » BVS » execute() should not alter PC when V is clear
+  √ nellie » mos6502 » operations » BVS » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BVS » exec() RELATIVE mode should alter PC (set)
+  √ nellie » mos6502 » operations » BVS » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BPL » execute() should return true
+  √ nellie » mos6502 » operations » BPL » execute() should alter PC when N is clear (add)
+  √ nellie » mos6502 » operations » BPL » execute() should alter PC when N is clear (add page)
+  √ nellie » mos6502 » operations » BPL » execute() should alter PC when N is clear (sub)
+  √ nellie » mos6502 » operations » BPL » execute() should alter PC when N is clear (sub page)
+  √ nellie » mos6502 » operations » BPL » execute() should not alter PC when N is set
+  √ nellie » mos6502 » operations » BPL » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BPL » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BPL » exec() RELATIVE mode should alter PC (set)
+  × nellie » mos6502 » operations » BRK » execute() should return true 
+  √ nellie » mos6502 » operations » BNE » execute() should return true
+  √ nellie » mos6502 » operations » BMI » execute() should return true
+  √ nellie » mos6502 » operations » BNE » execute() should alter PC when Z is clear (add)
+  √ nellie » mos6502 » operations » BNE » execute() should alter PC when Z is clear (add page)
+  √ nellie » mos6502 » operations » BNE » execute() should alter PC when Z is clear (sub)
+  √ nellie » mos6502 » operations » BNE » execute() should alter PC when Z is clear (sub page)
+  √ nellie » mos6502 » operations » BNE » execute() should not alter PC when Z is set
+  √ nellie » mos6502 » operations » BNE » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BNE » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BNE » exec() RELATIVE mode should alter PC (set)
+  √ nellie » mos6502 » operations » BMI » execute() should alter PC when N is set (add)
+  √ nellie » mos6502 » operations » BMI » execute() should alter PC when N is set (add page)
+  √ nellie » mos6502 » operations » BMI » execute() should alter PC when N is set (sub)
+  √ nellie » mos6502 » operations » BMI » execute() should alter PC when N is set (sub page)
+  √ nellie » mos6502 » operations » BMI » execute() should not alter PC when N is clear
+  √ nellie » mos6502 » operations » BMI » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BMI » exec() RELATIVE mode should alter PC (set)
+  √ nellie » mos6502 » operations » BMI » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BIT » execute() should return true
+  √ nellie » mos6502 » operations » BIT » execute() should alter B
+  √ nellie » mos6502 » operations » BIT » execute() should set N from B
+  √ nellie » mos6502 » operations » BIT » execute() should clear N from B
+  √ nellie » mos6502 » operations » BIT » execute() should set V from B
+  √ nellie » mos6502 » operations » BIT » execute() should clear V from B
+  √ nellie » mos6502 » operations » BIT » execute() should set Z from B
+  √ nellie » mos6502 » operations » BIT » execute() should clear Z from B
+  √ nellie » mos6502 » operations » BIT » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » BIT » exec() ABSOLUTE mode should alter B
+  √ nellie » mos6502 » operations » BIT » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » BIT » exec() ZERO_PAGE mode should alter B
+  √ nellie » mos6502 » operations » BEQ » execute() should return true
+  √ nellie » mos6502 » operations » BEQ » execute() should alter PC when Z is set (add)
+  √ nellie » mos6502 » operations » BEQ » execute() should alter PC when Z is set (add page)
+  √ nellie » mos6502 » operations » BEQ » execute() should alter PC when Z is set (sub)
+  √ nellie » mos6502 » operations » BEQ » execute() should alter PC when Z is set (sub page)
+  √ nellie » mos6502 » operations » BEQ » execute() should not alter PC when Z is clear
+  √ nellie » mos6502 » operations » BEQ » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BEQ » exec() RELATIVE mode should alter PC (set)
+  √ nellie » mos6502 » operations » BEQ » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BCS » execute() should return true
+  √ nellie » mos6502 » operations » BCS » execute() should alter PC when C is set (add)
+  √ nellie » mos6502 » operations » BCS » execute() should alter PC when C is set (add page)
+  √ nellie » mos6502 » operations » BCS » execute() should alter PC when C is set (sub)
+  √ nellie » mos6502 » operations » BCS » execute() should alter PC when C is set (sub page)
+  √ nellie » mos6502 » operations » BCS » execute() should not alter PC when C is clear
+  √ nellie » mos6502 » operations » BCS » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BCS » exec() RELATIVE mode should alter PC (set)
+  √ nellie » mos6502 » operations » BCS » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BCC » execute() should return true
+  √ nellie » mos6502 » operations » BCC » execute() should alter PC when C is clear (add)
+  √ nellie » mos6502 » operations » BCC » execute() should alter PC when C is clear (add page)
+  √ nellie » mos6502 » operations » BCC » execute() should alter PC when C is clear (sub)
+  √ nellie » mos6502 » operations » BCC » execute() should alter PC when C is clear (sub page)
+  √ nellie » mos6502 » operations » BCC » execute() should not alter PC when C is set
+  √ nellie » mos6502 » operations » BCC » exec() RELATIVE mode should return this
+  √ nellie » mos6502 » operations » BCC » exec() RELATIVE mode should alter PC (clear)
+  √ nellie » mos6502 » operations » BCC » exec() RELATIVE mode should alter PC (set)
+  √ nellie » mos6502 » operations » ASL » execute() should return true
+  √ nellie » mos6502 » operations » ASL » execute() should shift B left
+  √ nellie » mos6502 » operations » ASL » execute() should set N flag to 0
+  √ nellie » mos6502 » operations » ASL » execute() should set N flag to 1
+  √ nellie » mos6502 » operations » ASL » execute() should set Z flag to 0
+  √ nellie » mos6502 » operations » ASL » execute() should set Z flag to 1
+  √ nellie » mos6502 » operations » ASL » execute() should set C flag to 0
+  √ nellie » mos6502 » operations » ASL » execute() should set C flag to 1
+  √ nellie » mos6502 » operations » ASL » exec() ABSOLUTE_X mode should return this
+  √ nellie » mos6502 » operations » ASL » exec() ABSOLUTE_X mode should shift memory
+  √ nellie » mos6502 » operations » ASL » exec() ABSOLUTE mode should return this
+  √ nellie » mos6502 » operations » ASL » exec() ABSOLUTE mode should shift memory
+  √ nellie » mos6502 » operations » ASL » exec() ACCUMULATOR mode should return this
+  √ nellie » mos6502 » operations » ASL » exec() ACCUMULATOR mode should shift memory
+  √ nellie » mos6502 » operations » ASL » exec() ZERO_PAGE_X mode should return this
+  √ nellie » mos6502 » operations » ASL » exec() ZERO_PAGE_X mode should shift memory
+  √ nellie » mos6502 » operations » ASL » exec() ZERO_PAGE mode should return this
+  √ nellie » mos6502 » operations » ASL » exec() ZERO_PAGE mode should shift memory
+  × nellie » mos6502 » operations » ADC » execute() should return true 
+  √ nellie » mos6502 » operations » AND » absolute » exec(ABSOLUTE...) should return this
+  √ nellie » mos6502 » operations » AND » absolute » exec(ABSOLUTE...) should alter accumulator
+  √ nellie » mos6502 » operations » AND » absolute » MOS6502.execPC() should increment clock by 4
+  √ nellie » mos6502 » operations » AND » absolute_x » exec(ABSOLUTE_X...) should return this
+  √ nellie » mos6502 » operations » AND » absolute_x » exec(ABSOLUTE_X...) should alter accumulator
+  √ nellie » mos6502 » operations » AND » absolute_x » exec(ABSOLUTE_X...) should alter accumulator (page boundary)
+  √ nellie » mos6502 » operations » AND » absolute_x » MOS6502.execPC() should increment clock by 4
+  √ nellie » mos6502 » operations » AND » absolute_x » MOS6502.execPC() should increment clock by 5 (page boundary)
+  √ nellie » mos6502 » operations » AND » absolute_y » exec(ABSOLUTE_Y...) should return this
+  √ nellie » mos6502 » operations » AND » absolute_y » exec(ABSOLUTE_Y...) should alter accumulator
+  √ nellie » mos6502 » operations » AND » absolute_y » exec(ABSOLUTE_Y...) should alter accumulator (page boundary)
+  √ nellie » mos6502 » operations » AND » absolute_y » MOS6502.execPC() should increment clock by 4
+  √ nellie » mos6502 » operations » AND » absolute_y » MOS6502.execPC() should increment clock by 5 (page boundary)
+  √ nellie » mos6502 » operations » AND » immediate » exec(IMMEDIATE...) should return this
+  √ nellie » mos6502 » operations » AND » immediate » exec(IMMEDIATE...) should alter accumulator
+  √ nellie » mos6502 » operations » AND » immediate » MOS6502.execPC() should increment clock by 2
+  √ nellie » mos6502 » operations » AND » zero_page » exec(ZERO_PAGE...) should return this
+  √ nellie » mos6502 » operations » AND » zero_page » exec(ZERO_PAGE...) should alter accumulator
+  √ nellie » mos6502 » operations » AND » zero_page » MOS6502.execPC() should increment clock by 3
+  √ nellie » mos6502 » operations » AND » zero_page_x » exec(ZERO_PAGE_X...) should return this
+  √ nellie » mos6502 » operations » AND » zero_page_x » exec(ZERO_PAGE_X...) should alter accumulator
+  √ nellie » mos6502 » operations » AND » zero_page_x » exec(ZERO_PAGE_X...) should alter accumulator (wrap)
+  √ nellie » mos6502 » operations » AND » zero_page_x » MOS6502.execPC() should increment clock by 3
+  √ nellie » mos6502 » operations » TYA » implied » exec(IMPLIED...) should return this
+  √ nellie » mos6502 » operations » TYA » implied » exec(IMPLIED...) should set A from Y
+  √ nellie » mos6502 » operations » TYA » implied » MOS6502.execPC() should increment clock by 2
   ─
-  mos6502 » modes » indirect » index » beforeExecute() should return true
-  test\nellie\mos6502\modes\indirect\index.js:12
+  nellie » mos6502 » modes » indirect » beforeExecute() should return true
+  test\nellie\mos6502\modes\indirect.test.js:12
    11: test('beforeExecute() should return true', (t) => {
    12:   t.is(t.context.MODE.beforeExecute(), true);      
    13: });                                                
   - undefined
   + true
-  » test/nellie/mos6502/modes/indirect/index.js:12:5
-  mos6502 » modes » indirect » index » beforeExecute() should prime register.b
-  test\nellie\mos6502\modes\indirect\index.js:16
+  » test/nellie/mos6502/modes/indirect.test.js:12:5
+  nellie » mos6502 » modes » indirect » beforeExecute() should prime register.b
+  test\nellie\mos6502\modes\indirect.test.js:16
    15: test('beforeExecute() should prime register.b', (t) => {
    16:   t.fail();                                             
    17: });                                                     
-  » test/nellie/mos6502/modes/indirect/index.js:16:5
-  mos6502 » modes » indirect » index » afterExecute() should prime register.b
-  test\nellie\mos6502\modes\indirect\index.js:24
+  » test/nellie/mos6502/modes/indirect.test.js:16:5
+  nellie » mos6502 » modes » indirect » afterExecute() should prime register.b
+  test\nellie\mos6502\modes\indirect.test.js:24
    23: test('afterExecute() should prime register.b', (t) => {
    24:   t.fail();                                            
    25: });                                                    
-  » test/nellie/mos6502/modes/indirect/index.js:24:5
-  mos6502 » modes » indirect_x » index » beforeExecute() should return true
-  test\nellie\mos6502\modes\indirect_x\index.js:12
+  » test/nellie/mos6502/modes/indirect.test.js:24:5
+  nellie » mos6502 » modes » indirect_x » beforeExecute() should return true
+  test\nellie\mos6502\modes\indirect_x.test.js:12
    11: test('beforeExecute() should return true', (t) => {
    12:   t.is(t.context.MODE.beforeExecute(), true);      
    13: });                                                
   - undefined
   + true
-  » test/nellie/mos6502/modes/indirect_x/index.js:12:5
-  mos6502 » modes » indirect_x » index » beforeExecute() should prime register.b
-  test\nellie\mos6502\modes\indirect_x\index.js:16
+  » test/nellie/mos6502/modes/indirect_x.test.js:12:5
+  nellie » mos6502 » modes » indirect_x » beforeExecute() should prime register.b
+  test\nellie\mos6502\modes\indirect_x.test.js:16
    15: test('beforeExecute() should prime register.b', (t) => {
    16:   t.fail();                                             
    17: });                                                     
-  » test/nellie/mos6502/modes/indirect_x/index.js:16:5
-  mos6502 » modes » indirect_x » index » afterExecute() should prime register.b
-  test\nellie\mos6502\modes\indirect_x\index.js:24
+  » test/nellie/mos6502/modes/indirect_x.test.js:16:5
+  nellie » mos6502 » modes » indirect_x » afterExecute() should prime register.b
+  test\nellie\mos6502\modes\indirect_x.test.js:24
    23: test('afterExecute() should prime register.b', (t) => {
    24:   t.fail();                                            
    25: });                                                    
-  » test/nellie/mos6502/modes/indirect_x/index.js:24:5
-  mos6502 » modes » indirect_y » index » beforeExecute() should return true
-  test\nellie\mos6502\modes\indirect_y\index.js:12
+  » test/nellie/mos6502/modes/indirect_x.test.js:24:5
+  nellie » mos6502 » modes » indirect_y » beforeExecute() should return true
+  test\nellie\mos6502\modes\indirect_y.test.js:12
    11: test('beforeExecute() should return true', (t) => {
    12:   t.is(t.context.MODE.beforeExecute(), true);      
    13: });                                                
   - undefined
   + true
-  » test/nellie/mos6502/modes/indirect_y/index.js:12:5
-  mos6502 » modes » indirect_y » index » beforeExecute() should prime register.b
-  test\nellie\mos6502\modes\indirect_y\index.js:16
+  » test/nellie/mos6502/modes/indirect_y.test.js:12:5
+  nellie » mos6502 » modes » indirect_y » beforeExecute() should prime register.b
+  test\nellie\mos6502\modes\indirect_y.test.js:16
    15: test('beforeExecute() should prime register.b', (t) => {
    16:   t.fail();                                             
    17: });                                                     
-  » test/nellie/mos6502/modes/indirect_y/index.js:16:5
-  mos6502 » modes » indirect_y » index » afterExecute() should prime register.b
-  test\nellie\mos6502\modes\indirect_y\index.js:24
+  » test/nellie/mos6502/modes/indirect_y.test.js:16:5
+  nellie » mos6502 » modes » indirect_y » afterExecute() should prime register.b
+  test\nellie\mos6502\modes\indirect_y.test.js:24
    23: test('afterExecute() should prime register.b', (t) => {
    24:   t.fail();                                            
    25: });                                                    
-  » test/nellie/mos6502/modes/indirect_y/index.js:24:5
-  mos6502 » operations » ADC » index » execute() should return true
-  test\nellie\mos6502\operations\ADC\index.js:13
+  » test/nellie/mos6502/modes/indirect_y.test.js:24:5
+  nellie » mos6502 » modes » absolute_x » beforeExecute() should increment the clock by two
+  test\nellie\mos6502\modes\absolute_x.test.js:53
+   52:   MODE.beforeExecute(MOS6502);
+   53:   t.is(MOS6502.clock.inc, 3); 
+   54: });                           
+  - 2
+  + 3
+  » test/nellie/mos6502/modes/absolute_x.test.js:53:5
+  nellie » mos6502 » modes » absolute_x » beforeExecute() should increment the clock by three on page boundary
+  test\nellie\mos6502\modes\absolute_x.test.js:66
+   65:   MODE.beforeExecute(MOS6502);
+   66:   t.is(MOS6502.clock.inc, 4); 
+   67: });                           
+  - 3
+  + 4
+  » test/nellie/mos6502/modes/absolute_x.test.js:66:5
+  nellie » mos6502 » operations » AND » exec() INDIRECT_X mode should return this
+  nellie » mos6502 » operations » AND » exec() INDIRECT_X mode should alter accumulator
+  nellie » mos6502 » operations » AND » exec() INDIRECT_Y mode should return this
+  nellie » mos6502 » operations » AND » exec() INDIRECT_Y mode should alter accumulator
+  nellie » mos6502 » operations » TXS » execute() should return true
+  test\nellie\mos6502\operations\TXS.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/ADC/index.js:13:5
-  mos6502 » operations » AND » index » exec() ABSOLUTE_X mode should return this
-  mos6502 » operations » AND » index » exec() ABSOLUTE_X mode should alter accumulator
-  mos6502 » operations » AND » index » exec() ABSOLUTE_Y mode should return this
-  mos6502 » operations » AND » index » exec() ABSOLUTE_Y mode should alter accumulator
-  mos6502 » operations » AND » index » exec() INDIRECT_X mode should return this
-  mos6502 » operations » AND » index » exec() INDIRECT_X mode should alter accumulator
-  mos6502 » operations » AND » index » exec() INDIRECT_Y mode should return this
-  mos6502 » operations » AND » index » exec() INDIRECT_Y mode should alter accumulator
-  mos6502 » operations » AND » index » exec() ZERO_PAGE_X mode should return this
-  mos6502 » operations » AND » index » exec() ZERO_PAGE_X mode should alter accumulator
-  mos6502 » operations » BRK » index » execute() should return true
-  test\nellie\mos6502\operations\BRK\index.js:13
+  » test/nellie/mos6502/operations/TXS.test.js:13:5
+  nellie » mos6502 » operations » TSX » execute() should return true
+  test\nellie\mos6502\operations\TSX.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/BRK/index.js:13:5
-  mos6502 » operations » CMP » index » execute() should return true
-  test\nellie\mos6502\operations\CMP\index.js:13
+  » test/nellie/mos6502/operations/TSX.test.js:13:5
+  nellie » mos6502 » operations » STA » execute() should return true
+  test\nellie\mos6502\operations\STA.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/CMP/index.js:13:5
-  mos6502 » operations » EOR » index » execute() should return true
-  test\nellie\mos6502\operations\EOR\index.js:13
+  » test/nellie/mos6502/operations/STA.test.js:13:5
+  nellie » mos6502 » operations » SBC » execute() should return true
+  test\nellie\mos6502\operations\SBC.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/EOR/index.js:13:5
-  mos6502 » operations » JMP » index » execute() should return true
-  test\nellie\mos6502\operations\JMP\index.js:13
+  » test/nellie/mos6502/operations/SBC.test.js:13:5
+  nellie » mos6502 » operations » RTS » execute() should return true
+  test\nellie\mos6502\operations\RTS.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/JMP/index.js:13:5
-  mos6502 » operations » JSR » index » execute() should return true
-  test\nellie\mos6502\operations\JSR\index.js:13
+  » test/nellie/mos6502/operations/RTS.test.js:13:5
+  nellie » mos6502 » operations » RTI » execute() should return true
+  test\nellie\mos6502\operations\RTI.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/JSR/index.js:13:5
-  mos6502 » operations » LDA » index » exec() INDIRECT_X mode should return this
+  » test/nellie/mos6502/operations/RTI.test.js:13:5
+  nellie » mos6502 » operations » PLP » execute() should return true
+  test\nellie\mos6502\operations\PLP.test.js:13
+   12: test('execute() should return true', (t) => {         
+   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
+   14: });                                                   
+  - false
+  + true
+  » test/nellie/mos6502/operations/PLP.test.js:13:5
+  nellie » mos6502 » operations » PLA » execute() should return true
+  test\nellie\mos6502\operations\PLA.test.js:13
+   12: test('execute() should return true', (t) => {         
+   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
+   14: });                                                   
+  - false
+  + true
+  » test/nellie/mos6502/operations/PLA.test.js:13:5
+  nellie » mos6502 » operations » PHP » execute() should return true
+  test\nellie\mos6502\operations\PHP.test.js:13
+   12: test('execute() should return true', (t) => {         
+   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
+   14: });                                                   
+  - false
+  + true
+  » test/nellie/mos6502/operations/PHP.test.js:13:5
+  nellie » mos6502 » operations » PHA » execute() should return true
+  test\nellie\mos6502\operations\PHA.test.js:13
+   12: test('execute() should return true', (t) => {         
+   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
+   14: });                                                   
+  - false
+  + true
+  » test/nellie/mos6502/operations/PHA.test.js:13:5
+  nellie » mos6502 » operations » ORA » execute() should return true
+  test\nellie\mos6502\operations\ORA.test.js:13
+   12: test('execute() should return true', (t) => {         
+   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
+   14: });                                                   
+  - false
+  + true
+  » test/nellie/mos6502/operations/ORA.test.js:13:5
+  nellie » mos6502 » operations » LDA » exec() INDIRECT_X mode should return this
   OperationError {
     message: 'Halting LDA 0xa1. beforeExecute() returned undefined',
   }
-  mos6502 » operations » LDA » index » exec() INDIRECT_Y mode should return this
+  nellie » mos6502 » operations » LDA » exec() INDIRECT_Y mode should return this
   OperationError {
     message: 'Halting LDA 0xb1. beforeExecute() returned undefined',
   }
-  mos6502 » operations » PHA » index » execute() should return true
-  test\nellie\mos6502\operations\PHA\index.js:13
+  nellie » mos6502 » operations » JSR » execute() should return true
+  test\nellie\mos6502\operations\JSR.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/PHA/index.js:13:5
-  mos6502 » operations » ORA » index » execute() should return true
-  test\nellie\mos6502\operations\ORA\index.js:13
+  » test/nellie/mos6502/operations/JSR.test.js:13:5
+  nellie » mos6502 » operations » JMP » execute() should return true
+  test\nellie\mos6502\operations\JMP.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/ORA/index.js:13:5
-  mos6502 » operations » PLA » index » execute() should return true
-  test\nellie\mos6502\operations\PLA\index.js:13
+  » test/nellie/mos6502/operations/JMP.test.js:13:5
+  nellie » mos6502 » operations » EOR » execute() should return true
+  test\nellie\mos6502\operations\EOR.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/PLA/index.js:13:5
-  mos6502 » operations » PHP » index » execute() should return true
-  test\nellie\mos6502\operations\PHP\index.js:13
+  » test/nellie/mos6502/operations/EOR.test.js:13:5
+  nellie » mos6502 » operations » CMP » execute() should return true
+  test\nellie\mos6502\operations\CMP.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/PHP/index.js:13:5
-  mos6502 » operations » PLP » index » execute() should return true
-  test\nellie\mos6502\operations\PLP\index.js:13
+  » test/nellie/mos6502/operations/CMP.test.js:13:5
+  nellie » mos6502 » operations » BRK » execute() should return true
+  test\nellie\mos6502\operations\BRK.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/PLP/index.js:13:5
-  mos6502 » operations » RTS » index » execute() should return true
-  test\nellie\mos6502\operations\RTS\index.js:13
+  » test/nellie/mos6502/operations/BRK.test.js:13:5
+  nellie » mos6502 » operations » ADC » execute() should return true
+  test\nellie\mos6502\operations\ADC.test.js:13
    12: test('execute() should return true', (t) => {         
    13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
    14: });                                                   
   - false
   + true
-  » test/nellie/mos6502/operations/RTS/index.js:13:5
-  mos6502 » operations » RTI » index » execute() should return true
-  test\nellie\mos6502\operations\RTI\index.js:13
-   12: test('execute() should return true', (t) => {         
-   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
-   14: });                                                   
-  - false
-  + true
-  » test/nellie/mos6502/operations/RTI/index.js:13:5
-  mos6502 » operations » SBC » index » execute() should return true
-  test\nellie\mos6502\operations\SBC\index.js:13
-   12: test('execute() should return true', (t) => {         
-   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
-   14: });                                                   
-  - false
-  + true
-  » test/nellie/mos6502/operations/SBC/index.js:13:5
-  mos6502 » operations » STA » index » execute() should return true
-  test\nellie\mos6502\operations\STA\index.js:13
-   12: test('execute() should return true', (t) => {         
-   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
-   14: });                                                   
-  - false
-  + true
-  » test/nellie/mos6502/operations/STA/index.js:13:5
-  mos6502 » operations » TSX » index » execute() should return true
-  test\nellie\mos6502\operations\TSX\index.js:13
-   12: test('execute() should return true', (t) => {         
-   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
-   14: });                                                   
-  - false
-  + true
-  » test/nellie/mos6502/operations/TSX/index.js:13:5
-  mos6502 » operations » TXS » index » execute() should return true
-  test\nellie\mos6502\operations\TXS\index.js:13
-   12: test('execute() should return true', (t) => {         
-   13:   t.is(t.context.OP.execute(t.context.MOS6502), true);
-   14: });                                                   
-  - false
-  + true
-  » test/nellie/mos6502/operations/TXS/index.js:13:5
+  » test/nellie/mos6502/operations/ADC.test.js:13:5
   ─
-  38 tests failed
+  34 tests failed
