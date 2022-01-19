@@ -62,64 +62,6 @@ test('execute() should clear Z from A', (t) => {
   t.is(MOS6502.register.p.bit('Z'), 0);
 });
 
-test('exec() ABSOLUTE_X mode should return this', (t) => {});
-
-test('exec() ABSOLUTE_X mode should alter accumulator', (t) => {});
-
-test('exec() ABSOLUTE_Y mode should return this', (t) => {});
-
-test('exec() ABSOLUTE_Y mode should alter accumulator', (t) => {});
-
-test('exec() ABSOLUTE mode should return this', (t) => {
-  const MOS6502 = t.context.MOS6502;
-  const OP      = t.context.OP;
-  const MODE    = OP.mode.ABSOLUTE;
-  MOS6502.register.a.set(0xFF);
-  MOS6502.register.pc.set(0x0010);
-  MOS6502.memory.main.data[0x0010] = MODE;
-  MOS6502.memory.main.data[0x0011] = 0x02;
-  MOS6502.memory.main.data[0x0012] = 0x01;
-  MOS6502.memory.main.data[0x0102] = 0xAA;
-  t.is(OP.exec(MODE, MOS6502), OP);
-});
-
-test('exec() ABSOLUTE mode should alter accumulator', (t) => {
-  const MOS6502 = t.context.MOS6502;
-  const OP      = t.context.OP;
-  const MODE    = OP.mode.ABSOLUTE;
-  MOS6502.register.a.set(0xFF);
-  MOS6502.register.pc.set(0x0010);
-  MOS6502.memory.main.data[0x0010] = MODE;
-  MOS6502.memory.main.data[0x0011] = 0x02;
-  MOS6502.memory.main.data[0x0012] = 0x01;
-  MOS6502.memory.main.data[0x0102] = 0xAA;
-  OP.exec(MODE, MOS6502);
-  t.is(MOS6502.register.a.get(), 0xAA);
-});
-
-test('exec() IMMEDIATE mode should return this', (t) => {
-  const MOS6502 = t.context.MOS6502;
-  const OP      = t.context.OP;
-  const MODE    = OP.mode.IMMEDIATE;
-  MOS6502.register.a.set(0xFF);
-  MOS6502.register.pc.set(0x0010);
-  MOS6502.memory.main.data[0x0010] = MODE;
-  MOS6502.memory.main.data[0x0011] = 0xAA;
-  t.is(OP.exec(MODE, MOS6502), OP);
-});
-
-test('exec() IMMEDIATE mode should alter accumulator', (t) => {
-  const MOS6502 = t.context.MOS6502;
-  const OP      = t.context.OP;
-  const MODE    = OP.mode.IMMEDIATE;
-  MOS6502.register.a.set(0xFF);
-  MOS6502.register.pc.set(0x0010);
-  MOS6502.memory.main.data[0x0010] = MODE;
-  MOS6502.memory.main.data[0x0011] = 0xAA;
-  OP.exec(MODE, MOS6502);
-  t.is(MOS6502.register.a.get(), 0xAA);
-});
-
 test('exec() INDIRECT_X mode should return this', (t) => {});
 
 test('exec() INDIRECT_X mode should alter accumulator', (t) => {});
@@ -127,33 +69,3 @@ test('exec() INDIRECT_X mode should alter accumulator', (t) => {});
 test('exec() INDIRECT_Y mode should return this', (t) => {});
 
 test('exec() INDIRECT_Y mode should alter accumulator', (t) => {});
-
-test('exec() ZERO_PAGE_X mode should return this', (t) => {});
-
-test('exec() ZERO_PAGE_X mode should alter accumulator', (t) => {});
-
-test('exec() ZERO_PAGE mode should return this', (t) => {
-  const MOS6502 = t.context.MOS6502;
-  const OP      = t.context.OP;
-  const MODE    = OP.mode.ZERO_PAGE;
-  MOS6502.register.a.set(0xFF);
-  MOS6502.register.pc.set(0x0010);
-  MOS6502.memory.main.data[0x0010] = MODE;
-  MOS6502.memory.main.data[0x0011] = 0x02;
-  MOS6502.memory.main.data[0x0002] = 0xAA;
-  t.is(OP.exec(MODE, MOS6502), OP);
-});
-
-test('exec() ZERO_PAGE mode should alter accumulator', (t) => {
-  const MOS6502 = t.context.MOS6502;
-  const OP      = t.context.OP;
-  const MODE    = OP.mode.ZERO_PAGE;
-  MOS6502.register.a.set(0xFF);
-  MOS6502.register.pc.set(0x0010);
-  MOS6502.memory.main.data[0x0010] = MODE;
-  MOS6502.memory.main.data[0x0011] = 0x02;
-  MOS6502.memory.main.data[0x0012] = 0x01;
-  MOS6502.memory.main.data[0x0102] = 0xAA;
-  OP.exec(MODE, MOS6502);
-  t.is(MOS6502.register.a.get(), 0xAA);
-});

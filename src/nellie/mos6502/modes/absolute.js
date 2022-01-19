@@ -11,14 +11,14 @@ function* beforeExecuteAbsoluteTick(processor, callback=noCallback) {
   // into the address register; take this as absolute address,
   // and transfer the value at this address to register b
   let absolute;
-  let operand;
+  let newPC;
   // lower byte
-  operand    = processor.register.pc.inc();
-  processor.register.ma.set( processor.memory.main.get(operand) );
+  newPC = processor.register.pc.inc();
+  processor.register.ma.set( processor.memory.main.get(newPC) );
   yield* processor.clock.tick();
   // upper byte
-  operand    = processor.register.pc.inc();
-  processor.register.ma.inc( processor.memory.main.get(operand) << 8 );
+  newPC = processor.register.pc.inc();
+  processor.register.ma.inc( processor.memory.main.get(newPC) << 8 );
   yield* processor.clock.tick();
   // adjust for absolute_x or absolute_y via callback
   yield* callback(processor);
@@ -26,7 +26,10 @@ function* beforeExecuteAbsoluteTick(processor, callback=noCallback) {
   absolute = processor.memory.main.get(processor.register.ma.get());
   // store this value into register b
   processor.register.b.set(absolute);
-  yield* processor.clock.tick();
+  // we cannot predict whether ABSOLUTE will want a READ or a WRITE...
+  // ...so we do both
+  // there is no need to tick the clock here
+  // there will be a tick later at cleanup to stabilize any stray signals
   return true;
 } // beforeExecuteAbsoluteTick()
 
@@ -35,7 +38,10 @@ function* afterExecuteAbsoluteTick(processor) {
   // according to the value found in register b
   // if register b has not changed, there will be no effect
   processor.memory.main.set(processor.register.ma.get(), processor.register.b.get());
-  yield* processor.clock.tick();
+  // we cannot predict whether ABSOLUTE will want a READ or a WRITE...
+  // ...so we do both
+  // there is no need to tick the clock here
+  // there will be a tick later at cleanup to stabilize any stray signals
   return true;
 } // beforeExecuteAbsoluteTick()
 

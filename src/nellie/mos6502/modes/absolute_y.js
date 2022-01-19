@@ -12,12 +12,12 @@ function* beforeExecuteAbsoluteYTick_callback(processor) {
   let page   = processor.register.ma.get() >> 8;
   processor.register.ma.inc( processor.register.y.get() );
   if (page !== (processor.register.ma.get() >> 8)) { // different page (high byte)
-    processor.clock.tick(1);
+    yield* processor.clock.tick();
   } // if page
 } // beforeExecuteAbsoluteY_callbackTick()
 
 function* beforeExecuteAbsoluteYTick(processor) {
-  return MODE_ABSOLUTE.beforeExecute(processor, beforeExecuteAbsoluteYTick_callback);
+  return yield* MODE_ABSOLUTE.beforeExecuteTick(processor, beforeExecuteAbsoluteYTick_callback);
 } // beforeExecuteAbsoluteYTick()
 
 var MODE_ABSOLUTE_Y = new Ellie.Processor.Mode(

@@ -51,6 +51,37 @@ MOS6502.addRegister(REG_registerX);
 MOS6502.addRegister(REG_registerY);
 MOS6502.addRegister(REG_status);
 
+MOS6502.execPCTick = function*() {
+  // READ the memory address at PC
+  // this will take one CPU cycle
+  let opcode = this.memory.main.get( this.register.pc.get() );
+  console.debug(
+    this.register.pc.toString(),
+    '0x' + opcode.toString(16),
+    this.instruction[opcode].toString()
+  );
+  yield* this.clock.tick();
+  // EXECUTE the operation we just looked up
+  // this may take a variable number of CPU cycles
+  yield* this.execTick(opcode);
+  // progress to the next opcode
+  // since all operations take at least two cycles
+  // (one for lookup, one to stabilize)
+  // we will cleanup with a tick() here
+  this.register.pc.inc();
+  yield* this.clock.tick();
+  return this;
+}; // MOS6502.execPCTick()
+
+MOS6502.execPC = function() {
+  let runner = this.execPCTick.apply(this, arguments);
+  let ret    = runner.next();
+  while (ret.done !== true) {
+    ret = runner.next();
+  } // while not done
+  return ret.value; // should be chainable
+}; // MOS6502.execPC()
+
 MOS6502.runTick = function*() {
   // TODO remove: temp setup
   this.memory.main.set(0xFFFD, 0x80);
@@ -61,15 +92,13 @@ MOS6502.runTick = function*() {
   // normal operation from here
   this.register.pc.set((this.memory.main.get(0xFFFD) << 8) + this.memory.main.get(0xFFFC));
   while (true) {
-    let opcode = this.memory.main.get(this.register.pc.get());
-    console.log(this.register.pc.toString(), '0x' + opcode.toString(16), this.instruction[opcode].toString());
-    yield* this.execTick(opcode);
+    yield* this.execPCTick();
+
     const date = Date.now();
     let currentDate = null;
     do {
       currentDate = Date.now();
     } while (currentDate - date < 1000);
-    this.register.pc.inc();
   }
 };
 
