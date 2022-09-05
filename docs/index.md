@@ -4,6 +4,7 @@
 
 ## Documentation & Test Coverage
 * [`main/HEAD`](https://github.com/ellieproject/nellie.js/tree/main) [\[tests\]](/nellie.js/current/tests/results.html) [\[coverage\]](/nellie.js/current/coverage)
+* [`cefea5b0c`](https://github.com/ellieproject/nellie.js/tree/cefea5b0cbc1dbce790abce00b9a883c6b54bbfb) [[tests]](/nellie.js/cefea5b0cbc1dbce790abce00b9a883c6b54bbfb/tests/results.html) [[coverage]](/nellie.js/cefea5b0cbc1dbce790abce00b9a883c6b54bbfb/coverage)
 * [`e8f5a54ef`](https://github.com/ellieproject/nellie.js/tree/e8f5a54ef629cf5eac61c7fea0f450dc23acc98e) [[tests]](/nellie.js/e8f5a54ef629cf5eac61c7fea0f450dc23acc98e/tests/results.html) [[coverage]](/nellie.js/e8f5a54ef629cf5eac61c7fea0f450dc23acc98e/coverage)
 * [`4f22c8c72`](https://github.com/ellieproject/nellie.js/tree/4f22c8c72d0ce6d16682c4139f60101b336947bd) [[tests]](/nellie.js/4f22c8c72d0ce6d16682c4139f60101b336947bd/tests/results.html) [[coverage]](/nellie.js/4f22c8c72d0ce6d16682c4139f60101b336947bd/coverage)
 * [`666d338b5`](https://github.com/ellieproject/nellie.js/tree/666d338b5185eeb7592a4d44ba04decabff45de2) [[tests]](/nellie.js/666d338b5185eeb7592a4d44ba04decabff45de2/tests/results.html) [[coverage]](/nellie.js/666d338b5185eeb7592a4d44ba04decabff45de2/coverage)
