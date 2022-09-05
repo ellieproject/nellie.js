@@ -20,6 +20,9 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 
 ### Opcodes & Address Modes
 
+Opcodes: 25/55
+Opcodes + Address Modes: 41/153
+
 |    |                          |
 |---:|--------------------------|
 | ❌ | Neither Opcode nor Mode  |
@@ -30,41 +33,41 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 
 |           | ABX | ABY | ABS | IMM | INX | INY | ZPX | ZP |
 |----------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|   **ADC** | ❌ |  ❌ | ⚠️  | ⚠️ | ❌  | ❌  | ❌  | ⚠️  |
-|   **AND** | ❌ |  ❌ | ✔️  | ✔️ | ❌  | ❌  | ❌  | ✔️  |
+|   **ADC** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
+|   **AND** | ⚠️ |  ⚠️ | ✔️  | ✔️ | ❌  | ❌  | ⚠️  | ✔️  |
 | ✔️**BIT** |    |     | ✔️  |     |      |     |     | ✔️  |
-|   **CMP** | ❌ |  ❌ | ⚠️  | ⚠️ | ❌  | ❌  | ❌  | ⚠️  |
+|   **CMP** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
 |   **CPX** |    |     | ⚠️  | ⚠️ |      |     |     | ⚠️  |
 |   **CPY** |    |     | ⚠️  | ⚠️ |      |     |     | ⚠️  |
-|   **EOR** | ❌ |  ❌ | ⚠️  | ⚠️ | ❌  | ❌  | ❌  | ⚠️  |
-|   **ORA** | ❌ |  ❌ | ⚠️  | ⚠️ | ❌  | ❌  | ❌  | ⚠️  |
-|   **SBC** | ❌ |  ❌ | ⚠️  | ⚠️ | ❌  | ❌  | ❌  | ⚠️  |
+|   **EOR** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
+|   **ORA** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
+|   **SBC** | ⚠️ |  ⚠️ | ⚠️  | ⚠️ | ❌  | ❌  | ⚠️  | ⚠️  |
 
 #### Load & Store to Memory
 
 |         | ABX | ABY | ABS | IMM | INX | INY | ZPX | ZPY | ZP |
 |--------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **LDA** | ❌  | ❌ | ✔️ | ✔️   | ❌ |  ❌ |  ❌ |     | ✔️ |
-| **LDX** |     | ❌ | ✔️ | ✔️   |     |     |     |  ❌ | ✔️ |
-| **LDY** | ❌  |    | ✔️ | ✔️   |     |     |  ❌ |     | ✔️ |
-| **STA** | ❌  | ❌ | ⚠️ |      | ❌ |  ❌ |  ❌ |     | ⚠️ |
-| **STX** |     | ❌ | ⚠️ |      |     |     |     |  ❌ | ⚠️ |
-| **STY** | ❌  |    | ⚠️ |      |     |     |  ❌ |     | ⚠️ |
+| **LDA** | ⚠️  | ⚠️ | ✔️ | ✔️   | ❌ |  ❌ |  ⚠️ |     | ✔️ |
+| **LDX** |     | ⚠️ | ✔️ | ✔️   |     |     |     |  ⚠️ | ✔️ |
+| **LDY** | ⚠️  |    | ✔️ | ✔️   |     |     |  ⚠️ |     | ✔️ |
+| **STA** | ⚠️  | ⚠️ | ⚠️ |      | ❌ |  ❌ |  ⚠️ |     | ⚠️ |
+| **STX** |     | ⚠️ | ⚠️ |      |     |     |     |  ⚠️ | ⚠️ |
+| **STY** | ⚠️  |    | ⚠️ |      |     |     |  ⚠️ |     | ⚠️ |
 
-#### Shift & Increment Registers
+#### Shift & Increment Register
 
 |           | ABX | ABS | ACC | IMP | ZPX | ZP |
 |----------:|:---:|:---:|:---:|:---:|:---:|:---:|
-|   **ASL** | ❌ | ⚠️  |  ⚠️ |     |  ❌ | ⚠️ |
-|   **DEC** | ❌ | ⚠️  |     |     |  ❌ | ⚠️ |
+|   **ASL** | ⚠️ | ⚠️  |  ⚠️ |     |  ⚠️ | ⚠️ |
+|   **DEC** | ⚠️ | ⚠️  |     |     |  ⚠️ | ⚠️ |
 | ✔️**DEX** |    |     |      | ✔️ |     |     |
 | ✔️**DEY** |    |     |      | ✔️ |     |     |
-|   **INC** | ❌ | ⚠️  |     |     |  ❌ | ⚠️ |
+|   **INC** | ⚠️ | ⚠️  |     |     |  ⚠️ | ⚠️ |
 | ✔️**INX** |    |     |      | ✔️ |     |     |
 | ✔️**INY** |    |     |      | ✔️ |     |     |
-|   **LSR** | ❌ | ⚠️  |  ✔️ |     |  ❌ | ⚠️ |
-|   **ROL** | ❌ | ⚠️  |  ✔️ |     |  ❌ | ⚠️ |
-|   **ROR** | ❌ | ⚠️  |  ✔️ |     |  ❌ | ⚠️ |
+|   **LSR** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
+|   **ROL** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
+|   **ROR** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
 
 #### Branch Control
 
@@ -84,8 +87,8 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 |           | ABS | IMP | IND |
 |----------:|-----|:---:|:---:|
 |   **BRK** |     |  ⚠️ |     |
-|   **JMP** | ❌ |      |  ❌ |
-|   **JSR** | ❌ |      |     |
+|   **JMP** | ⚠️ |      |  ❌ |
+|   **JSR** | ⚠️ |      |     |
 | ✔️**NOP** |    |   ✔️ |     |
 |   **RTI** |     |  ⚠️ |     |
 |   **RTS** |     |  ⚠️ |     |
@@ -102,7 +105,7 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 | ✔️**SED** | ✔️ |
 | ✔️**SEI** | ✔️ |
 
-#### Stack Control & Register Transfer
+#### Stack Control & Transfer Register
 
 |           | IMP |
 |----------:|:---:|
