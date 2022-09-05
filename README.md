@@ -20,8 +20,8 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 
 ### Opcodes & Address Modes
 
-Opcodes: 26/55
-Opcodes + Address Modes: 44/153
+Opcodes: 29/55
+Opcodes + Address Modes: 52/151
 
 |    |                          |
 |---:|--------------------------|
@@ -48,11 +48,11 @@ Opcodes + Address Modes: 44/153
 |           | ABX | ABY | ABS | IMM | INX | INY | ZPX | ZPY | ZP |
 |----------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |   **LDA** | ⚠️  | ⚠️ | ✔️ | ✔️   | ❌ |  ❌ |  ⚠️ |     | ✔️ |
-|   **LDX** |     | ⚠️ | ✔️ | ✔️   |     |     |     |  ⚠️ | ✔️ |
+| ✔️**LDX** |     | ✔️ | ✔️ | ✔️   |     |     |     |  ✔️ | ✔️ |
 | ✔️**LDY** | ✔️  |    | ✔️ | ✔️   |     |     |  ✔️ |     | ✔️ |
 |   **STA** | ⚠️  | ⚠️ | ⚠️ |      | ❌ |  ❌ |  ⚠️ |     | ⚠️ |
-|   **STX** |     | ⚠️ | ⚠️ |      |     |     |     |  ⚠️ | ⚠️ |
-|   **STY** | ⚠️  |    | ⚠️ |      |     |     |  ⚠️ |     | ⚠️ |
+| ✔️**STX** |     |    | ✔️ |      |     |     |     |  ✔️ | ✔️ |
+| ✔️**STY** |     |    | ✔️ |      |     |     |  ✔️ |     | ✔️ |
 
 #### Shift & Increment Register
 
