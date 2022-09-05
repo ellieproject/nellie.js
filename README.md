@@ -65,9 +65,9 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 |  ABSOLUTE X |     |  ❌  |     |  ❌  |  ❌  |     |  ❌  |     |     |     |     |  ❌  |  ❌  |     |
 |  ABSOLUTE Y |     |  ❌  |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |
 |   ABSOLUTE  |  ❌  |  ❌  |  ❌  |  ❌  |  ❌  |     |  ❌  |     |     |     |     |  ❌  |  ❌  |     |
-| ACCUMULATOR |     |     |     |     |  ❕  |     |     |     |     |     |     |  ❕  |  ❕  |     |
-|  IMMEDIATE  |     |  ❕  |  ❕  |  ❕  |     |     |  ❕  |     |     |     |     |     |     |     |
-|   IMPLIED   |     |     |     |     |     |  ❕  |     |  ❕  |  ❕  |  ❕  |  ❕  |     |     |  ❕  |
+| ACCUMULATOR |     |     |     |     |  ✔️  |     |     |     |     |     |     |  ✔️  |  ✔️  |     |
+|  IMMEDIATE  |     |  ❕  |  ✔️  |  ✔️  |     |     |  ❕  |     |     |     |     |     |     |     |
+|   IMPLIED   |     |     |     |     |     |  ✔️  |     |  ❕  |  ❕  |  ❕  |  ❕  |     |     |  ❕  |
 |  INDIRECT X |     |  ❌  |     |     |     |     |  ❌  |     |     |     |     |     |     |     |
 |  INDIRECT Y |     |  ❌  |     |     |     |     |  ❌  |     |     |     |     |     |     |     |
 |   INDIRECT  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
@@ -83,7 +83,7 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 |   ABSOLUTE  |     |  ❌  |     |     |     |  ❌  |  ❌  |  ❌  |     |     |     |     |     |     |
 | ACCUMULATOR |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
 |  IMMEDIATE  |     |  ❕  |     |     |     |     |     |     |     |     |     |     |     |     |
-|   IMPLIED   |  ❕  |     |  ❕  |  ❕  |  ❕  |     |     |     |  ❕  |  ❕  |  ❕  |  ❕  |  ❕  |  ❕  |
+|   IMPLIED   |  ❕  |     |  ✔️  |  ✔️  |  ✔️  |     |     |     |  ✔️  |  ✔️  |  ❕  |  ✔️  |  ❕  |  ✔️  |
 |  INDIRECT X |     |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |     |
 |  INDIRECT Y |     |  ❌  |     |     |     |  ❌  |     |     |     |     |     |     |     |     |
 |   INDIRECT  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
