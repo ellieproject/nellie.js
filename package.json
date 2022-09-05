@@ -2,10 +2,10 @@
   "name": "@ellieproject/nellie",
   "version": "0.1.0",
   "description": "An NES Emulation demo written using the ellie.js library",
-  "main": "src/nellie.js",
+  "main": "src/nellie/index.js",
   "exports": {
-    ".": "./src/nellie.js",
-    "./*": "./src/nellie/*.js",
+    ".": "./src/nellie/index.js",
+    "./*": "./src/nellie/*/index.js",
     "./package.json": "./package.json"
   },
   "scripts": {
