@@ -82,9 +82,9 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 - Absolute X = incomplete ❌
 - Absolute Y = incomplete ❌
 - Absolute = incomplete ❌
-- Accumulator = needs tests ❔
+- Accumulator = complete ✔️
 - Immediate = incomplete ❌
-- Implied = needs tests ❔
+- Implied = complete ✔️
 - Indirect X = incomplete ❌
 - Indirect Y = incomplete ❌
 - Indirect = incomplete ❌
