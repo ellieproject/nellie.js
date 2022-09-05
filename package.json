@@ -46,6 +46,6 @@
     "taplet": "^0.2.0"
   },
   "dependencies": {
-    "@ellieproject/ellie": "file:../ellie.js/ellieproject-ellie-0.1.0.tgz"
+    "@ellieproject/ellie": "github:ellieproject/ellie.js"
   }
 }
