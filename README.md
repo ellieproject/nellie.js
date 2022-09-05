@@ -20,8 +20,8 @@ The MOS6502 currently lacks a clock and most of its feature set, including a goo
 
 ### Opcodes & Address Modes
 
-Opcodes: 31/55
-Opcodes + Address Modes: 58/151
+Opcodes: 35/55
+Opcodes + Address Modes: 75/151
 
 |    |                          |
 |---:|--------------------------|
@@ -58,14 +58,14 @@ Opcodes + Address Modes: 58/151
 
 |           | ABX | ABS | ACC | IMP | ZPX | ZP |
 |----------:|:---:|:---:|:---:|:---:|:---:|:---:|
-|   **ASL** | ⚠️ | ⚠️  |  ⚠️ |     |  ⚠️ | ⚠️ |
-|   **DEC** | ⚠️ | ⚠️  |     |     |  ⚠️ | ⚠️ |
+| ✔️**ASL** | ✔️ | ✔️  |  ✔️ |     |  ✔️ | ✔️ |
+| ✔️**DEC** | ✔️ | ✔️  |     |     |  ✔️ | ✔️ |
 | ✔️**DEX** |    |     |      | ✔️ |     |     |
 | ✔️**DEY** |    |     |      | ✔️ |     |     |
-|   **INC** | ⚠️ | ⚠️  |     |     |  ⚠️ | ⚠️ |
+| ✔️**INC** | ✔️ | ✔️  |     |     |  ✔️ | ✔️ |
 | ✔️**INX** |    |     |      | ✔️ |     |     |
 | ✔️**INY** |    |     |      | ✔️ |     |     |
-|   **LSR** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
+| ✔️**LSR** | ✔️ | ✔️  |  ✔️ |     |  ✔️ | ✔️ |
 |   **ROL** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
 |   **ROR** | ⚠️ | ⚠️  |  ✔️ |     |  ⚠️ | ⚠️ |
 
