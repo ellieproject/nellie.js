@@ -5,6 +5,7 @@
   "main": "src/nellie/index.js",
   "exports": {
     ".": "./src/nellie.js",
+    "./test/*": "./test/*.js",
     "./*": "./src/nellie/*.js",
     "./package.json": "./package.json"
   },
